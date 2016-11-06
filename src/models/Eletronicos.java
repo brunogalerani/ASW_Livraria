@@ -1,3 +1,4 @@
+package models;
 import java.util.Date;
 
 public abstract class Eletronicos extends Produto{

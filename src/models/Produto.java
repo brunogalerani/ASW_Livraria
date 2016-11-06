@@ -1,3 +1,4 @@
+package models;
 
 public abstract class Produto {
 	private double preco;

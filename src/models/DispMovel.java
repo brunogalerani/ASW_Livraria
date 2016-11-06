@@ -1,3 +1,4 @@
+package models;
 import java.util.Date;
 
 public abstract class DispMovel extends Eletronicos{

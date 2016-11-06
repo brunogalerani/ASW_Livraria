@@ -1,3 +1,4 @@
+package models;
 
 public class EBook extends Livro{
 	private double tamanhoArquivo;

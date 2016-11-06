@@ -1,3 +1,4 @@
+package models;
 
 public class LivroFisico extends Livro{
 	private double altura;
