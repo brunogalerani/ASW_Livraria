@@ -102,7 +102,7 @@
                   <Image url="@../resources/sell.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonRegistrarProdutos" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Registrar venda">
+            <Button fx:id="buttonRegistrarVenda" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Registrar venda">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
@@ -124,7 +124,7 @@
                   <Image url="@../resources/add-product.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonGerenciarProdutos" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Gerenciar produtos">
+            <Button fx:id="buttonAdicionarProdutos" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Adicionar produtos">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>

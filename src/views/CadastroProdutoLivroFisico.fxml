@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Group layoutY="27.0">
+         <children>
+            <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
+            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Produtos" textAlignment="CENTER" wrappingWidth="282.13671875">
+               <font>
+                  <Font name="Bauhaus 93" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Text fill="#bf9d9d" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livro Físico" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
+         <font>
+            <Font name="Bauhaus 93" size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="58.0" layoutY="160.0" text="Código de barras">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="215.0" text="Preço">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="270.0" text="Titulo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="325.0" text="Idioma">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="216.0" text="Editora">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="380.0" text="Ano">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="435.0" text="ISBN">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="271.0" text="Autor">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="558.0" layoutY="160.0" text="Número de páginas">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="857.0" layoutY="326.0" text="Largura">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="558.0" layoutY="381.0" text="Resumo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="490.0" text="Categoria">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="326.0" text="Altura">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldCodigoBarras" layoutX="250.0" layoutY="160.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldPreco" layoutX="250.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldTitulo" layoutX="250.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textAreaIdioma" layoutX="250.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldAno" layoutX="250.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldISBN" layoutX="250.0" layoutY="435.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldNumeroPaginas" layoutX="745.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldEditora" layoutX="745.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldAutor" layoutX="745.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldLargura" layoutX="930.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldCategoria" layoutX="250.0" layoutY="490.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldAltura" layoutX="745.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
+      <Button fx:id="buttonCadastrar" layoutX="937.0" layoutY="593.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Cadastrar" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonVoltar" layoutX="803.0" layoutY="593.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #bf9d9d;" text="Voltar" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="366.0" layoutY="380.0" text="Tipo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldTipo" layoutX="439.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextArea fx:id="textAreaResumo" layoutX="745.0" layoutY="380.0" prefHeight="135.0" prefWidth="268.0" />
+   </children>
+</AnchorPane>
