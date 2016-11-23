@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+=======
+/Teste.txt
+>>>>>>> branch 'master' of https://github.com/brunogalerani/SistemaLivraria_ASW.git
 /app/
 /controllers/
 /models/
 /resources/
 /views/
+/teste/
