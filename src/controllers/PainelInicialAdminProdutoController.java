@@ -11,7 +11,7 @@ public class PainelInicialAdminProdutoController  implements Initializable{
 
 	@FXML
 	private Button buttonBarAdmin, buttonBarFuncionario, buttonProduto, buttonCliente, buttonFuncionario, 
-	buttonRegistrarVenda, buttonGerenciarProdutos, buttonInformacaoProdutos;
+	buttonRegistrarVenda, buttonGerenciarProdutos, buttonListarProdutos;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

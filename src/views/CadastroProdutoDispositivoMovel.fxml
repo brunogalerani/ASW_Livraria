@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoDispositivoMovelController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -109,14 +109,14 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldCodigoBarras" layoutX="251.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldPreco" layoutX="251.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldProfundidade" layoutX="251.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldPeso" layoutX="251.0" layoutY="490.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldCodigoBarras" layoutX="265.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldPreco" layoutX="265.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldProfundidade" layoutX="265.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldPeso" layoutX="265.0" layoutY="490.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldModelo" layoutX="745.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldMarca" layoutX="745.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldFabricante" layoutX="745.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldGarantia" layoutX="251.0" layoutY="545.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldGarantia" layoutX="265.0" layoutY="545.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldArmazenamento" layoutX="745.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
       <Button fx:id="buttonCadastrar" layoutX="937.0" layoutY="643.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Cadastrar" textFill="WHITE">
          <font>
@@ -128,26 +128,26 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="358.0" layoutY="435.0" text="Consumo">
+      <Label layoutX="372.0" layoutY="435.0" text="Consumo">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldConsumo" layoutX="440.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldCor" layoutX="251.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
-      <Label layoutX="360.0" layoutY="326.0" text="Potencia">
+      <TextField fx:id="textFieldConsumo" layoutX="454.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldCor" layoutX="265.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="374.0" layoutY="326.0" text="Potencia">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldPotencia" layoutX="440.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldLargura" layoutX="251.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
-      <Label layoutX="360.0" layoutY="381.0" text="Altura">
+      <TextField fx:id="textFieldPotencia" layoutX="454.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldLargura" layoutX="265.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="374.0" layoutY="381.0" text="Altura">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldAltura" layoutX="440.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldAltura" layoutX="454.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
       <TextField fx:id="textFieldBateria" layoutX="745.0" layoutY="380.0" prefHeight="25.0" prefWidth="268.0" />
       <Label layoutX="556.0" layoutY="435.0" text="TouchScreen">
          <font>
@@ -165,7 +165,7 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldAlimentacao" layoutX="251.0" layoutY="600.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldAlimentacao" layoutX="265.0" layoutY="600.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldTamanhoTela" layoutX="745.0" layoutY="489.0" prefHeight="25.0" prefWidth="79.0" />
       <Label layoutX="840.0" layoutY="490.0" text="Tipo Chip">
          <font>
@@ -196,6 +196,6 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="choiceBoxTipoDispositivoMovel" layoutX="251.0" layoutY="158.0" prefHeight="25.0" prefWidth="268.0" />
+      <ChoiceBox fx:id="choiceBoxTipoDispositivoMovel" layoutX="265.0" layoutY="158.0" prefHeight="25.0" prefWidth="268.0" style="-fx-background-color: transparent; -fx-border-color: #c9c7c7; -fx-border-radius: 4px;" />
    </children>
 </AnchorPane>
