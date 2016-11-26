@@ -27,6 +27,7 @@ public class CadastroClienteController  implements Initializable{
 	private void btnCadastrar() {
 		
 	}
+	
 	@FXML
 	private void btnVoltar() {
 		
