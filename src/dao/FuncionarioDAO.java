@@ -30,9 +30,9 @@ public class FuncionarioDAO {
 		this.manager.remove(funcionario);
 		this.manager.getTransaction().commit();
 	}
-	public List<Endereco> all() {
+	public List<Funcionario> all() {
 		Query query = this.manager.createQuery("select f from Funcionario f");
-		List<Endereco> list = query.getResultList();
+		List<Funcionario> list = query.getResultList();
 		return list;
 	}
 	@Override
