@@ -36,5 +36,8 @@ public class LivroFisicoDAO {
 		List<LivroFisico> list = query.getResultList();
 		return list;
 	}
-	
+	@Override
+	protected void finalize() throws Throwable {
+		this.manager.close();
+	}
 }
