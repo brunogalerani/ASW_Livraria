@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoDispositivoMovelController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Group layoutY="27.0">
+         <children>
+            <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
+            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Produtos" textAlignment="CENTER" wrappingWidth="282.13671875">
+               <font>
+                  <Font name="Bauhaus 93" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Text fill="#bf9d9d" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dispositivel Móvel" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
+         <font>
+            <Font name="Bauhaus 93" size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="59.0" layoutY="215.0" text="Código de barras">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="270.0" text="Preço">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="325.0" text="Cor">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="380.0" text="Largura">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="216.0" text="Marca">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="435.0" text="Profundidade">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="490.0" text="Peso">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="271.0" text="Fabricante">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="558.0" layoutY="160.0" text="Modelo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="558.0" layoutY="381.0" text="Bateria">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="545.0" text="Garantia">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="326.0" text="Armazenamento">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldCodigoBarras" layoutX="265.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldPreco" layoutX="265.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldProfundidade" layoutX="265.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldPeso" layoutX="265.0" layoutY="490.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldModelo" layoutX="745.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldMarca" layoutX="745.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldFabricante" layoutX="745.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldGarantia" layoutX="265.0" layoutY="545.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldArmazenamento" layoutX="745.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
+      <Button fx:id="buttonCadastrar" layoutX="937.0" layoutY="643.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Cadastrar" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonVoltar" layoutX="803.0" layoutY="643.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #bf9d9d;" text="Voltar" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="372.0" layoutY="435.0" text="Consumo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldConsumo" layoutX="454.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldCor" layoutX="265.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="374.0" layoutY="326.0" text="Potencia">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldPotencia" layoutX="454.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldLargura" layoutX="265.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="374.0" layoutY="381.0" text="Altura">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldAltura" layoutX="454.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldBateria" layoutX="745.0" layoutY="380.0" prefHeight="25.0" prefWidth="268.0" />
+      <Label layoutX="556.0" layoutY="435.0" text="TouchScreen">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldTouchScreen" layoutX="743.0" layoutY="434.0" prefHeight="25.0" prefWidth="268.0" />
+      <Label layoutX="558.0" layoutY="490.0" text="Tamanho Tela">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="600.0" text="Alimentação">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldAlimentacao" layoutX="265.0" layoutY="600.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldTamanhoTela" layoutX="745.0" layoutY="489.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="840.0" layoutY="490.0" text="Tipo Chip">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldTipoChip" layoutX="934.0" layoutY="489.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="557.0" layoutY="546.0" text="Quantidade Chip">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldQuantidadeChip" layoutX="744.0" layoutY="545.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="838.0" layoutY="545.0" text="Resolução">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldResolucao" layoutX="933.0" layoutY="545.0" prefHeight="25.0" prefWidth="79.0" />
+      <Label layoutX="558.0" layoutY="600.0" text="Tecnologia suportada">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldTecnologiaSuportada" layoutX="745.0" layoutY="600.0" prefHeight="25.0" prefWidth="268.0" />
+      <Label layoutX="59.0" layoutY="159.0" text="Tipo Dispositivo Móvel">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceBoxTipoDispositivoMovel" layoutX="265.0" layoutY="158.0" prefHeight="25.0" prefWidth="268.0" style="-fx-background-color: transparent; -fx-border-color: #c9c7c7; -fx-border-radius: 4px;" />
+   </children>
+</AnchorPane>
