@@ -36,6 +36,13 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 	private void btnCadastrar() {
 		
 	}
+	private void cadastrarCelular() {
+		this.celular = new Celular();
+		String modelo = this.textFieldModelo.getText();
+		double preco = Double.parseDouble(this.textFieldPreco.getText());
+		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
+		
+	}
 	@FXML
 	private void btnVoltar() {
 		
