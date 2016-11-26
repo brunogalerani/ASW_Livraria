@@ -1,10 +1,10 @@
 package models;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Pedido {
 	private Cliente cliente;
 	private Vendedor vendedor;
-	private ArrayList<Produto> produtos;
+	private List<Produto> produtos;
 	
 	public Pedido() {
 	}
@@ -30,7 +30,7 @@ public class Pedido {
 		this.vendedor = vendedor;
 	}
 
-	public ArrayList<Produto> getProdutos() {
+	public List<Produto> getProdutos() {
 		return produtos;
 	}
 	

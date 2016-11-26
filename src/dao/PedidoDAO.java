@@ -6,33 +6,35 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import database.JPAUtil;
-import models.DispMovel;
+import models.EBook;
+import models.Pedido;
 
-public class DispMovelDAO {
+public class PedidoDAO {
 	private EntityManager manager;
 	
-	public DispMovelDAO() {
+	public PedidoDAO() {
 		this.manager = JPAUtil.getEntityManager();
 	}
-	public void insert(DispMovel dispMovel) {
+	
+	public void insert(Pedido pedido) {
 		this.manager.getTransaction().begin();
-		this.manager.persist(dispMovel);
+		this.manager.persist(pedido);
 		this.manager.getTransaction().commit();
 	}
-	public void update(DispMovel dispMovel) {
+	public void update(Pedido pedido) {
 		this.manager.getTransaction().begin();
-		this.manager.merge(dispMovel);
+		this.manager.merge(pedido);
 		this.manager.getTransaction().commit();
 	}
-	public void remove(DispMovel dispMovel) {
+	public void remove(Pedido pedido) {
 		this.manager.getTransaction().begin();
-		dispMovel = this.manager.find(DispMovel.class, dispMovel.getCodBarras());
-		this.manager.remove(dispMovel);
+		pedido = this.manager.find(Pedido.class, pedido.hashCode());
+		this.manager.remove(pedido);
 		this.manager.getTransaction().commit();
 	}
-	public List<DispMovel> all() {
-		Query query = this.manager.createQuery("select d from DispMovel d");
-		List<DispMovel> list = query.getResultList();
+	public List<Pedido> all() {
+		Query query = this.manager.createQuery("select e from EBook e");
+		List<Pedido> list = query.getResultList();
 		return list;
 	}
 	@Override
