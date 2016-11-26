@@ -27,5 +27,13 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 		// TODO Auto-generated method stub
 		
 	}
+	@FXML
+	private void btnCadastrar() {
+		
+	}
+	@FXML
+	private void btnVoltar() {
+		
+	}
 
 }
