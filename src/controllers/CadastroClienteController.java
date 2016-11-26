@@ -22,5 +22,14 @@ public class CadastroClienteController  implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@FXML
+	private void btnCadastrar() {
+		
+	}
+	@FXML
+	private void btnVoltar() {
+		
+	}
 
 }
