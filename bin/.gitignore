@@ -1,3 +1,6 @@
-/database/
+/app/
 /controllers/
 /dao/
+/database/
+/models/
+/teste/
