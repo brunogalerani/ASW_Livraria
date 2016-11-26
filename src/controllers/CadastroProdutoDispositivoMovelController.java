@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import models.Celular;
+import models.Tablet;
 
 public class CadastroProdutoDispositivoMovelController  implements Initializable{
 
@@ -21,6 +23,9 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 	textFieldResolucao, textFieldTecnologiaSuportada;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
+	
+	private Tablet tablet;
+	private Celular celular;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
