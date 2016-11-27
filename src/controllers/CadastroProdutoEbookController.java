@@ -27,5 +27,15 @@ public class CadastroProdutoEbookController  implements Initializable{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@FXML
+	private void handleBtnCadastrar() {
+		
+	}
+	
+	@FXML
+	private void handleBtnVoltar() {
+		
+	}
 
 }

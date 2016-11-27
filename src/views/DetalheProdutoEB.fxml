@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DetalheProdutoEBController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Group layoutY="27.0">
+         <children>
+            <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
+            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalhes produtos" textAlignment="CENTER" wrappingWidth="282.13671875">
+               <font>
+                  <Font name="Bauhaus 93" size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Text fill="#bf9d9d" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados do produto" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
+         <font>
+            <Font name="Bauhaus 93" size="23.0" />
+         </font>
+      </Text>
+      <Label layoutX="505.0" layoutY="145.0" text="Codigo de barras">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="215.0" text="Preço">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="285.0" text="Título">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="355.0" text="Idioma">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="215.0" text="Categoria">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="425.0" text="Ano">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="495.0" text="Formato">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="285.0" text="Editora">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="145.0" text="Tamanho Arquivo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="355.0" text="Autor">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="425.0" text="ISBN">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonVoltar" layoutX="955.0" layoutY="583.0" mnemonicParsing="false" onAction="#handleBtnVoltar" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Voltar" textFill="WHITE">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelCodigoBarras" layoutX="504.0" layoutY="185.0" />
+      <Label fx:id="labelPreco" layoutX="504.0" layoutY="253.0" />
+      <Label fx:id="labelTitulo" layoutX="504.0" layoutY="325.0" />
+      <Label fx:id="labelIdioma" layoutX="504.0" layoutY="397.0" />
+      <Label fx:id="labelAno" layoutX="504.0" layoutY="466.0" />
+      <Label fx:id="labelFormato" layoutX="504.0" layoutY="536.0" />
+      <Label fx:id="labelTamanhoArquivo" layoutX="794.0" layoutY="185.0" />
+      <Label fx:id="labelCategoria" layoutX="794.0" layoutY="253.0" />
+      <Label fx:id="labelEditora" layoutX="794.0" layoutY="325.0" />
+      <Label fx:id="labelAutor" layoutX="795.0" layoutY="397.0" />
+      <Label fx:id="labelISBN" layoutX="794.0" layoutY="466.0" />
+      <Label fx:id="labelNumeroPaginas" layoutX="505.0" layoutY="592.0" prefHeight="17.0" prefWidth="0.0" />
+      <ImageView fx:id="imgView" fitHeight="295.0" fitWidth="200.0" layoutX="40.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="268.0" layoutY="145.0" text="Resumo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="554.0" text="Numero de páginas">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelLargura" layoutX="504.0" layoutY="592.0" />
+      <Text fx:id="textResumo" layoutX="268.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="161.99999302625656" />
+   </children>
+</AnchorPane>
