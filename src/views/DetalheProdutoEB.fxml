@@ -103,12 +103,7 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Button fx:id="buttonCadastrar" layoutX="955.0" layoutY="583.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Cadastrar" textFill="WHITE">
-         <font>
-            <Font name="Bauhaus 93" size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="buttonVoltar" layoutX="821.0" layoutY="583.0" mnemonicParsing="false" style="-fx-border-color: transparent; -fx-background-color: #bf9d9d;" text="Voltar" textFill="WHITE">
+      <Button fx:id="buttonVoltar" layoutX="955.0" layoutY="583.0" mnemonicParsing="false" onAction="#handleBtnVoltar" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Voltar" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
@@ -125,7 +120,7 @@
       <Label fx:id="labelAutor" layoutX="795.0" layoutY="397.0" />
       <Label fx:id="labelISBN" layoutX="794.0" layoutY="466.0" />
       <Label fx:id="labelNumeroPaginas" layoutX="505.0" layoutY="592.0" prefHeight="17.0" prefWidth="0.0" />
-      <ImageView fitHeight="295.0" fitWidth="200.0" layoutX="40.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgView" fitHeight="295.0" fitWidth="200.0" layoutX="40.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="268.0" layoutY="145.0" text="Resumo">
          <font>
             <Font name="Bauhaus 93" size="19.0" />

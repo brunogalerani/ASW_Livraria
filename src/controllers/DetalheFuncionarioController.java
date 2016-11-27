@@ -9,13 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class DetalheProdutoDMController implements Initializable{
+public class DetalheFuncionarioController implements Initializable{
 
 	@FXML
-	private Label labelTipoDispositivoMovel, labelCor, labelPreco, labelLargura, labelPotencia, 
-	labelAltura, labelConsumo, labelProfundidade, labelGarantia, labelPeso, labelModelo, labelAlimentacao,
-	labelMarca, labelArmazenamento, labelFabricante, labelTouchScreen, labelTecnologiaSuportada, 
-	labelQuantidadeChips, labelTamanhoTela, labelResolucao, labelTipoChip, labelBateria;
+	private Label labelNome, labelDataDeNascimento, labelCPF, labelRG, labelTelefone, labelEmail,
+	labelCEP, labelEndereco, labelRua, labelBairro, labelComplemento, labelEstado, labelNumero, 
+	labelCidade;
 	
 	@FXML
 	private Button buttonVoltar;
@@ -33,5 +32,6 @@ public class DetalheProdutoDMController implements Initializable{
 	private void handleBtnVoltar() {
 		
 	}
+
 	
 }
