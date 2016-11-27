@@ -62,7 +62,7 @@
          </font>
       </Label>
       <Label fx:id="labelNomeProduto" layoutX="536.0" layoutY="267.0" />
-      <Label layoutX="494.0" layoutY="145.0" text="CPF do Cliente">
+      <Label layoutX="522.0" layoutY="145.0" text="Cliente">
          <font>
             <Font name="Bauhaus 93" size="17.0" />
          </font>
@@ -73,7 +73,6 @@
          </font>
       </Label>
       <TextField fx:id="textFieldQuantidade" layoutX="476.0" layoutY="365.0" />
-      <TextField fx:id="textFieldCPF" layoutX="477.0" layoutY="173.0" />
       <Button fx:id="buttonConcluir" layoutX="959.0" layoutY="591.0" mnemonicParsing="false" onAction="#handleBtnConcluir" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Concluir" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
@@ -84,5 +83,15 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="buttonSelecionarCliente" layoutX="480.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleBtnSelecionarCliente" style="-fx-border-color: #417f5f; -fx-background-color: transparent;" text="Selecionar cliente">
+         <font>
+            <Font name="Bauhaus 93" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelCliente" layoutX="533.0" layoutY="598.0">
+         <font>
+            <Font name="Arial Unicode MS" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
