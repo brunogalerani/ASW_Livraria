@@ -15,26 +15,26 @@ public class VideoGameDAO {
 		this.manager = JPAUtil.getEntityManager();
 	}
 
-	private void insert(VideoGame videoGame) {
+	public void insert(VideoGame videoGame) {
 		this.manager.getTransaction().begin();
 		this.manager.persist(videoGame);
 		this.manager.getTransaction().commit();
 	}
 
-	private void update(VideoGame videoGame) {
+	public void update(VideoGame videoGame) {
 		this.manager.getTransaction().begin();
 		this.manager.merge(videoGame);
 		this.manager.getTransaction().commit();
 	}
 
-	private void remove(VideoGame videoGame) {
+	public void remove(VideoGame videoGame) {
 		this.manager.getTransaction().begin();
 		videoGame = this.manager.find(VideoGame.class, videoGame.getModelo());
 		this.manager.remove(videoGame);
 		this.manager.getTransaction().commit();
 	}
 
-	private List<VideoGame> all() {
+	public List<VideoGame> all() {
 		Query query = this.manager.createQuery("select v from VideoGame v");
 		List<VideoGame> list = query.getResultList();
 		return list;
