@@ -15,6 +15,7 @@ public abstract class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String tipoProduto;
 	private double preco;
 	private long codBarras;
 	private int quantidade;
@@ -24,6 +25,7 @@ public abstract class Produto {
 	public Produto() {
 		this.codBarras = 0;
 		this.preco = 0;
+		this.tipoProduto = this.getClass().getName();
 	}
 
 	public Long getId() {
@@ -57,5 +59,14 @@ public abstract class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+
+	public String getTipoProduto() {
+		return tipoProduto;
+	}
+
+	public void setTipoProduto(String tipoProduto) {
+		this.tipoProduto = tipoProduto;
+	}
+	
 
 }
