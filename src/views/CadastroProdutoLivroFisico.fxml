@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoLivroFisicoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoLivroFisicoController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -99,7 +99,7 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="558.0" layoutY="381.0" text="Resumo">
+      <Label layoutX="557.0" layoutY="436.0" text="Resumo">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -142,6 +142,18 @@
          </font>
       </Label>
       <TextField fx:id="textFieldTipo" layoutX="439.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextArea fx:id="textAreaResumo" layoutX="745.0" layoutY="380.0" prefHeight="135.0" prefWidth="268.0" />
+      <TextArea fx:id="textAreaResumo" layoutX="744.0" layoutY="435.0" prefHeight="135.0" prefWidth="268.0" />
+      <Label layoutX="556.0" layoutY="381.0" text="Profundidade">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldProfundidade" layoutX="745.0" layoutY="380.0" prefHeight="25.0" prefWidth="268.0" />
+      <Label layoutX="60.0" layoutY="538.0" text="Peso">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldPeso" layoutX="252.0" layoutY="538.0" prefHeight="25.0" prefWidth="268.0" />
    </children>
 </AnchorPane>
