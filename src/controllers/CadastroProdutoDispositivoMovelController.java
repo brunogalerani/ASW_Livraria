@@ -67,7 +67,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
 
-		if (radioButtonCel.isArmed()) {
+		if (radioButtonCel.isSelected()) {
 			this.celular = new Celular();
 			this.celular.setTouchScreen(touchScreen);
 			this.celular.setTamanhoTela(tamanhoTela);
@@ -92,7 +92,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.celular.setCodBarras(codBarras);
 
 			celularDAO.insert(celular);
-		} else if (radioButtonTablet.isArmed()) {
+		} else if (radioButtonTablet.isSelected()) {
 			this.tablet = new Tablet();
 			this.tablet.setTouchScreen(touchScreen);
 			this.tablet.setTamanhoTela(tamanhoTela);

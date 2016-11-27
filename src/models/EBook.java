@@ -14,6 +14,7 @@ public class EBook extends Livro {
 	private String formato;
 
 	public EBook() {
+		super();
 	}
 	
 	public Long getId() {
