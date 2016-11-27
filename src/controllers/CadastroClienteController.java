@@ -38,7 +38,19 @@ public class CadastroClienteController  implements Initializable{
 	}
 	private void cadastrar() {
 		String nome = this.textFieldNome.getText();
-		LocalDate dataNascimento = 
+		LocalDate dataNascimento = this.datePickerDataNascimento.getValue();
+		long cpf = Long.parseLong(this.textFieldCPF.getText());
+		String rg = this.textFieldRG.getText();
+		String telefone = this.textFieldTelefone.getText();
+		String email = this.textFieldEmail.getText();
+		
+		String rua = this.textFieldEndereco.getText();
+		String bairro = this.textFieldBairro.getText();
+		long cep = Long.parseLong(this.textFieldCEP.getText());
+		String numero = this.textFieldNumero.getText();
+		String complemento = this.textFieldComplemento.getText();
+		String cidade = this.textFieldCidade.getText();
+		String estado = this.textFieldEstado.getText();
 	}
 	@FXML
 	private void handleBtnVoltar() {
