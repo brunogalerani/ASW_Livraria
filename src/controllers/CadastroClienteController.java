@@ -35,7 +35,7 @@ public class CadastroClienteController  implements Initializable{
 	
 	@FXML
 	private void handleBtnCadastrar() {
-		
+		this.cadastrar();
 	}
 	private void cadastrar() {
 		String nome = this.textFieldNome.getText();
