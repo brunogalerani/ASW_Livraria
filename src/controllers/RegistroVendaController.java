@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import models.Produto;
 
 public class RegistroVendaController implements Initializable{
 
@@ -33,6 +34,13 @@ public class RegistroVendaController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void selectTableViewProdutosDisponiveis(Produto produto){
+		if(produto != null){
+			produto.getClass();
+			this.labelNomeProduto.setText(produto.getNome());
+		}
 	}
 	
 	@FXML

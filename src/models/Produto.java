@@ -18,6 +18,16 @@ public abstract class Produto {
 	private double preco;
 	private long codBarras;
 	private int quantidade;
+	private String nome;
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	@Transient
 	private Pedido pedido;
 
