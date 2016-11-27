@@ -17,11 +17,11 @@ public class App extends Application {
         
         stage.setScene(scene);
         stage.setTitle("Sistema Livraria ASW");
-//        Gerente gerente = new Gerente();
-//		gerente.setCpf(123456);
-//		gerente.setLogin("Bruno");
-//        GerenteDAO t = new GerenteDAO();
-//        t.insert(gerente);
+        Gerente gerente = new Gerente();
+		gerente.setCpf(123456);
+		gerente.setLogin("Bruno");
+        GerenteDAO t = new GerenteDAO();
+        t.insert(gerente);
         stage.show();
 	}
 	

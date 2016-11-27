@@ -1,22 +1,21 @@
 package models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Transient;
+import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public abstract class Funcionario extends Pessoa {
 
-	
-	@Transient
-	private AcaoUsuario acaoUsuario;
 	@Column(unique = true)
 	private String login;
-	/*@OneToMany(mappedBy="funcionario")
-	private List<Pedido> pedidos;*/
+	@OneToMany(mappedBy="funcionario")
+	private List<Pedido> pedidos;
 
 	public Funcionario() {
 		super();
@@ -30,15 +29,7 @@ public abstract class Funcionario extends Pessoa {
 		this.login = login;
 	}
 
-//	public List<Pedido> getPedidos() {
-//		return pedidos;
-//	}
-
-	public AcaoUsuario getAcaoUsuario() {
-		return acaoUsuario;
-	}
-
-	public void setAcaoUsuario(AcaoUsuario acaoUsuario) {
-		this.acaoUsuario = acaoUsuario;
+	public List<Pedido> getPedidos() {
+		return pedidos;
 	}
 }
