@@ -9,44 +9,45 @@ import dao.TabletDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import models.Celular;
 import models.Tablet;
 
-public class CadastroProdutoDispositivoMovelController  implements Initializable{
+public class CadastroProdutoDispositivoMovelController implements Initializable {
 
 	@FXML
-	private ChoiceBox choiceBoxTipoDispositivoMovel;
+	private RadioButton radioButtonCel, radioButtonTablet, radioButtonTsSim, radioButtonTsNao;
 	@FXML
 	private DatePicker datePickerGarantia;
 	@FXML
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldCor, textFieldPotencia, textFieldLargura,
-	textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, 
-	textFieldAlimentacao, textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, 
-	textFieldTamanhoTela, textFieldTipoChip, textFieldQuantidadeChip,
-	textFieldResolucao, textFieldTecnologiaSuportada;
+			textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, textFieldAlimentacao,
+			textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, textFieldTamanhoTela,
+			textFieldTipoChip, textFieldQuantidadeChip, textFieldResolucao, textFieldTecnologiaSuportada;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
-	
+
 	private Tablet tablet;
 	private Celular celular;
 	private TabletDAO tabletDAO;
 	private CelularDAO celularDAO;
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		this.celularDAO = new CelularDAO();
 		this.tabletDAO = new TabletDAO();
-		
+
 	}
+
 	@FXML
 	private void btnCadastrar() {
-		
+		cadastrarDispositivo();
 	}
+
 	private void cadastrarDispositivo() {
-		boolean touchScreen;
+		boolean touchScreen = radioButtonTsSim.isArmed();
 		double tamanhoTela = Double.parseDouble(this.textFieldTamanhoTela.getText());
 		String tipoChip = this.textFieldTipoChip.getText();
 		int quantidadeChip = Integer.parseInt(this.textFieldQuantidadeChip.getText());
@@ -59,7 +60,6 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 		double potencia = Double.parseDouble(this.textFieldPotencia.getText());
 		int alimentacao = Integer.parseInt(this.textFieldAlimentacao.getText());
 		double consumo = Double.parseDouble(this.textFieldConsumo.getText());
-		boolean bateria;
 		LocalDate garantia = this.datePickerGarantia.getValue();
 		String modelo = this.textFieldModelo.getText();
 		String marca = this.textFieldMarca.getText();
@@ -68,15 +68,16 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
-		
-		if (  ) {
+
+		if (radioButtonCel.isArmed()) {
 			this.celular = new Celular();
 			this.celular.setTouchScreen(touchScreen);
 			this.celular.setTamanhoTela(tamanhoTela);
 			this.celular.setTipoChip(tipoChip);
 			this.celular.setQuantidadeChip(quantidadeChip);
 			this.celular.setTecnologiaSuportada(tecnologiaSuportada);
-			this.celular.setResolucao(resolucao);;
+			this.celular.setResolucao(resolucao);
+			;
 			this.celular.setCor(cor);
 			this.celular.setAltura(altura);
 			this.celular.setLargura(largura);
@@ -84,7 +85,6 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 			this.celular.setPotencia(potencia);
 			this.celular.setAlimentacao(alimentacao);
 			this.celular.setConsumo(consumo);
-			this.celular.setBateria(bateria);
 			this.celular.setGarantia(garantia);
 			this.celular.setModelo(modelo);
 			this.celular.setMarca(marca);
@@ -93,17 +93,16 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 			this.celular.setPeso(peso);
 			this.celular.setPreco(preco);
 			this.celular.setCodBarras(codBarras);
-			
+
 			celularDAO.insert(celular);
-		}
-		if (  ) {
+		} else if (radioButtonTablet.isArmed()) {
 			this.tablet = new Tablet();
 			this.tablet.setTouchScreen(touchScreen);
 			this.tablet.setTamanhoTela(tamanhoTela);
 			this.tablet.setTipoChip(tipoChip);
 			this.tablet.setQuantidadeChip(quantidadeChip);
 			this.tablet.setTecnologiaSuportada(tecnologiaSuportada);
-			this.tablet.setResolucao(resolucao);;
+			this.tablet.setResolucao(resolucao);
 			this.tablet.setCor(cor);
 			this.tablet.setAltura(altura);
 			this.tablet.setLargura(largura);
@@ -111,7 +110,6 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 			this.tablet.setPotencia(potencia);
 			this.tablet.setAlimentacao(alimentacao);
 			this.tablet.setConsumo(consumo);
-			this.tablet.setBateria(bateria);
 			this.tablet.setGarantia(garantia);
 			this.tablet.setModelo(modelo);
 			this.tablet.setMarca(marca);
@@ -120,20 +118,20 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 			this.tablet.setPeso(peso);
 			this.tablet.setPreco(preco);
 			this.tablet.setCodBarras(codBarras);
-			
+
 			tabletDAO.insert(tablet);
 		}
-		
+
 	}
 
 	@FXML
 	private void handleBtnCadastrar() {
-		
+
 	}
-	
+
 	@FXML
 	private void handleBtnVoltar() {
-		
+
 	}
 
 }

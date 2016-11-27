@@ -9,11 +9,14 @@ import encryption.EncryptPassword;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Funcionario;
@@ -30,18 +33,19 @@ public class LoginController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-//		Gerente gerente = new Gerente();
-//		gerente.setCpf(123456);
-//		gerente.setLogin("Bruno");
-//		gerente.setSenha(EncryptPassword.encryptSHA256("teste"));
-//		GerenteDAO t = new GerenteDAO();
-//		t.insert(gerente);
-//		
-//		Vendedor vendedor = new Vendedor();
-//		vendedor.setLogin("Alo");
-//		vendedor.setSenha(EncryptPassword.encryptSHA256("opa"));
-//		VendedorDAO dao = new VendedorDAO();
-//		dao.insert(vendedor);
+		buttonLogin.setDefaultButton(true);
+		// Gerente gerente = new Gerente();
+		// gerente.setCpf(123456);
+		// gerente.setLogin("Bruno");
+		// gerente.setSenha(EncryptPassword.encryptSHA256("teste"));
+		// GerenteDAO t = new GerenteDAO();
+		// t.insert(gerente);
+		//
+		// Vendedor vendedor = new Vendedor();
+		// vendedor.setLogin("Alo");
+		// vendedor.setSenha(EncryptPassword.encryptSHA256("opa"));
+		// VendedorDAO dao = new VendedorDAO();
+		// dao.insert(vendedor);
 	}
 
 	@FXML
@@ -52,13 +56,13 @@ public class LoginController implements Initializable {
 
 	@FXML
 	public void handleButtonLogin() throws IOException {
-		
+
 		FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 		String login = textFieldUsuario.getText();
 		String password = EncryptPassword.encryptSHA256(passwordFieldSenha.getText());
 
 		Alert alert = new Alert(Alert.AlertType.ERROR);
-		
+
 		if (login.isEmpty()) {
 			alert.setTitle("Campo vazio!");
 			alert.setHeaderText("O campo \"Usuário\" está em branco!");
@@ -76,12 +80,12 @@ public class LoginController implements Initializable {
 				alert.setHeaderText("Credenciais inválidas ou usuário inexistente!");
 				alert.setContentText("Por favor, verifique seus dados e tente novamente!");
 				alert.showAndWait();
-			}
-			else{
+			} else {
 				Stage actual = (Stage) buttonLogin.getScene().getWindow();
 				actual.close();
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(PainelInicialFuncionarioClienteController.class.getResource("/views/PainelInicialFuncionarioCliente.fxml"));
+				loader.setLocation(PainelInicialFuncionarioClienteController.class
+						.getResource("/views/PainelInicialFuncionarioCliente.fxml"));
 				AnchorPane page = (AnchorPane) loader.load();
 
 				Stage nextStage = new Stage();

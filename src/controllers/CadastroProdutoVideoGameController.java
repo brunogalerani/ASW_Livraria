@@ -46,7 +46,6 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		double potencia = Double.parseDouble(this.textFieldPotencia.getText());
 		int alimentacao = Integer.parseInt(this.textFieldAlimentacao.getText());
 		double consumo = Double.parseDouble(this.textFieldConsumo.getText());
-		boolean bateria;
 		LocalDate garantia = datePickerGarantia.getValue();
 		String modelo = this.textFieldModelo.getText();
 		String marca = this.textFieldMarca.getText();
@@ -66,7 +65,6 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGame.setPotencia(potencia);
 		this.videoGame.setAlimentacao(alimentacao);
 		this.videoGame.setConsumo(consumo);
-		this.videoGame.setBateria(bateria);
 		this.videoGame.setGarantia(garantia);
 		this.videoGame.setModelo(modelo);
 		this.videoGame.setMarca(marca);
