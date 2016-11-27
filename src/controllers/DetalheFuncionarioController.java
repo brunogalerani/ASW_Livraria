@@ -13,7 +13,7 @@ public class DetalheFuncionarioController implements Initializable{
 
 	@FXML
 	private Label labelNome, labelDataDeNascimento, labelCPF, labelRG, labelTelefone, labelEmail,
-	labelCEP, labelEndereco, labelRua, labelBairro, labelComplemento, labelEstado, labelNumero, 
+	labelCEP, labelRua, labelBairro, labelComplemento, labelEstado, labelNumero, 
 	labelCidade;
 	
 	@FXML

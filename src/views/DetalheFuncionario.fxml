@@ -68,11 +68,6 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="212.0" text="Endereço">
-         <font>
-            <Font name="Bauhaus 93" size="19.0" />
-         </font>
-      </Label>
       <Label layoutX="391.0" layoutY="422.0" text="Telefone">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
@@ -83,7 +78,7 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="282.0" text="Rua">
+      <Label layoutX="679.0" layoutY="352.0" text="Rua">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -93,27 +88,27 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="883.0" layoutY="282.0" text="Número">
+      <Label layoutX="884.0" layoutY="352.0" text="Número">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="352.0" text="Bairro">
+      <Label layoutX="679.0" layoutY="422.0" text="Bairro">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="422.0" text="Complemento">
+      <Label layoutX="679.0" layoutY="492.0" text="Complemento">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="492.0" text="Estado">
+      <Label layoutX="678.0" layoutY="212.0" text="Estado">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="883.0" layoutY="492.0" text="Cidade">
+      <Label layoutX="679.0" layoutY="282.0" text="Cidade">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -130,13 +125,12 @@
       <Label fx:id="labelTelefone" layoutX="390.0" layoutY="463.0" />
       <Label fx:id="labelEmail" layoutX="390.0" layoutY="533.0" />
       <Label fx:id="labelCEP" layoutX="680.0" layoutY="182.0" />
-      <Label fx:id="labelEndereco" layoutX="680.0" layoutY="250.0" />
-      <Label fx:id="labelRua" layoutX="680.0" layoutY="322.0" />
-      <Label fx:id="labelBairro" layoutX="681.0" layoutY="394.0" />
-      <Label fx:id="labelComplemento" layoutX="680.0" layoutY="463.0" />
-      <Label fx:id="labelEstado" layoutX="680.0" layoutY="533.0" />
-      <Label fx:id="labelNumero" layoutX="885.0" layoutY="322.0" />
-      <Label fx:id="LabelCidade" layoutX="883.0" layoutY="525.0" />
+      <Label fx:id="labelRua" layoutX="680.0" layoutY="394.0" />
+      <Label fx:id="labelBairro" layoutX="680.0" layoutY="463.0" />
+      <Label fx:id="labelComplemento" layoutX="680.0" layoutY="533.0" />
+      <Label fx:id="labelEstado" layoutX="680.0" layoutY="250.0" />
+      <Label fx:id="labelNumero" layoutX="885.0" layoutY="394.0" />
+      <Label fx:id="labelCidade" layoutX="680.0" layoutY="322.0" />
       <ImageView fx:id="imgView" fitHeight="295.0" fitWidth="200.0" layoutX="80.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

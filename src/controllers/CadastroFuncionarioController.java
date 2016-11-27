@@ -12,7 +12,7 @@ public class CadastroFuncionarioController implements Initializable{
 	
 	@FXML
 	private TextField textFieldNome, textFieldDataNascimento, textFieldCPF, textFieldRG, textFieldTelefone,
-		textFieldEmail, textFieldCEP, textFieldEndereco, textFieldRua, textFieldNumero, textFieldBairro,
+		textFieldEmail, textFieldCEP, textFieldRua, textFieldNumero, textFieldBairro,
 		textFieldComplemento, textFieldEstado, textFieldCidade;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;

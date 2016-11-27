@@ -68,11 +68,6 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="230.0" text="Endereço">
-         <font>
-            <Font name="Bauhaus 93" size="19.0" />
-         </font>
-      </Label>
       <Label layoutX="77.0" layoutY="440.0" text="Telefone">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
@@ -83,7 +78,7 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="300.0" text="Rua">
+      <Label layoutX="577.0" layoutY="370.0" text="Rua">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -93,27 +88,27 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="872.0" layoutY="300.0" text="Número">
+      <Label layoutX="872.0" layoutY="370.0" text="Número">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="370.0" text="Bairro">
+      <Label layoutX="577.0" layoutY="440.0" text="Bairro">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="440.0" text="Complemento">
+      <Label layoutX="577.0" layoutY="510.0" text="Complemento">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="510.0" text="Estado">
+      <Label layoutX="577.0" layoutY="230.0" text="Estado">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="815.0" layoutY="510.0" text="Cidade">
+      <Label layoutX="577.0" layoutY="300.0" text="Cidade">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -125,13 +120,12 @@
       <TextField fx:id="textFieldTelefone" layoutX="269.0" layoutY="439.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldEmail" layoutX="269.0" layoutY="509.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldCEP" layoutX="714.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldEndereco" layoutX="714.0" layoutY="229.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldRua" layoutX="714.0" layoutY="299.0" prefHeight="25.0" prefWidth="138.0" />
-      <TextField fx:id="textFieldNumero" layoutX="945.0" layoutY="299.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldBairro" layoutX="714.0" layoutY="369.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldComplemento" layoutX="714.0" layoutY="439.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldEstado" layoutX="714.0" layoutY="509.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldCidade" layoutX="886.0" layoutY="509.0" prefHeight="25.0" prefWidth="138.0" />
+      <TextField fx:id="textFieldRua" layoutX="714.0" layoutY="369.0" prefHeight="25.0" prefWidth="138.0" />
+      <TextField fx:id="textFieldNumero" layoutX="945.0" layoutY="369.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldBairro" layoutX="714.0" layoutY="439.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldComplemento" layoutX="714.0" layoutY="509.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldEstado" layoutX="714.0" layoutY="229.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldCidade" layoutX="714.0" layoutY="299.0" prefHeight="25.0" prefWidth="268.0" />
       <Button fx:id="buttonCadastrar" layoutX="956.0" layoutY="593.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Cadastrar" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
