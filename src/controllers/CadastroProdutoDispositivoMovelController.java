@@ -45,7 +45,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	}
 
 	private void cadastrarDispositivo() {
-		boolean touchScreen = radioButtonTsSim.isArmed();
+		boolean touchScreen = radioButtonTsSim.isSelected();
 		double tamanhoTela = Double.parseDouble(this.textFieldTamanhoTela.getText());
 		String tipoChip = this.textFieldTipoChip.getText();
 		int quantidadeChip = Integer.parseInt(this.textFieldQuantidadeChip.getText());
