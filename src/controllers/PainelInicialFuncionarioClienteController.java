@@ -20,6 +20,9 @@ public class PainelInicialFuncionarioClienteController implements Initializable 
 	private Button buttonBarFuncionario, buttonBarAdmin, buttonProduto, buttonCliente, buttonHistoricoCompras,
 			buttonCadastrarClientes, buttonListarClientes;
 
+	@FXML
+	private AnchorPane ap;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -63,4 +66,15 @@ public class PainelInicialFuncionarioClienteController implements Initializable 
 		nextStage.showAndWait();
 	}
 
+	@FXML
+	public void handleButtonBarAdmin() throws IOException {
+		AnchorPane nextAp = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/PainelInicialAdminCliente.fxml"));
+		this.ap.getChildren().setAll(nextAp);
+	}
+	
+	@FXML 
+	public void handleButtonProduto() throws IOException{
+		AnchorPane nextAp = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/PainelInicialFuncionarioProduto.fxml"));
+		this.ap.getChildren().setAll(nextAp);
+	}
 }

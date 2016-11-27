@@ -38,6 +38,7 @@ public class LoginController implements Initializable {
 	            textFieldUsuario.requestFocus();
 	        }
 	    });
+		
 		// Gerente gerente = new Gerente();
 		// gerente.setCpf(123456);
 		// gerente.setLogin("Bruno");
@@ -86,7 +87,9 @@ public class LoginController implements Initializable {
 				alert.showAndWait();
 			} else {
 				Stage actual = (Stage) buttonLogin.getScene().getWindow();
+			
 				actual.close();
+				
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(PainelInicialFuncionarioClienteController.class
 						.getResource("/views/PainelInicialFuncionarioCliente.fxml"));

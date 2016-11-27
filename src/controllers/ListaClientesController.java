@@ -70,8 +70,19 @@ public class ListaClientesController implements Initializable {
 	}
 
 	@FXML
-	public void handleBtnCadastrar() {
+	public void handleBtnCadastrar() throws IOException {
 
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(CadastroClienteController.class.getResource("/views/CadastroCliente.fxml"));
+		AnchorPane page = (AnchorPane) loader.load();
+
+		Stage nextStage = new Stage();
+		nextStage.setTitle("Sistema Livraria ASW");
+		nextStage.setResizable(false);
+		Scene scene = new Scene(page);
+		nextStage.setScene(scene);
+
+		nextStage.showAndWait();
 	}
 
 	@FXML
@@ -94,7 +105,7 @@ public class ListaClientesController implements Initializable {
 
 	@FXML
 	public void handleBtnDetalhes() {
-
+		
 	}
 
 	@FXML

@@ -204,8 +204,8 @@
       </Group>
       <Group layoutX="743.0" layoutY="437.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="Sim" />
-            <RadioButton layoutX="178.0" layoutY="1.0" mnemonicParsing="false" text="Não" />
+            <RadioButton fx:id="radioButtonTsSim" mnemonicParsing="false" text="Sim" />
+            <RadioButton fx:id="radioButtonTsNao" layoutX="178.0" layoutY="1.0" mnemonicParsing="false" text="Não" />
             <Group layoutX="41.0" layoutY="10.0" />
          </children>
       </Group>
