@@ -1,5 +1,5 @@
 /app/
 /controllers/
-/views/
-/META-INF/
+/dao/
 /database/
+/models/
