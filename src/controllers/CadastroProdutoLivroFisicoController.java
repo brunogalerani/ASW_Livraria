@@ -34,7 +34,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 	
 	@FXML
 	private void handleBtnCadastrar() {
-		
+		this.cadastrar();
 	}
 	private void cadastrar() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
