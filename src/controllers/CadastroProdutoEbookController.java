@@ -35,7 +35,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 	
 	@FXML
 	private void handleBtnCadastrar() {
-		
+		this.cadastrar();
 	}
 	private void cadastrar() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
@@ -46,6 +46,26 @@ public class CadastroProdutoEbookController  implements Initializable{
 		int isbn = Integer.parseInt(this.textFieldISBN.getText());
 		String editora = this.textFieldEditora.getText();
 		String autor = this.textFieldAutor.getText();
+		String resumo = this.textAreaResumo.getText();
+		String categoria = this.textFieldCategoria.getText();
+		double tamanhoArquivo = Double.parseDouble(this.textFieldTamanhoArquivo.getText());
+		String formato = this.textFieldFormato.getText();
+		
+		this.eBook = new EBook();
+		this.eBook.setPreco(preco);
+		this.eBook.setCodBarras(codBarras);
+		this.eBook.setTitulo(titulo);
+		this.eBook.setIdioma(idioma);
+		this.eBook.setAno(ano);
+		this.eBook.setIsbn(isbn);
+		this.eBook.setEditora(editora);
+		this.eBook.setAutor(autor);
+		this.eBook.setResumo(resumo);
+		this.eBook.setCategoria(categoria);
+		this.eBook.setTamanhoArquivo(tamanhoArquivo);
+		this.eBook.setFormato(formato);
+		
+		eBookDAO.insert(eBook);
 	}
 	
 	@FXML
