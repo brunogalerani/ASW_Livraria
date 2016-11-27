@@ -36,26 +36,26 @@ public class SelecaoTipoProdutoController implements Initializable{
 	}
 	@FXML
 	private void ifRadioButtonChecked() {
-		if (this.radioButtonDM.isSelected()) {
-			this.checked = !this.radioButtonDM.isSelected();
+		if (this.radioButtonDM.isArmed()) {
+			this.checked = !this.radioButtonDM.isArmed();
 			this.radioButtonEB.setSelected(this.checked);
 			this.radioButtonLF.setSelected(this.checked);
 			this.radioButtonVG.setSelected(this.checked);
 		}
-		if (this.radioButtonEB.isSelected()) {
-			this.checked = !this.radioButtonEB.isSelected();
+		if (this.radioButtonEB.isArmed()) {
+			this.checked = !this.radioButtonEB.isArmed();
 			this.radioButtonDM.setSelected(this.checked);
 			this.radioButtonLF.setSelected(this.checked);
 			this.radioButtonVG.setSelected(this.checked);
 		}
-		if (this.radioButtonLF.isSelected()) {
-			this.checked = !this.radioButtonLF.isSelected();
+		if (this.radioButtonLF.isArmed()) {
+			this.checked = !this.radioButtonLF.isArmed();
 			this.radioButtonEB.setSelected(this.checked);
 			this.radioButtonDM.setSelected(this.checked);
 			this.radioButtonVG.setSelected(this.checked);
 		}
-		if (this.radioButtonVG.isSelected()) {
-			this.checked = !this.radioButtonVG.isSelected();
+		if (this.radioButtonVG.isArmed()) {
+			this.checked = !this.radioButtonVG.isArmed();
 			this.radioButtonEB.setSelected(this.checked);
 			this.radioButtonLF.setSelected(this.checked);
 			this.radioButtonDM.setSelected(this.checked);

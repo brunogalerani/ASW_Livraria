@@ -49,7 +49,7 @@ public class ListaProdutosController implements Initializable{
 		this.listaProdutos = this.produtoDAO.all();
 		
 		this.tableColumnQtdDisponivel.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
-		this.tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("codBarras"));
+		this.tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		this.tableColumnTipo.setCellValueFactory(new PropertyValueFactory<>("tipoProduto"));
 		
 
