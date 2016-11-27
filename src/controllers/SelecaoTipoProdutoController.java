@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +32,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 	
 	@FXML
 	private void handleBtnVoltar(){
-		
+		this.closeDialogStage();
 	}
 	@FXML
 	private void ifRadioButtonChecked() {
@@ -62,7 +64,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 	}
 	@FXML
 	private void handleBtnConfirmar() throws IOException{
-		if(this.radioButtonDM.isArmed()){
+		if(this.radioButtonDM.isSelected()){
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(CadastroProdutoDispositivoMovelController.class.getResource("/views/CadastroProdutoDispositivoMovel.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
@@ -72,15 +74,55 @@ public class SelecaoTipoProdutoController implements Initializable{
 			nextStage.setResizable(false);
 			Scene scene = new Scene(page);
 			nextStage.setScene(scene);
+			this.closeDialogStage();			
+			nextStage.showAndWait();
+		} else if(this.radioButtonEB.isSelected()){
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoEbookController.class.getResource("/views/CadastroProdutoEbook.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
 
+			Stage nextStage = new Stage();
+			nextStage.setTitle("Sistema Livraria ASW");
+			nextStage.setResizable(false);
+			Scene scene = new Scene(page);
+			nextStage.setScene(scene);
+			this.closeDialogStage();
+			nextStage.showAndWait();
+		}else if(this.radioButtonLF.isSelected()){
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoLivroFisicoController.class.getResource("/views/CadastroProdutoLivroFisico.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			Stage nextStage = new Stage();
+			nextStage.setTitle("Sistema Livraria ASW");
+			nextStage.setResizable(false);
+			Scene scene = new Scene(page);
+			nextStage.setScene(scene);
+			this.closeDialogStage();
+			nextStage.showAndWait();
+		}else if(this.radioButtonVG.isSelected()){
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoVideoGameController.class.getResource("/views/CadastroProdutoVideoGame.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+
+			Stage nextStage = new Stage();
+			nextStage.setTitle("Sistema Livraria ASW");
+			nextStage.setResizable(false);
+			Scene scene = new Scene(page);
+			nextStage.setScene(scene);
+			this.closeDialogStage();
 			nextStage.showAndWait();
 		}else {
-			System.out.println(")))))))))))");
+			Alert selecioneUmProduto = new Alert(Alert.AlertType.WARNING);
+			selecioneUmProduto.setHeaderText("Por favor, selecione tipo de produto");
+			selecioneUmProduto.showAndWait();
 		}
 	}
 
 	public void setDialogStage(Stage diaogStage) {
 		this.dialogStage = diaogStage;
 	}
-
+	private void closeDialogStage() {
+		this.dialogStage.close();
+	}
 }
