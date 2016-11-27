@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.EBook;
 
 public class CadastroProdutoEbookController  implements Initializable{
@@ -40,6 +41,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
 		confirmacaoCadastro.setHeaderText("Ebook cadastrado com sucesso!");
 		confirmacaoCadastro.showAndWait();
+		this.voltar();
 	}
 	private void cadastrar() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
@@ -71,10 +73,13 @@ public class CadastroProdutoEbookController  implements Initializable{
 		
 		eBookDAO.insert(eBook);
 	}
-	
+	private void voltar() {
+		Stage actual = (Stage) buttonVoltar.getScene().getWindow();
+		actual.close();
+	}
 	@FXML
 	private void handleBtnVoltar() {
-		
+		this.voltar();
 	}
 
 }
