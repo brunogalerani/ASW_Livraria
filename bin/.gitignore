@@ -1,7 +1,9 @@
-
+/META-INF/
+/app/
 /controllers/
+/dao/
+/database/
 /encryption/
 /models/
+/resources/
 /views/
-/app/
-/dao/
