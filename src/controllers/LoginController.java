@@ -6,17 +6,15 @@ import java.util.ResourceBundle;
 
 import dao.FuncionarioDAO;
 import encryption.EncryptPassword;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Funcionario;
@@ -34,6 +32,12 @@ public class LoginController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		buttonLogin.setDefaultButton(true);
+		Platform.runLater(new Runnable() {
+	        @Override
+	        public void run() {
+	            textFieldUsuario.requestFocus();
+	        }
+	    });
 		// Gerente gerente = new Gerente();
 		// gerente.setCpf(123456);
 		// gerente.setLogin("Bruno");

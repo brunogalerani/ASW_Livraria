@@ -61,7 +61,11 @@ public class ListaClientesController implements Initializable {
 
 	public void selectItemTableViewCliente(Cliente cliente) {
 		if (cliente != null) {
-
+			this.labelCEP.setText(String.valueOf(cliente.getEndereco().getCep()));
+			this.labelDataDeNascimento.setText(String.valueOf(cliente.getDataNascimento()));
+			this.labelEmail.setText(cliente.getEmail());
+			this.labelNome.setText(cliente.getNome());
+			this.labelTelefone.setText(cliente.getTelefone());
 		}
 	}
 
@@ -114,14 +118,13 @@ public class ListaClientesController implements Initializable {
 		Scene scene = new Scene(page);
 		dialogStage.setScene(scene);
 		
-		/*CadastroClienteController controller = loader.getController();
+		CadastroClienteController controller = loader.getController();
 		controller.setDialogStage(dialogStage);
 		controller.setCliente(cliente);
 		
 		dialogStage.showAndWait();
 		
-		return controller.isButtonConfirmarClicked();*/
-		return true;
+		return controller.isButtonConfirmarClicked();
 	}
 
 }
