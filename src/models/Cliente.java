@@ -1,16 +1,36 @@
 package models;
-import java.util.ArrayList;
-import java.util.Date;
 
-public class Cliente extends Pessoa{
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Cliente extends Pessoa {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String tipoCliente;
 	
-	public Cliente(String tipoCliente, String nome, Date dataNascimento, long cpf, String rg, Endereco endereco, ArrayList<String> telefones,
-			String email) {
-		super(nome, dataNascimento, cpf, rg, endereco, telefones, email);
-		this.tipoCliente = tipoCliente;
+	@OneToMany(mappedBy="cliente")
+	List<Pedido> pedidos;
+
+	public Cliente() {
+
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}	
+	
 	public String getTipoCliente() {
 		return tipoCliente;
 	}
@@ -18,6 +38,5 @@ public class Cliente extends Pessoa{
 	public void setTipoCliente(String tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
-	
-	
+
 }

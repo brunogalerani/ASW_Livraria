@@ -1,5 +1,10 @@
+/META-INF/
+/Teste.txt
 /app/
 /controllers/
-/views/
-/META-INF/
+/dao/
 /database/
+/encryption/
+/models/
+/resources/
+/views/

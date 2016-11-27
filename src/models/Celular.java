@@ -1,5 +1,11 @@
 package models;
 
-public class Celular extends DispMovel{
-	
+import javax.persistence.Entity;
+
+@Entity
+public class Celular extends DispMovel {
+
+	public Celular(){
+		
+	}
 }

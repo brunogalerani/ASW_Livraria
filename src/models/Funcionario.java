@@ -1,19 +1,38 @@
 package models;
-import java.util.ArrayList;
-import java.util.Date;
 
-public abstract class Funcionario extends Pessoa{
+import java.util.List;
+
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+@MappedSuperclass
+public abstract class Funcionario extends Pessoa {
+	
+	@Transient
 	private AcaoUsuario acaoUsuario;
 	private String matricula;
-	
-	public Funcionario(){
+	@OneToMany
+	private List<Pedido> pedidos;
+
+	public Funcionario() {
 		super();
 	}
-	
-	public Funcionario(String nome, Date dataNascimento, long cpf, String rg, Endereco endereco, ArrayList<String> telefones,
-			String email, AcaoUsuario acaoUsuario, String matricula) {
-		super(nome, dataNascimento, cpf, rg, endereco, telefones, email);
+
+	public AcaoUsuario getAcaoUsuario() {
+		return acaoUsuario;
+	}
+
+	public void setAcaoUsuario(AcaoUsuario acaoUsuario) {
 		this.acaoUsuario = acaoUsuario;
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
+
 }

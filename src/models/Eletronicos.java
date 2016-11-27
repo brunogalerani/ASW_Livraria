@@ -1,7 +1,12 @@
 package models;
-import java.util.Date;
 
-public abstract class Eletronicos extends Produto{
+import java.time.LocalDate;
+
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Eletronicos extends Produto {
+
 	private String cor;
 	private double altura;
 	private double largura;
@@ -10,35 +15,15 @@ public abstract class Eletronicos extends Produto{
 	private int alimentacao;
 	private double consumo;
 	private boolean bateria;
-	private Date garantia;
+	private LocalDate garantia;
 	private String modelo;
 	private String marca;
 	private String fabricante;
 	private double armazenamento;
 	private double peso;
-	
+
 	public Eletronicos() {
 		super();
-	}
-
-	public Eletronicos(String cor, double altura, double largura, double profundidade, double potencia, int alimentacao,
-			double consumo, boolean bateria, Date garantia, String modelo, String marca, String fabricante,
-			double armazenamento, double peso, double preco, long codBarras) {
-		super(preco, codBarras);
-		this.cor = cor;
-		this.altura = altura;
-		this.largura = largura;
-		this.profundidade = profundidade;
-		this.potencia = potencia;
-		this.alimentacao = alimentacao;
-		this.consumo = consumo;
-		this.bateria = bateria;
-		this.garantia = garantia;
-		this.modelo = modelo;
-		this.marca = marca;
-		this.fabricante = fabricante;
-		this.armazenamento = armazenamento;
-		this.peso = peso;
 	}
 
 	public String getCor() {
@@ -105,11 +90,11 @@ public abstract class Eletronicos extends Produto{
 		this.bateria = bateria;
 	}
 
-	public Date getGarantia() {
+	public LocalDate getGarantia() {
 		return garantia;
 	}
 
-	public void setGarantia(Date garantia) {
+	public void setGarantia(LocalDate garantia) {
 		this.garantia = garantia;
 	}
 
@@ -152,6 +137,5 @@ public abstract class Eletronicos extends Produto{
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	
-	
+
 }

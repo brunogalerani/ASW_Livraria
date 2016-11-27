@@ -1,10 +1,13 @@
 package models;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Pessoa {
 	private String nome;
-	private Date dataNascimento;
+	private LocalDate dataNascimento;
 	private long cpf;
 	private String rg;
 	private Endereco endereco;
@@ -12,17 +15,6 @@ public abstract class Pessoa {
 	private String email;
 	
 	public Pessoa() {
-	}
-
-	public Pessoa(String nome, Date dataNascimento, long cpf, String rg, Endereco endereco, ArrayList<String> telefones,
-			String email) {
-		this.nome = nome;
-		this.dataNascimento = dataNascimento;
-		this.cpf = cpf;
-		this.rg = rg;
-		this.endereco = endereco;
-		this.telefones = telefones;
-		this.email = email;
 	}
 
 	public String getNome() {
@@ -33,11 +25,11 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

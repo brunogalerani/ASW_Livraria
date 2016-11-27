@@ -18,10 +18,20 @@ public class LoginController implements Initializable {
 	private Button buttonLogin;
 	@FXML
 	private Button buttonFechar;
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+
+	}
+
+	@FXML
+	public void handleButtonFechar() {
+
+	}
+
+	@FXML
+	public void handleButtonLogin() {
+	
 	}
 
 }

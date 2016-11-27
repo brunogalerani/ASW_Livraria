@@ -1,6 +1,10 @@
 package models;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class Livro extends Produto{
+	
 	private String titulo;
 	private String idioma;
 	private int ano;
@@ -13,20 +17,6 @@ public abstract class Livro extends Produto{
 	
 	public Livro() {
 		super();
-	}
-
-	public Livro(double preco, long codBarras, String titulo, String idioma, int ano, int isbn, int numeroPaginas,
-			String editora, String autor, String resumo, String categoria) {
-		super(preco, codBarras);
-		this.titulo = titulo;
-		this.idioma = idioma;
-		this.ano = ano;
-		this.isbn = isbn;
-		this.numeroPaginas = numeroPaginas;
-		this.editora = editora;
-		this.autor = autor;
-		this.resumo = resumo;
-		this.categoria = categoria;
 	}
 
 	public String getTitulo() {

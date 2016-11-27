@@ -1,26 +1,18 @@
 package models;
 
-public class LivroFisico extends Livro{
+import javax.persistence.Entity;
+
+@Entity
+public class LivroFisico extends Livro {
+
 	private double altura;
 	private double largura;
 	private double profundidade;
 	private String tipo;
 	private double peso;
-	
+
 	public LivroFisico() {
 		super();
-	}
-
-	public LivroFisico(double preco, long codBarras, String titulo, String idioma, int ano, int isbn, int numeroPaginas,
-			String editora, String autor, String resumo, String categoria, double altura, double largura,
-			double profundidade, String tipo, double peso) {
-		super(preco, codBarras, titulo, idioma, ano, isbn, numeroPaginas, editora, autor, resumo, categoria);
-		
-		this.altura = altura;
-		this.largura = largura;
-		this.profundidade = profundidade;
-		this.tipo = tipo;
-		this.peso = peso;
 	}
 
 	public double getAltura() {
@@ -62,6 +54,5 @@ public class LivroFisico extends Livro{
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	
-	
+
 }

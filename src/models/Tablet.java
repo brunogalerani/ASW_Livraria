@@ -1,5 +1,11 @@
 package models;
 
-public class Tablet extends DispMovel{
+import javax.persistence.Entity;
+
+@Entity
+public class Tablet extends DispMovel {
 	
+	public Tablet(){
+		
+	}
 }

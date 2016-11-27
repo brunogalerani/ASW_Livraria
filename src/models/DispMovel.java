@@ -1,28 +1,18 @@
 package models;
-import java.util.Date;
 
-public abstract class DispMovel extends Eletronicos{
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class DispMovel extends Eletronicos {
+
 	private boolean touchScreen;
 	private double tamanhoTela;
 	private String tipoChip;
 	private int quantidadeChip;
 	private String tecnologiaSuportada;
 	private String resolucao;
-	
-	public DispMovel() {
-	}
 
-	public DispMovel(boolean touchScreen, double tamanhoTela, String tipoChip, int quantidadeChip,
-			String tecnologiaSuportada, String resolucao, String cor, double altura, double largura, double profundidade,
-			double potencia, int alimentacao,double consumo, boolean bateria, Date garantia, String modelo, String marca,
-			String fabricante, double armazenamento, double peso, double preco, long codBarras) {
-		super(cor, altura, largura, profundidade, potencia, alimentacao, consumo, bateria, garantia, modelo, marca, fabricante, armazenamento, peso, preco, codBarras);
-		this.touchScreen = touchScreen;
-		this.tamanhoTela = tamanhoTela;
-		this.tipoChip = tipoChip;
-		this.quantidadeChip = quantidadeChip;
-		this.tecnologiaSuportada = tecnologiaSuportada;
-		this.resolucao = resolucao;
+	public DispMovel() {
 	}
 
 	public boolean isTouchScreen() {
@@ -72,6 +62,5 @@ public abstract class DispMovel extends Eletronicos{
 	public void setResolucao(String resolucao) {
 		this.resolucao = resolucao;
 	}
-	
-	
+
 }

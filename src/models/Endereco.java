@@ -1,6 +1,16 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Endereco {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String rua;
 	private String bairro;
 	private long cep;
@@ -8,22 +18,18 @@ public class Endereco {
 	private String complemento;
 	private String cidade;
 	private String estado;
-	
+
 	public Endereco() {
 	}
 
-	public Endereco(String rua, String bairro, long cep, String numero, String complemento, String cidade,
-			String estado) {
-		super();
-		this.rua = rua;
-		this.bairro = bairro;
-		this.cep = cep;
-		this.numero = numero;
-		this.complemento = complemento;
-		this.cidade = cidade;
-		this.estado = estado;
+	public Long getId() {
+		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}	
+	
 	public String getRua() {
 		return rua;
 	}
@@ -79,6 +85,5 @@ public class Endereco {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	
-	
+
 }

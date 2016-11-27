@@ -13,11 +13,17 @@
 		<class>models.Administrador</class>
 		<class>models.Celular</class>
 		<class>models.Cliente</class>
+		<class>models.DispMovel</class>
 		<class>models.EBook</class>
+		<class>models.Eletronicos</class>
 		<class>models.Endereco</class>
+		<class>models.Funcionario</class>
 		<class>models.Gerente</class>
+		<class>models.Livro</class>
 		<class>models.LivroFisico</class>
 		<class>models.Pedido</class>
+		<class>models.Pessoa</class>
+		<class>models.Produto</class>
 		<class>models.Tablet</class>
 		<class>models.Vendedor</class>
 		<class>models.VideoGame</class>
