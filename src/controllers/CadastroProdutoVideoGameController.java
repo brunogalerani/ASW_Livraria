@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import dao.VideoGameDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -35,6 +36,9 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastro();
+		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
+		confirmacaoCadastro.setHeaderText("Video Game cadastrado com sucesso!");
+		confirmacaoCadastro.showAndWait();
 	}
 	private void cadastro() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());

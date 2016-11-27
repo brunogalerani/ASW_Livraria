@@ -75,7 +75,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 			Scene scene = new Scene(page);
 			nextStage.setScene(scene);
 			this.closeDialogStage();			
-			nextStage.showAndWait();
+			nextStage.show();
 		} else if(this.radioButtonEB.isSelected()){
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(CadastroProdutoEbookController.class.getResource("/views/CadastroProdutoEbook.fxml"));
@@ -87,7 +87,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 			Scene scene = new Scene(page);
 			nextStage.setScene(scene);
 			this.closeDialogStage();
-			nextStage.showAndWait();
+			nextStage.show();
 		}else if(this.radioButtonLF.isSelected()){
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(CadastroProdutoLivroFisicoController.class.getResource("/views/CadastroProdutoLivroFisico.fxml"));
@@ -99,7 +99,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 			Scene scene = new Scene(page);
 			nextStage.setScene(scene);
 			this.closeDialogStage();
-			nextStage.showAndWait();
+			nextStage.show();
 		}else if(this.radioButtonVG.isSelected()){
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(CadastroProdutoVideoGameController.class.getResource("/views/CadastroProdutoVideoGame.fxml"));
@@ -111,7 +111,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 			Scene scene = new Scene(page);
 			nextStage.setScene(scene);
 			this.closeDialogStage();
-			nextStage.showAndWait();
+			nextStage.show();
 		}else {
 			Alert selecioneUmProduto = new Alert(Alert.AlertType.WARNING);
 			selecioneUmProduto.setHeaderText("Por favor, selecione tipo de produto");
