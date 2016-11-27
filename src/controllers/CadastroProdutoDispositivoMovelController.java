@@ -125,8 +125,14 @@ public class CadastroProdutoDispositivoMovelController  implements Initializable
 		}
 		
 	}
+
 	@FXML
-	private void btnVoltar() {
+	private void handleBtnCadastrar() {
+		
+	}
+	
+	@FXML
+	private void handleBtnVoltar() {
 		
 	}
 
