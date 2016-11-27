@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SelecaoTipoProdutoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="628.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SelecaoTipoProdutoController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="628.0">
          <menus>
@@ -60,22 +60,22 @@
       </Label>
       <Group layoutX="348.0" layoutY="100.0">
          <children>
-            <RadioButton fx:id="radioButtonDM" mnemonicParsing="false" text="Dispositívo móvel">
+            <RadioButton fx:id="radioButtonDM" mnemonicParsing="false" onAction="#ifRadioButtonChecked" text="Dispositívo móvel">
                <font>
                   <Font name="Bauhaus 93" size="15.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="radioButtonVG" layoutY="40.0" mnemonicParsing="false" text="Video Game">
+            <RadioButton fx:id="radioButtonVG" layoutY="40.0" mnemonicParsing="false" onAction="#ifRadioButtonChecked" text="Video Game">
                <font>
                   <Font name="Bauhaus 93" size="15.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="radioButtonEB" layoutY="120.0" mnemonicParsing="false" text="E-Book">
+            <RadioButton fx:id="radioButtonEB" layoutY="120.0" mnemonicParsing="false" onAction="#ifRadioButtonChecked" text="E-Book">
                <font>
                   <Font name="Bauhaus 93" size="15.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="radioButtonLF" layoutY="80.0" mnemonicParsing="false" text="Livro Físico">
+            <RadioButton fx:id="radioButtonLF" layoutY="80.0" mnemonicParsing="false" onAction="#ifRadioButtonChecked" text="Livro Físico">
                <font>
                   <Font name="Bauhaus 93" size="15.0" />
                </font>

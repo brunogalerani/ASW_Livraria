@@ -117,7 +117,7 @@
       <TextField fx:id="textFieldCodigoBarras" layoutX="250.0" layoutY="160.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldPreco" layoutX="250.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldTitulo" layoutX="250.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textAreaIdioma" layoutX="250.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldIdioma" layoutX="250.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldAno" layoutX="250.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
       <TextField fx:id="textFieldISBN" layoutX="250.0" layoutY="435.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldNumeroPaginas" layoutX="745.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />

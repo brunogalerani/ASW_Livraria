@@ -8,6 +8,9 @@ import dao.CelularDAO;
 import dao.TabletDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
@@ -39,11 +42,6 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.celularDAO = new CelularDAO();
 		this.tabletDAO = new TabletDAO();
 
-	}
-
-	@FXML
-	private void btnCadastrar() {
-		cadastrarDispositivo();
 	}
 
 	private void cadastrarDispositivo() {
@@ -125,12 +123,19 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 
 	@FXML
 	private void handleBtnCadastrar() {
-
+		this.cadastrarDispositivo();
+		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
+		confirmacaoCadastro.setHeaderText("Dispositivo cadastrado com sucesso!");
+		confirmacaoCadastro.showAndWait();
+		this.voltar();
 	}
-
+	private void voltar() {
+		Stage actual = (Stage) buttonVoltar.getScene().getWindow();
+		actual.close();
+	}
 	@FXML
 	private void handleBtnVoltar() {
-
+		this.voltar();
 	}
 
 }

@@ -7,9 +7,11 @@ import java.util.ResourceBundle;
 import dao.VideoGameDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.VideoGame;
 
 public class CadastroProdutoVideoGameController  implements Initializable{
@@ -35,6 +37,10 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastro();
+		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
+		confirmacaoCadastro.setHeaderText("Video Game cadastrado com sucesso!");
+		confirmacaoCadastro.showAndWait();
+		this.voltar();
 	}
 	private void cadastro() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
@@ -77,10 +83,13 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGameDAO.insert(videoGame);
 		
 	}
-	
+	private void voltar() {
+		Stage actual = (Stage) buttonVoltar.getScene().getWindow();
+		actual.close();
+	}
 	@FXML
 	private void handleBtnVoltar() {
-		
+		this.voltar();
 	}
 
 }
