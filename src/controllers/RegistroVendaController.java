@@ -13,13 +13,13 @@ import javafx.scene.control.TextField;
 public class RegistroVendaController implements Initializable{
 
 	@FXML
-	private Button buttonConcluir, buttonVoltar, buttonAdicionar, buttonRemover;
+	private Button buttonConcluir, buttonVoltar, buttonAdicionar, buttonRemover, buttonSelecionarCliente;
 	
 	@FXML
 	private TextField textFieldQuantidade, textFieldCPF;
 	
 	@FXML
-	private Label labelNomeProduto;
+	private Label labelNomeProduto, labelCliente;
 	
 	@FXML
 	private ListView listViewProdutosComprando, listViewProdutosDisponiveis;
@@ -47,6 +47,11 @@ public class RegistroVendaController implements Initializable{
 	
 	@FXML
 	public void handleBtnRemover(){
+		
+	}
+	
+	@FXML
+	public void handleBtnSelecionarCliente(){
 		
 	}
 
