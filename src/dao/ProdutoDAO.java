@@ -45,3 +45,4 @@ public class ProdutoDAO {
 		this.manager.close();
 	}
 }
+
