@@ -23,6 +23,18 @@ public class PainelInicialFuncionarioProdutoController implements Initializable 
 		// TODO Auto-generated method stub
 
 	}
+	@FXML
+	private void handleButtonAddProdutos() throws IOException {
+		AnchorPane nextAp = (AnchorPane) FXMLLoader
+				.load(getClass().getResource("/views/TipoProduto.fxml"));
+		this.ap.getChildren().setAll(nextAp);
+	}
+	@FXML
+	private void handleButtonListProdutos() throws IOException {
+		AnchorPane nextAp = (AnchorPane) FXMLLoader
+				.load(getClass().getResource("/views/ListaProdutos.fxml"));
+		this.ap.getChildren().setAll(nextAp);
+	}
 
 	@FXML
 	public void handleButtonCliente() throws IOException {
