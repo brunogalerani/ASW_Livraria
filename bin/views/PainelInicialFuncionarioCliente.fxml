@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PainelInicialFuncionarioClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.91" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PainelInicialFuncionarioClienteController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -124,7 +124,7 @@
                   <Image url="@../resources/add-client.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonCadastrarClientes" alignment="TOP_CENTER" mnemonicParsing="false" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Cadastrar clientes">
+            <Button fx:id="buttonCadastrarClientes" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#handleButtonCadastrarClientes" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Cadastrar clientes">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
@@ -151,7 +151,7 @@
                   <Image url="@../resources/list.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonListarClientes" alignment="TOP_CENTER" layoutX="-1.0" layoutY="-13.0" mnemonicParsing="false" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Listar clientes">
+            <Button fx:id="buttonListarClientes" alignment="TOP_CENTER" layoutX="-1.0" layoutY="-13.0" mnemonicParsing="false" onAction="#handleButtonListarClientes" prefHeight="505.0" prefWidth="230.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Listar clientes">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>

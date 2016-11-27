@@ -46,7 +46,8 @@ public class LoginController implements Initializable {
 
 	@FXML
 	public void handleButtonFechar() {
-
+		Stage actual = (Stage) buttonLogin.getScene().getWindow();
+		actual.close();
 	}
 
 	@FXML
