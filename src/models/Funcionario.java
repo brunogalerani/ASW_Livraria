@@ -14,6 +14,7 @@ public abstract class Funcionario extends Pessoa {
 
 	@Column(unique = true)
 	private String login;
+	private String senha;
 	@OneToMany(mappedBy="funcionario")
 	private List<Pedido> pedidos;
 
@@ -32,4 +33,14 @@ public abstract class Funcionario extends Pessoa {
 	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	
 }

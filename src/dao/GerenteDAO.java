@@ -43,11 +43,12 @@ public class GerenteDAO {
 		return list;
 	}
 
-	public Gerente selectFromLogin(String login) {
+	public Gerente selectFromLogin(String login, String password) {
 		try {
-			TypedQuery<Gerente> query = this.manager.createQuery("select g from Gerente g where g.login=:login",
+			TypedQuery<Gerente> query = this.manager.createQuery("select g from Gerente g where g.login=:login and g.senha=:senha",
 					Gerente.class);
-			query.setParameter("login", login);			
+			query.setParameter("login", login);	
+			query.setParameter("senha", password);
 			Gerente gerente = query.getSingleResult();
 
 			return gerente;

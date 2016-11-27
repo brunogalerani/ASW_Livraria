@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
@@ -39,6 +40,20 @@ public class FuncionarioDAO {
 		Query query = this.manager.createQuery("select f from Funcionario f");
 		List<Funcionario> list = query.getResultList();
 		return list;
+	}
+	
+	public Funcionario selectFromLogin(String login, String password) {
+		try {
+			TypedQuery<Funcionario> query = this.manager.createQuery("select f from Funcionario f where f.login=:login and f.senha=:senha",
+					Funcionario.class);
+			query.setParameter("login", login);	
+			query.setParameter("senha", password);
+			Funcionario funcionario = query.getSingleResult();
+
+			return funcionario;
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 	@Override

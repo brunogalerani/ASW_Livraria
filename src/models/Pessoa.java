@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
@@ -19,7 +20,8 @@ public abstract class Pessoa {
 	private LocalDate dataNascimento;
 	private long cpf;
 	private String rg;
-	//private Endereco endereco;
+	@ManyToOne
+	private Endereco endereco;
 	private String telefone;
 	private String email;
 	
@@ -58,13 +60,13 @@ public abstract class Pessoa {
 		this.rg = rg;
 	}
 
-//	public Endereco getEndereco() {
-//		return endereco;
-//	}
-//
-//	public void setEndereco(Endereco endereco) {
-//		this.endereco = endereco;
-//	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
 	public String getTelefone() {
 		return telefone;
