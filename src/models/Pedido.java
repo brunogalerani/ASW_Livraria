@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -17,11 +16,10 @@ public class Pedido {
 	private Long id;
 	@ManyToOne
 	private Cliente cliente;
-	@ManyToOne
-	private Funcionario funcionario;
-	@OneToMany
-	@JoinColumn(name="id", referencedColumnName="Produto")
-	private List<Produto> produtos;
+	/*@ManyToOne
+	private Funcionario funcionario;*/
+//	@OneToMany(mappedBy="pedido")
+//	private List<Produto> produtos;
 
 	public Pedido() {
 	}
@@ -42,20 +40,20 @@ public class Pedido {
 		this.cliente = funcionario;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
-	}
-
-	public void setVendedor(Funcionario funcionario) {
-		this.funcionario = funcionario;
-	}
-
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void addProdutos(Produto produto) {
-		this.produtos.add(produto);
-	}
+//	public Funcionario getFuncionario() {
+//		return funcionario;
+//	}
+//
+//	public void setVendedor(Funcionario funcionario) {
+//		this.funcionario = funcionario;
+//	}
+//
+//	public List<Produto> getProdutos() {
+//		return produtos;
+//	}
+//
+//	public void addProdutos(Produto produto) {
+//		this.produtos.add(produto);
+//	}
 
 }

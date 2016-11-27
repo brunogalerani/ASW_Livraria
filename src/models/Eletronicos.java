@@ -2,9 +2,11 @@ package models;
 
 import java.time.LocalDate;
 
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
-@MappedSuperclass
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public abstract class Eletronicos extends Produto {
 
 	private String cor;

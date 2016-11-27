@@ -3,9 +3,11 @@ package models;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
 
-@MappedSuperclass
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public abstract class Produto {
 
 	@Id
@@ -14,6 +16,8 @@ public abstract class Produto {
 	private double preco;
 	private long codBarras;
 	private int quantidade;
+	@Transient
+	private Pedido pedido;
 
 	public Produto() {
 		this.codBarras = 0;

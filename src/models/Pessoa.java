@@ -2,15 +2,24 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public abstract class Pessoa {
+	
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	private String nome;
 	private LocalDate dataNascimento;
 	private long cpf;
 	private String rg;
-	private Endereco endereco;
+	//private Endereco endereco;
 	private ArrayList<String> telefones;
 	private String email;
 	
@@ -49,13 +58,13 @@ public abstract class Pessoa {
 		this.rg = rg;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+//	public Endereco getEndereco() {
+//		return endereco;
+//	}
+//
+//	public void setEndereco(Endereco endereco) {
+//		this.endereco = endereco;
+//	}
 
 	public ArrayList<String> getTelefones() {
 		return telefones;
