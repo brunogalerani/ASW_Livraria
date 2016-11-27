@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroClienteController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -36,7 +36,7 @@
       <Group layoutY="27.0">
          <children>
             <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
-            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Clientes" textAlignment="CENTER" wrappingWidth="282.13671875">
+            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalhes clientes" textAlignment="CENTER" wrappingWidth="282.13671875">
                <font>
                   <Font name="Bauhaus 93" size="23.0" />
                </font>
@@ -128,20 +128,20 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="labelNome" layoutX="390.0" layoutY="182.0" text="Label" />
-      <Label fx:id="labelDataDeNascimento" layoutX="390.0" layoutY="250.0" text="Label" />
-      <Label fx:id="labelCPF" layoutX="390.0" layoutY="322.0" text="Label" />
-      <Label fx:id="labelRG" layoutX="390.0" layoutY="394.0" text="Label" />
-      <Label fx:id="labelTelefone" layoutX="390.0" layoutY="463.0" text="Label" />
-      <Label fx:id="labelEmail" layoutX="390.0" layoutY="533.0" text="Label" />
-      <Label fx:id="labelCEP" layoutX="680.0" layoutY="182.0" text="Label" />
-      <Label fx:id="labelEndereco" layoutX="680.0" layoutY="250.0" text="Label" />
-      <Label fx:id="labelRua" layoutX="680.0" layoutY="322.0" text="Label" />
-      <Label fx:id="labelBairro" layoutX="681.0" layoutY="394.0" text="Label" />
-      <Label fx:id="labelComplemento" layoutX="680.0" layoutY="463.0" text="Label" />
-      <Label fx:id="labelEstado" layoutX="680.0" layoutY="533.0" text="Label" />
-      <Label fx:id="labelNumero" layoutX="885.0" layoutY="322.0" text="Label" />
-      <Label fx:id="LabelCidade" layoutX="883.0" layoutY="525.0" text="Label" />
+      <Label fx:id="labelNome" layoutX="390.0" layoutY="182.0" />
+      <Label fx:id="labelDataDeNascimento" layoutX="390.0" layoutY="250.0" />
+      <Label fx:id="labelCPF" layoutX="390.0" layoutY="322.0" />
+      <Label fx:id="labelRG" layoutX="390.0" layoutY="394.0" />
+      <Label fx:id="labelTelefone" layoutX="390.0" layoutY="463.0" />
+      <Label fx:id="labelEmail" layoutX="390.0" layoutY="533.0" />
+      <Label fx:id="labelCEP" layoutX="680.0" layoutY="182.0" />
+      <Label fx:id="labelEndereco" layoutX="680.0" layoutY="250.0" />
+      <Label fx:id="labelRua" layoutX="680.0" layoutY="322.0" />
+      <Label fx:id="labelBairro" layoutX="681.0" layoutY="394.0" />
+      <Label fx:id="labelComplemento" layoutX="680.0" layoutY="463.0" />
+      <Label fx:id="labelEstado" layoutX="680.0" layoutY="533.0" />
+      <Label fx:id="labelNumero" layoutX="885.0" layoutY="322.0" />
+      <Label fx:id="LabelCidade" layoutX="883.0" layoutY="525.0" />
       <ImageView fitHeight="295.0" fitWidth="200.0" layoutX="80.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

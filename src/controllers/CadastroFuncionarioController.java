@@ -8,8 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-public class CadastroClienteController  implements Initializable{
-
+public class CadastroFuncionarioController implements Initializable{
+	
 	@FXML
 	private TextField textFieldNome, textFieldDataNascimento, textFieldCPF, textFieldRG, textFieldTelefone,
 		textFieldEmail, textFieldCEP, textFieldEndereco, textFieldRua, textFieldNumero, textFieldBairro,
@@ -18,11 +18,11 @@ public class CadastroClienteController  implements Initializable{
 	private Button buttonVoltar, buttonCadastrar;
 	
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		
 	}
-	
+
 	@FXML
 	private void handleBtnCadastrar() {
 		
@@ -32,5 +32,5 @@ public class CadastroClienteController  implements Initializable{
 	private void handleBtnVoltar() {
 		
 	}
-
+	
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DetalheProdutoEBController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -36,84 +36,69 @@
       <Group layoutY="27.0">
          <children>
             <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
-            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalhes clientes" textAlignment="CENTER" wrappingWidth="282.13671875">
+            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detalhes produtos" textAlignment="CENTER" wrappingWidth="282.13671875">
                <font>
                   <Font name="Bauhaus 93" size="23.0" />
                </font>
             </Text>
          </children>
       </Group>
-      <Text fill="#bf9d9d" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados do cliente" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
+      <Text fill="#bf9d9d" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados do produto" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
          <font>
             <Font name="Bauhaus 93" size="23.0" />
          </font>
       </Text>
-      <Label layoutX="391.0" layoutY="142.0" text="Nome">
+      <Label layoutX="505.0" layoutY="145.0" text="Codigo de barras">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="391.0" layoutY="212.0" text="Data de nascimento">
+      <Label layoutX="505.0" layoutY="215.0" text="Preço">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="391.0" layoutY="282.0" text="CPF">
+      <Label layoutX="505.0" layoutY="285.0" text="Título">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="391.0" layoutY="352.0" text="RG">
+      <Label layoutX="505.0" layoutY="355.0" text="Idioma">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="212.0" text="Endereço">
+      <Label layoutX="792.0" layoutY="215.0" text="Categoria">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="391.0" layoutY="422.0" text="Telefone">
+      <Label layoutX="505.0" layoutY="425.0" text="Ano">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="391.0" layoutY="492.0" text="Email">
+      <Label layoutX="505.0" layoutY="495.0" text="Formato">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="282.0" text="Rua">
+      <Label layoutX="792.0" layoutY="285.0" text="Editora">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="142.0" text="CEP">
+      <Label layoutX="792.0" layoutY="145.0" text="Tamanho Arquivo">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="883.0" layoutY="282.0" text="Número">
+      <Label layoutX="792.0" layoutY="355.0" text="Autor">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="678.0" layoutY="352.0" text="Bairro">
-         <font>
-            <Font name="Bauhaus 93" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="678.0" layoutY="422.0" text="Complemento">
-         <font>
-            <Font name="Bauhaus 93" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="678.0" layoutY="492.0" text="Estado">
-         <font>
-            <Font name="Bauhaus 93" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="883.0" layoutY="492.0" text="Cidade">
+      <Label layoutX="792.0" layoutY="425.0" text="ISBN">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -128,20 +113,30 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="labelNome" layoutX="390.0" layoutY="182.0" />
-      <Label fx:id="labelDataDeNascimento" layoutX="390.0" layoutY="250.0" />
-      <Label fx:id="labelCPF" layoutX="390.0" layoutY="322.0" />
-      <Label fx:id="labelRG" layoutX="390.0" layoutY="394.0" />
-      <Label fx:id="labelTelefone" layoutX="390.0" layoutY="463.0" />
-      <Label fx:id="labelEmail" layoutX="390.0" layoutY="533.0" />
-      <Label fx:id="labelCEP" layoutX="680.0" layoutY="182.0" />
-      <Label fx:id="labelEndereco" layoutX="680.0" layoutY="250.0" />
-      <Label fx:id="labelRua" layoutX="680.0" layoutY="322.0" />
-      <Label fx:id="labelBairro" layoutX="681.0" layoutY="394.0" />
-      <Label fx:id="labelComplemento" layoutX="680.0" layoutY="463.0" />
-      <Label fx:id="labelEstado" layoutX="680.0" layoutY="533.0" />
-      <Label fx:id="labelNumero" layoutX="885.0" layoutY="322.0" />
-      <Label fx:id="LabelCidade" layoutX="883.0" layoutY="525.0" />
-      <ImageView fitHeight="295.0" fitWidth="200.0" layoutX="80.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="labelCodigoBarras" layoutX="504.0" layoutY="185.0" />
+      <Label fx:id="labelPreco" layoutX="504.0" layoutY="253.0" />
+      <Label fx:id="labelTitulo" layoutX="504.0" layoutY="325.0" />
+      <Label fx:id="labelIdioma" layoutX="504.0" layoutY="397.0" />
+      <Label fx:id="labelAno" layoutX="504.0" layoutY="466.0" />
+      <Label fx:id="labelFormato" layoutX="504.0" layoutY="536.0" />
+      <Label fx:id="labelTamanhoArquivo" layoutX="794.0" layoutY="185.0" />
+      <Label fx:id="labelCategoria" layoutX="794.0" layoutY="253.0" />
+      <Label fx:id="labelEditora" layoutX="794.0" layoutY="325.0" />
+      <Label fx:id="labelAutor" layoutX="795.0" layoutY="397.0" />
+      <Label fx:id="labelISBN" layoutX="794.0" layoutY="466.0" />
+      <Label fx:id="labelNumeroPaginas" layoutX="505.0" layoutY="592.0" prefHeight="17.0" prefWidth="0.0" />
+      <ImageView fitHeight="295.0" fitWidth="200.0" layoutX="40.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="268.0" layoutY="145.0" text="Resumo">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="554.0" text="Numero de páginas">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelLargura" layoutX="504.0" layoutY="592.0" />
+      <Text fx:id="textResumo" layoutX="268.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="161.99999302625656" />
    </children>
 </AnchorPane>
