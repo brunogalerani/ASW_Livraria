@@ -21,7 +21,7 @@ public class CadastroClienteController implements Initializable {
 
 	@FXML
 	private TextField textFieldNome, textFieldCPF, textFieldRG, textFieldTelefone, textFieldEmail, textFieldCEP,
-			textFieldEndereco, textFieldRua, textFieldNumero, textFieldBairro, textFieldComplemento, textFieldEstado,
+			textFieldRua, textFieldNumero, textFieldBairro, textFieldComplemento, textFieldEstado,
 			textFieldCidade;
 	@FXML
 	private DatePicker datePickerDataNascimento;
