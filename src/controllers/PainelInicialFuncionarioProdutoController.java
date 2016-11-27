@@ -7,8 +7,10 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class PainelInicialFuncionarioProdutoController implements Initializable {
 
@@ -25,9 +27,17 @@ public class PainelInicialFuncionarioProdutoController implements Initializable 
 	}
 	@FXML
 	private void handleButtonAddProdutos() throws IOException {
-		AnchorPane nextAp = (AnchorPane) FXMLLoader
-				.load(getClass().getResource("/views/TipoProduto.fxml"));
-		this.ap.getChildren().setAll(nextAp);
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(SelecaoTipoProdutoController.class.
+				getResource("/views/SelecaoTipoProduto.fxml"));
+		AnchorPane page = loader.load();
+		Stage diaogStage = new Stage();
+		diaogStage.setTitle("Selecionar o tipo de produto");
+		Scene scene = new Scene(page);
+		diaogStage.setScene(scene);
+		SelecaoTipoProdutoController controller = loader.getController();
+		controller.setDialogStage(diaogStage);
+		diaogStage.showAndWait();
 	}
 	@FXML
 	private void handleButtonListProdutos() throws IOException {

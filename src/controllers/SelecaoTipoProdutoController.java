@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.stage.Stage;
 
 public class SelecaoTipoProdutoController implements Initializable{
 
@@ -15,6 +16,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 	@FXML
 	private RadioButton radioButtonDM, radioButtonEB, radioButtonVG, radioButtonLF;
 	
+	private Stage dialogStage;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -29,6 +31,10 @@ public class SelecaoTipoProdutoController implements Initializable{
 	@FXML
 	private void handleBtnConfirmar(){
 		
+	}
+
+	public void setDialogStage(Stage diaogStage) {
+		this.dialogStage = diaogStage;
 	}
 
 }
