@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import models.Cliente;
+import models.Endereco;
 
 public class CadastroClienteController  implements Initializable{
 
@@ -51,6 +52,26 @@ public class CadastroClienteController  implements Initializable{
 		String complemento = this.textFieldComplemento.getText();
 		String cidade = this.textFieldCidade.getText();
 		String estado = this.textFieldEstado.getText();
+		
+		Endereco endereco = new Endereco();
+		endereco.setRua(rua);
+		endereco.setBairro(bairro);
+		endereco.setCep(cep);
+		endereco.setNumero(numero);
+		endereco.setComplemento(complemento);
+		endereco.setCidade(cidade);
+		endereco.setEstado(estado);
+		
+		cliente = new Cliente();
+		cliente.setNome(nome);
+		cliente.setDataNascimento(dataNascimento);
+		cliente.setCpf(cpf);
+		cliente.setRg(rg);
+		cliente.setTelefone(telefone);
+		cliente.setEmail(email);
+		cliente.setEndereco(endereco);
+		
+		clienteDAO.insert(cliente);
 	}
 	@FXML
 	private void handleBtnVoltar() {

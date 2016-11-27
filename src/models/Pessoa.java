@@ -11,7 +11,7 @@ public abstract class Pessoa {
 	private long cpf;
 	private String rg;
 	private Endereco endereco;
-	private ArrayList<String> telefones;
+	private String telefone;
 	private String email;
 	
 	public Pessoa() {
@@ -57,12 +57,12 @@ public abstract class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public ArrayList<String> getTelefones() {
-		return telefones;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setTelefones(ArrayList<String> telefones) {
-		this.telefones = telefones;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public String getEmail() {
