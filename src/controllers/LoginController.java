@@ -6,13 +6,14 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LoginController implements Initializable {
 	@FXML
 	private TextField textFieldUsuario;
 	@FXML
-	private TextField textFieldSenha;
+	private PasswordField passwordFieldSenha;
 	@FXML
 	private Button buttonLogin;
 	@FXML

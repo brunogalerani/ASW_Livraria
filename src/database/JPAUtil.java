@@ -6,6 +6,7 @@ import javax.persistence.Persistence;
 
 public class JPAUtil {
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("livrariadb");
+	
 	public static EntityManager getEntityManager() {
 		return factory.createEntityManager();
 	}
