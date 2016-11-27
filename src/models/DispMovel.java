@@ -15,6 +15,7 @@ public abstract class DispMovel extends Eletronicos {
 	private String resolucao;
 
 	public DispMovel() {
+		super();
 	}
 
 	public boolean isTouchScreen() {

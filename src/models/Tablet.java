@@ -13,7 +13,7 @@ public class Tablet extends DispMovel {
 	private Long id;
 
 	public Tablet() {
-
+		super();
 	}
 
 	public Long getId() {

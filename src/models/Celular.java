@@ -12,7 +12,7 @@ public class Celular extends DispMovel {
 	private Long id;
 	
 	public Celular(){
-		
+		super();
 	}
 	
 	public Long getId() {

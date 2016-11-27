@@ -25,7 +25,7 @@ public abstract class Produto {
 	public Produto() {
 		this.codBarras = 0;
 		this.preco = 0;
-		this.tipoProduto = this.getClass().getName();
+		this.tipoProduto = this.getClass().getName().substring(7);
 	}
 
 	public Long getId() {
@@ -68,5 +68,4 @@ public abstract class Produto {
 		this.tipoProduto = tipoProduto;
 	}
 	
-
 }
