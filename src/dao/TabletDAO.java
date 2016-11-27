@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import database.JPAUtil;
+import models.Produto;
 import models.Tablet;
 
 public class TabletDAO {

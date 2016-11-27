@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import database.JPAUtil;
 import models.LivroFisico;
+import models.Produto;
 
 public class LivroFisicoDAO {
 	private EntityManager manager;

@@ -98,11 +98,22 @@
           <TableColumn fx:id="tableColumnNomeProdutoDisponivel" prefWidth="206.0" text="Nome do produto" />
         </columns>
       </TableView>
-      <TableView fx:id="tableViewProdutosComprando" layoutX="743.0" layoutY="116.0" prefHeight="445.0" prefWidth="312.0">
+      <TableView fx:id="tableViewProdutosComprando" layoutX="743.0" layoutY="116.0" prefHeight="379.0" prefWidth="312.0">
          <columns>
-            <TableColumn fx:id="tableColumnQtdEscolhida" prefWidth="97.0" text="Qtd. escolhida" />
-            <TableColumn fx:id="tableColumnNomeProdutoComprando" prefWidth="214.0" text="Nome do produto" />
+            <TableColumn fx:id="tableColumnQtdEscolhida" prefWidth="57.0" text="Qtd" />
+            <TableColumn fx:id="tableColumnNomeProdutoComprando" prefWidth="160.0" text="Nome do produto" />
+            <TableColumn fx:id="tableColumnPreco" prefWidth="94.0" text="Preço" />
          </columns>
       </TableView>
+      <Label layoutX="1016.0" layoutY="514.0" text="Total">
+         <font>
+            <Font name="Bauhaus 93" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTotalPreco" layoutX="990.0" layoutY="544.0">
+         <font>
+            <Font name="Bauhaus 93" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

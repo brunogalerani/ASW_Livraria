@@ -7,37 +7,36 @@ import javax.persistence.Query;
 
 import database.JPAUtil;
 import models.Produto;
-import models.VideoGame;
 
-public class VideoGameDAO {
+public class ProdutoDAO {
 	private EntityManager manager;
 
-	public VideoGameDAO() {
+	public ProdutoDAO() {
 		this.manager = JPAUtil.getEntityManager();
 	}
 
-	public void insert(VideoGame videoGame) {
+	public void insert(Produto produto) {
 		this.manager.getTransaction().begin();
-		this.manager.persist(videoGame);
+		this.manager.persist(produto);
 		this.manager.getTransaction().commit();
 	}
 
-	public void update(VideoGame videoGame) {
+	public void update(Produto produto) {
 		this.manager.getTransaction().begin();
-		this.manager.merge(videoGame);
+		this.manager.merge(produto);
 		this.manager.getTransaction().commit();
 	}
 
-	public void remove(VideoGame videoGame) {
+	public void remove(Produto produto) {
 		this.manager.getTransaction().begin();
-		videoGame = this.manager.find(VideoGame.class, videoGame.getModelo());
-		this.manager.remove(videoGame);
+		produto = this.manager.find(Produto.class, produto.hashCode());
+		this.manager.remove(produto);
 		this.manager.getTransaction().commit();
 	}
 
-	public List<VideoGame> all() {
-		Query query = this.manager.createQuery("select v from VideoGame v");
-		List<VideoGame> list = query.getResultList();
+	public List<Produto> all() {
+		Query query = this.manager.createQuery("select p from Produto p");
+		List<Produto> list = query.getResultList();
 		return list;
 	}
 

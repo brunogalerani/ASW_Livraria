@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import database.JPAUtil;
 import models.Celular;
 import models.DispMovel;
+import models.Produto;
 
 public class CelularDAO {
 	private EntityManager manager;

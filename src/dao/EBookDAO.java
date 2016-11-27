@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import database.JPAUtil;
 import models.EBook;
+import models.Produto;
 
 public class EBookDAO {
 	private EntityManager manager;
