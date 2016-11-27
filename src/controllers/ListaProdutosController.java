@@ -22,7 +22,7 @@ public class ListaProdutosController implements Initializable{
 	private TableView tableViewProduto;
 	
 	@FXML
-	private TableColumn tableColumnQtdDisponivel, tableColumnNome;
+	private TableColumn tableColumnQtdDisponivel, tableColumnNome, tableColumnTipo;
 	
 	
 	

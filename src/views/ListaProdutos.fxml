@@ -131,7 +131,8 @@
       <TableView fx:id="tableViewProduto" layoutX="34.0" layoutY="133.0" prefHeight="493.0" prefWidth="390.0">
         <columns>
           <TableColumn fx:id="tableColumnQtdDisponivel" prefWidth="127.0" text="Qtd. Disponível" />
-          <TableColumn fx:id="tableColumnNome" prefWidth="262.0" text="Nome" />
+          <TableColumn fx:id="tableColumnNome" prefWidth="190.0" text="Nome" />
+            <TableColumn fx:id="tableColumnTipo" text="Tipo" />
         </columns>
       </TableView>
    </children>
