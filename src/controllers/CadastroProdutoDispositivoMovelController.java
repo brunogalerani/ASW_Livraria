@@ -77,7 +77,6 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.celular.setQuantidadeChip(quantidadeChip);
 			this.celular.setTecnologiaSuportada(tecnologiaSuportada);
 			this.celular.setResolucao(resolucao);
-			;
 			this.celular.setCor(cor);
 			this.celular.setAltura(altura);
 			this.celular.setLargura(largura);
