@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -18,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import models.Produto;
 
 public class ListaProdutosController implements Initializable{
@@ -58,8 +60,18 @@ public class ListaProdutosController implements Initializable{
 	}
 
 	@FXML
-	public void handleBtnCadastrar(){
-		
+	public void handleBtnCadastrar() throws IOException{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(SelecaoTipoProdutoController.class.
+				getResource("/views/SelecaoTipoProduto.fxml"));
+		AnchorPane page = loader.load();
+		Stage diaogStage = new Stage();
+		diaogStage.setTitle("Selecionar o tipo de produto");
+		Scene scene = new Scene(page);
+		diaogStage.setScene(scene);
+		SelecaoTipoProdutoController controller = loader.getController();
+		controller.setDialogStage(diaogStage);
+		diaogStage.showAndWait();
 	}
 	
 	@FXML
