@@ -84,6 +84,18 @@ public class ListaProdutosController implements Initializable{
 		Produto produto = (Produto) this.tableViewProduto.getSelectionModel().getSelectedItem();
 		if (produto.getTipoProduto().equals(EBook.class.getName().substring(7))) {
 			System.out.println("EBOOK");
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoEbookController.class.
+					getResource("/views/CadastroProdutoEbook.fxml"));
+			AnchorPane page = loader.load();
+			Stage diaogStage = new Stage();
+			diaogStage.setTitle("Sistema Livraria ASW");
+			diaogStage.setResizable(false);
+			Scene scene = new Scene(page);
+			diaogStage.setScene(scene);
+			CadastroProdutoEbookController controller = loader.getController();
+			controller.setEbook((EBook)produto);
+			diaogStage.showAndWait();
 		}
 		if (produto.getTipoProduto().equals(Celular.class.getName().substring(7))) {
 			
@@ -118,9 +130,34 @@ public class ListaProdutosController implements Initializable{
 		}
 		if (produto.getTipoProduto().equals(VideoGame.class.getName().substring(7))) {
 			System.out.println("VideoGame");
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoVideoGameController.class.
+					getResource("/views/CadastroProdutoVideoGame.fxml"));
+			AnchorPane page = loader.load();
+			Stage diaogStage = new Stage();
+			diaogStage.setTitle("Sistema Livraria ASW");
+			diaogStage.setResizable(false);
+			Scene scene = new Scene(page);
+			diaogStage.setScene(scene);
+			CadastroProdutoVideoGameController controller = loader.getController();
+			controller.setVideoGame((VideoGame)produto);
+			diaogStage.showAndWait();
 		}
 		if (produto.getTipoProduto().equals(LivroFisico.class.getName().substring(7))) {
 			System.out.println("LivroFisico");
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoLivroFisicoController.class.
+					getResource("/views/CadastroProdutoLivroFisico.fxml"));
+			AnchorPane page = loader.load();
+			Stage diaogStage = new Stage();
+			diaogStage.setTitle("Sistema Livraria ASW");
+			diaogStage.setResizable(false);
+			Scene scene = new Scene(page);
+			diaogStage.setScene(scene);
+			CadastroProdutoLivroFisicoController controller = loader.getController();
+			controller.setLivroFisico((LivroFisico)produto);
+			diaogStage.showAndWait();
+			
 		}
 	}
 	private void listenerTableView() {
