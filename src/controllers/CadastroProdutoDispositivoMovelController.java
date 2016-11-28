@@ -39,6 +39,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	private TabletDAO tabletDAO;
 	private CelularDAO celularDAO;
 	private DispMovel dispMovel;
+	private boolean alteracao = false;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -49,10 +50,70 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	
 	public void setDispMóvel(DispMovel dispMovel) {
 		this.dispMovel = dispMovel;
+		this.alteracao = true;
 		if (this.dispMovel.getClass() == Celular.class) {
 			celular = (Celular)dispMovel;
-			System.out.println(celular.getFabricante());
+			this.carregarCamposCelular();
 		}
+		if (this.dispMovel.getClass() == Tablet.class) {
+			tablet = (Tablet)dispMovel;
+			this.carregarCamposTablet();
+		}
+	}
+	private void carregarCamposCelular() {
+		this.radioButtonCel.setSelected(true);
+		this.radioButtonCel.setDisable(true);
+		this.radioButtonTablet.setVisible(false);
+		
+		this.textFieldAlimentacao.setText(String.valueOf(this.celular.getAlimentacao()));
+		this.textFieldAltura.setText(String.valueOf(this.celular.getAltura()));
+		this.textFieldArmazenamento.setText(String.valueOf(this.celular.getArmazenamento()));
+		this.textFieldBateria.setText(this.celular.getBateria());
+		this.textFieldCodigoBarras.setText(String.valueOf(this.celular.getCodBarras()));
+		this.textFieldConsumo.setText(String.valueOf(this.celular.getConsumo()));
+		this.textFieldCor.setText(this.celular.getCor());
+		this.textFieldFabricante.setText(this.celular.getFabricante());
+		this.textFieldLargura.setText(String.valueOf(this.celular.getLargura()));
+		this.textFieldMarca.setText(this.celular.getMarca());
+		this.textFieldModelo.setText(this.celular.getModelo());
+		this.textFieldNome.setText(this.celular.getNome());
+		this.textFieldPeso.setText(String.valueOf(this.celular.getPeso()));
+		this.textFieldPotencia.setText(String.valueOf(this.celular.getPotencia()));
+		this.textFieldPreco.setText(String.valueOf(this.celular.getPreco()));
+		this.textFieldProfundidade.setText(String.valueOf(this.celular.getProfundidade()));
+		this.textFieldQuantidadeChip.setText(String.valueOf(this.celular.getQuantidadeChip()));
+		this.textFieldResolucao.setText(this.celular.getResolucao());
+		this.textFieldTamanhoTela.setText(String.valueOf(this.celular.getTamanhoTela()));
+		this.textFieldTecnologiaSuportada.setText(this.celular.getTecnologiaSuportada());
+		this.textFieldTipoChip.setText(this.celular.getTipoChip());
+		
+	}
+	private void carregarCamposTablet() {
+		this.radioButtonTablet.setSelected(true);
+		this.radioButtonTablet.setDisable(true);
+		this.radioButtonCel.setVisible(false);
+		
+		this.textFieldAlimentacao.setText(String.valueOf(this.tablet.getAlimentacao()));
+		this.textFieldAltura.setText(String.valueOf(this.tablet.getAltura()));
+		this.textFieldArmazenamento.setText(String.valueOf(this.tablet.getArmazenamento()));
+		this.textFieldBateria.setText(this.tablet.getBateria());
+		this.textFieldCodigoBarras.setText(String.valueOf(this.tablet.getCodBarras()));
+		this.textFieldConsumo.setText(String.valueOf(this.tablet.getConsumo()));
+		this.textFieldCor.setText(this.tablet.getCor());
+		this.textFieldFabricante.setText(this.tablet.getFabricante());
+		this.textFieldLargura.setText(String.valueOf(this.tablet.getLargura()));
+		this.textFieldMarca.setText(this.tablet.getMarca());
+		this.textFieldModelo.setText(this.tablet.getModelo());
+		this.textFieldNome.setText(this.tablet.getNome());
+		this.textFieldPeso.setText(String.valueOf(this.tablet.getPeso()));
+		this.textFieldPotencia.setText(String.valueOf(this.tablet.getPotencia()));
+		this.textFieldPreco.setText(String.valueOf(this.tablet.getPreco()));
+		this.textFieldProfundidade.setText(String.valueOf(this.tablet.getProfundidade()));
+		this.textFieldQuantidadeChip.setText(String.valueOf(this.tablet.getQuantidadeChip()));
+		this.textFieldResolucao.setText(this.tablet.getResolucao());
+		this.textFieldTamanhoTela.setText(String.valueOf(this.tablet.getTamanhoTela()));
+		this.textFieldTecnologiaSuportada.setText(this.tablet.getTecnologiaSuportada());
+		this.textFieldTipoChip.setText(this.tablet.getTipoChip());
 	}
 	private void cadastrarDispositivo() {
 		boolean touchScreen = radioButtonTsSim.isSelected();
@@ -80,7 +141,10 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		String nome = this.textFieldNome.getText();
 
 		if (radioButtonCel.isSelected()) {
-			this.celular = new Celular();
+			if (!alteracao) {
+				this.celular = new Celular();
+			}
+
 			this.celular.setTouchScreen(touchScreen);
 			this.celular.setTamanhoTela(tamanhoTela);
 			this.celular.setTipoChip(tipoChip);
@@ -105,9 +169,17 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.celular.setBateria(bateria);
 			this.celular.setNome(nome);
 
-			celularDAO.insert(celular);
+			if (!alteracao) {
+				celularDAO.insert(celular);
+			} else {
+				celularDAO.update(celular);
+			}
+			
 		} else if (radioButtonTablet.isSelected()) {
-			this.tablet = new Tablet();
+			if (!alteracao) {
+				this.tablet = new Tablet();
+			}
+
 			this.tablet.setTouchScreen(touchScreen);
 			this.tablet.setTamanhoTela(tamanhoTela);
 			this.tablet.setTipoChip(tipoChip);
@@ -132,7 +204,12 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.tablet.setBateria(bateria);
 			this.tablet.setNome(nome);
 			
-			tabletDAO.insert(tablet);
+			if (!alteracao) {
+				tabletDAO.insert(tablet);
+			} else {
+				tabletDAO.update(tablet);
+			}
+			
 		}
 
 	}

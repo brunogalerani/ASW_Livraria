@@ -28,13 +28,25 @@ public class CadastroProdutoEbookController  implements Initializable{
 	
 	private EBookDAO eBookDAO;
 	private EBook eBook;
+	private boolean alteracao = false;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.eBookDAO = new EBookDAO();
 		
 	}
-	
+	public void setEbook(EBook eBook) {
+		this.eBook = eBook;
+		this.alteracao = true;
+		this.carregarCampos();
+	}
+	private void carregarCampos() {
+		this.textFieldNome.setText(this.eBook.getNome());
+		this.textAreaIdioma.setText(this.eBook.getIdioma());
+		this.textAreaResumo.setText(this.eBook.getResumo());
+		this.textFieldAno.setText(String.valueOf(this.eBook.getAno()));
+		//////pareiii aquiiiii////////////////////
+	}
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastrar();
@@ -58,7 +70,10 @@ public class CadastroProdutoEbookController  implements Initializable{
 		String formato = this.textFieldFormato.getText();
 		String nome = this.textFieldNome.getText();
 		
-		this.eBook = new EBook();
+		if (!alteracao) {
+			this.eBook = new EBook();
+		}
+
 		this.eBook.setPreco(preco);
 		this.eBook.setCodBarras(codBarras);
 		this.eBook.setTitulo(titulo);
@@ -73,7 +88,12 @@ public class CadastroProdutoEbookController  implements Initializable{
 		this.eBook.setFormato(formato);
 		this.eBook.setNome(nome);
 		
-		eBookDAO.insert(eBook);
+		if (alteracao) {
+			eBookDAO.insert(eBook);
+		} else {
+			eBookDAO.update(eBook);
+		}
+		
 	}
 	private void voltar() {
 		Stage actual = (Stage) buttonVoltar.getScene().getWindow();

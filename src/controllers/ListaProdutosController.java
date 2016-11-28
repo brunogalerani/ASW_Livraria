@@ -93,16 +93,28 @@ public class ListaProdutosController implements Initializable{
 					getResource("/views/CadastroProdutoDispositivoMovel.fxml"));
 			AnchorPane page = loader.load();
 			Stage diaogStage = new Stage();
-			diaogStage.setTitle("Selecionar o tipo de produto");
+			diaogStage.setTitle("Sistema Livraria ASW");
+			diaogStage.setResizable(false);
 			Scene scene = new Scene(page);
 			diaogStage.setScene(scene);
 			CadastroProdutoDispositivoMovelController controller = loader.getController();
 			controller.setDispMóvel((Celular)produto);
-			
 			diaogStage.showAndWait();
 		}
 		if (produto.getTipoProduto().equals(Tablet.class.getName().substring(7))) {
 			System.out.println("Tablet");
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoDispositivoMovelController.class.
+					getResource("/views/CadastroProdutoDispositivoMovel.fxml"));
+			AnchorPane page = loader.load();
+			Stage diaogStage = new Stage();
+			diaogStage.setTitle("Sistema Livraria ASW");
+			diaogStage.setResizable(false);
+			Scene scene = new Scene(page);
+			diaogStage.setScene(scene);
+			CadastroProdutoDispositivoMovelController controller = loader.getController();
+			controller.setDispMóvel((Tablet)produto);
+			diaogStage.showAndWait();
 		}
 		if (produto.getTipoProduto().equals(VideoGame.class.getName().substring(7))) {
 			System.out.println("VideoGame");
