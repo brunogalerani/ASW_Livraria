@@ -16,7 +16,7 @@ public abstract class Eletronicos extends Produto {
 	private double potencia;
 	private int alimentacao;
 	private double consumo;
-	private boolean bateria;
+	private String bateria;
 	private LocalDate garantia;
 	private String modelo;
 	private String marca;
@@ -84,11 +84,11 @@ public abstract class Eletronicos extends Produto {
 		this.consumo = consumo;
 	}
 
-	public boolean isBateria() {
+	public String getBateria() {
 		return bateria;
 	}
 
-	public void setBateria(boolean bateria) {
+	public void setBateria(String bateria) {
 		this.bateria = bateria;
 	}
 

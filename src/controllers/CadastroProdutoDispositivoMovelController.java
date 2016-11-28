@@ -29,7 +29,8 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldCor, textFieldPotencia, textFieldLargura,
 			textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, textFieldAlimentacao,
 			textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, textFieldTamanhoTela,
-			textFieldTipoChip, textFieldQuantidadeChip, textFieldResolucao, textFieldTecnologiaSuportada;
+			textFieldTipoChip, textFieldQuantidadeChip, textFieldResolucao, textFieldTecnologiaSuportada, textFieldBateria,
+			textFieldNome;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
 
@@ -75,6 +76,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
+		String bateria = this.textFieldBateria.getText();
 
 		if (radioButtonCel.isSelected()) {
 			this.celular = new Celular();
@@ -99,6 +101,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.celular.setPeso(peso);
 			this.celular.setPreco(preco);
 			this.celular.setCodBarras(codBarras);
+			this.celular.setBateria(bateria);
 
 			celularDAO.insert(celular);
 		} else if (radioButtonTablet.isSelected()) {
@@ -124,6 +127,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.tablet.setPeso(peso);
 			this.tablet.setPreco(preco);
 			this.tablet.setCodBarras(codBarras);
+			this.celular.setBateria(bateria);
 
 			tabletDAO.insert(tablet);
 		}
