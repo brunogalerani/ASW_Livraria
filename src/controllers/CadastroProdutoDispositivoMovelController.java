@@ -77,6 +77,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
 		String bateria = this.textFieldBateria.getText();
+		String nome = this.textFieldNome.getText();
 
 		if (radioButtonCel.isSelected()) {
 			this.celular = new Celular();
@@ -102,6 +103,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.celular.setPreco(preco);
 			this.celular.setCodBarras(codBarras);
 			this.celular.setBateria(bateria);
+			this.celular.setNome(nome);
 
 			celularDAO.insert(celular);
 		} else if (radioButtonTablet.isSelected()) {
@@ -127,8 +129,9 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.tablet.setPeso(peso);
 			this.tablet.setPreco(preco);
 			this.tablet.setCodBarras(codBarras);
-			this.celular.setBateria(bateria);
-
+			this.tablet.setBateria(bateria);
+			this.tablet.setNome(nome);
+			
 			tabletDAO.insert(tablet);
 		}
 
