@@ -45,6 +45,16 @@ public class CadastroProdutoEbookController  implements Initializable{
 		this.textAreaIdioma.setText(this.eBook.getIdioma());
 		this.textAreaResumo.setText(this.eBook.getResumo());
 		this.textFieldAno.setText(String.valueOf(this.eBook.getAno()));
+		this.textFieldAutor.setText(this.eBook.getAutor());
+		this.textFieldCategoria.setText(this.eBook.getCategoria());
+		this.textFieldCodigoBarras.setText(String.valueOf(this.eBook.getCodBarras()));
+		this.textFieldEditora.setText(this.eBook.getEditora());
+		this.textFieldFormato.setText(this.eBook.getFormato());
+		this.textFieldISBN.setText(String.valueOf(this.eBook.getIsbn()));
+		this.textFieldNumeroPaginas.setText(String.valueOf(this.eBook.getNumeroPaginas()));
+		this.textFieldPreco.setText(String.valueOf(this.eBook.getPreco()));
+		this.textFieldTamanhoArquivo.setText(String.valueOf(this.eBook.getTamanhoArquivo()));
+		this.textFieldTitulo.setText(this.eBook.getTitulo());
 		//////pareiii aquiiiii////////////////////
 	}
 	@FXML
@@ -89,9 +99,9 @@ public class CadastroProdutoEbookController  implements Initializable{
 		this.eBook.setNome(nome);
 		
 		if (alteracao) {
-			eBookDAO.insert(eBook);
-		} else {
 			eBookDAO.update(eBook);
+		} else {
+			eBookDAO.insert(eBook);
 		}
 		
 	}
