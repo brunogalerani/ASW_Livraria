@@ -57,7 +57,7 @@ public class FuncionarioDAO {
 	}
 
 	@Override
-	protected void finalize() throws Throwable {
+	protected void finalize() {
 		this.manager.close();
 	}
 }
