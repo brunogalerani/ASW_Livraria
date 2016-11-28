@@ -1,16 +1,12 @@
 package controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import dao.CelularDAO;
-import dao.EBookDAO;
-import dao.LivroFisicoDAO;
 import dao.PedidoDAO;
 import dao.ProdutoDAO;
-import dao.TabletDAO;
-import dao.VideoGameDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -45,19 +41,21 @@ public class RegistroVendaController implements Initializable {
 	private TableColumn<?, ?> tableColumnQtdDisponivel, tableColumnNomeProdutoDisponivel;
 
 	@FXML
-	private TableColumn tableColumnQtdEscolhida, tableColumnNomeProdutoComprando, tableColumnPreco;
+	private TableColumn<?, ?> tableColumnQtdEscolhida, tableColumnNomeProdutoComprando, tableColumnPreco;
 
 	private Cliente cliente;
 	private List<Produto> prodDisponivel, prodComprando;
 	private ObservableList<Produto> prodObsDisponivel, prodObsComprando;
 	private PedidoDAO pedidodao;
 	private ProdutoDAO produtodao;
+	private Produto produtoSelecionado;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		pedidodao = new PedidoDAO();
-
-		//loadTableViewDisponivel();
+		prodComprando = new ArrayList<Produto>();
+		produtodao = new ProdutoDAO();
+		loadTableViewDisponivel();
 
 		tableViewProdutosDisponiveis.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> selectedItemTableViewProdutosDisponiveis(newValue));
@@ -70,10 +68,10 @@ public class RegistroVendaController implements Initializable {
 
 	public void loadTableViewDisponivel() {
 		this.prodDisponivel = produtodao.all();
-		
+
 		tableColumnQtdDisponivel.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
 		tableColumnNomeProdutoDisponivel.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		
+
 		this.prodObsDisponivel = FXCollections.observableList(this.prodDisponivel);
 		this.tableViewProdutosDisponiveis.setItems(prodObsDisponivel);
 	}
@@ -81,15 +79,28 @@ public class RegistroVendaController implements Initializable {
 	public void selectedItemTableViewProdutosDisponiveis(Produto produtoDisp) {
 		if (produtoDisp != null) {
 			this.labelNomeProduto.setText(produtoDisp.getNome());
+			produtoSelecionado = produtoDisp;
 		}
 	}
-	
+
+	public void loadTableViewProdutosComprando() {
+		tableColumnQtdEscolhida.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+		tableColumnNomeProdutoComprando.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		Double precop = produtoSelecionado.getPreco() * Integer.parseInt(textFieldQuantidade.getText());
+		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(("preco")));
+		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
+		this.tableViewProdutosComprando.setItems(prodObsComprando);
+	}
+
 	@FXML
 	public void handleBtnAdicionar() {
-		tableColumnQtdEscolhida.setCellValueFactory(new PropertyValueFactory<>(textFieldQuantidade.getText()));
-		tableColumnNomeProdutoComprando
-				.setCellValueFactory(new PropertyValueFactory<>(tableColumnNomeProdutoDisponivel.getText()));
-		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(""));
+		if (!prodComprando.contains(produtoSelecionado)) {
+			Produto temp = produtoSelecionado;
+			temp.setPreco(produtoSelecionado.getPreco() * Integer.parseInt(textFieldQuantidade.getText()));
+			prodComprando.add(temp);
+			temp.setQuantidade(Integer.parseInt(textFieldQuantidade.getText()));
+			loadTableViewProdutosComprando();
+		}
 	}
 
 	@FXML
