@@ -28,12 +28,38 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 	
 	private LivroFisicoDAO livroFisicoDAO;
 	private LivroFisico livroFisico;
+	private boolean alteracao = false;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.livroFisicoDAO = new LivroFisicoDAO();
 		
 	}
 	
+	public void setLivroFisico(LivroFisico livroFisico) {
+		this.livroFisico = livroFisico;
+		this.alteracao = true;
+		this.carregarCampos();
+	}
+	
+	private void carregarCampos() {
+		this.textAreaResumo.setText(this.livroFisico.getResumo());
+		this.textFieldAltura.setText(String.valueOf(this.livroFisico.getAltura()));
+		this.textFieldAno.setText(String.valueOf(this.livroFisico.getAno()));
+		this.textFieldAutor.setText(this.livroFisico.getAutor());
+		this.textFieldCategoria.setText(this.livroFisico.getCategoria());
+		this.textFieldCodigoBarras.setText(String.valueOf(this.livroFisico.getCodBarras()));
+		this.textFieldEditora.setText(this.livroFisico.getEditora());
+		this.textFieldIdioma.setText(this.livroFisico.getIdioma());
+		this.textFieldISBN.setText(String.valueOf(this.livroFisico.getIsbn()));
+		this.textFieldLargura.setText(String.valueOf(this.livroFisico.getLargura()));
+		this.textFieldNome.setText(this.livroFisico.getNome());
+		this.textFieldNumeroPaginas.setText(String.valueOf(this.livroFisico.getNumeroPaginas()));
+		this.textFieldPeso.setText(String.valueOf(this.livroFisico.getPeso()));
+		this.textFieldPreco.setText(String.valueOf(this.livroFisico.getPreco()));
+		this.textFieldProfundidade.setText(String.valueOf(this.livroFisico.getProfundidade()));
+		this.textFieldTipo.setText(this.livroFisico.getTipo());
+		this.textFieldTitulo.setText(this.livroFisico.getTitulo());
+	}
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastrar();
@@ -61,7 +87,9 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
 		String nome = this.textFieldNome.getText();
 		
-		this.livroFisico = new LivroFisico();
+		if (!alteracao) {
+			this.livroFisico = new LivroFisico();
+		}
 		this.livroFisico.setPreco(preco);
 		this.livroFisico.setCodBarras(codBarras);
 		this.livroFisico.setTitulo(titulo);
@@ -80,7 +108,11 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		this.livroFisico.setPeso(peso);
 		this.livroFisico.setNome(nome);
 		
-		this.livroFisicoDAO.insert(livroFisico);
+		if (alteracao) {
+			this.livroFisicoDAO.update(livroFisico);
+		}else {
+			this.livroFisicoDAO.insert(livroFisico);
+		}
 		
 	}
 	private void voltar() {

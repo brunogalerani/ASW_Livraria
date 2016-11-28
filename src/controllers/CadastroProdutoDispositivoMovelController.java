@@ -86,6 +86,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.textFieldTamanhoTela.setText(String.valueOf(this.celular.getTamanhoTela()));
 		this.textFieldTecnologiaSuportada.setText(this.celular.getTecnologiaSuportada());
 		this.textFieldTipoChip.setText(this.celular.getTipoChip());
+		this.datePickerGarantia.setValue(this.celular.getGarantia());
 		
 	}
 	private void carregarCamposTablet() {
@@ -114,6 +115,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.textFieldTamanhoTela.setText(String.valueOf(this.tablet.getTamanhoTela()));
 		this.textFieldTecnologiaSuportada.setText(this.tablet.getTecnologiaSuportada());
 		this.textFieldTipoChip.setText(this.tablet.getTipoChip());
+		this.datePickerGarantia.setValue(this.tablet.getGarantia());
 	}
 	private void cadastrarDispositivo() {
 		boolean touchScreen = radioButtonTsSim.isSelected();
