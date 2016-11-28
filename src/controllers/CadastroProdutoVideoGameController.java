@@ -40,6 +40,12 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.carregarCampos();
 	}
 	private void carregarCampos() {
+		this.textFieldAlimentacao.setText(String.valueOf(this.videoGame.getAlimentacao()));
+		this.textFieldAltura.setText(String.valueOf(this.videoGame.getAltura()));
+		this.textFieldArmazenamento.setText(String.valueOf(this.videoGame.getArmazenamento()));
+		this.textFieldBateria.setText(this.videoGame.getBateria());
+		this.textFieldCodigoBarras.setText(String.valueOf(this.videoGame.getCodBarras()));
+		this.textFieldConsumo.setText(String.valueOf(this.videoGame.getConsumo()));
 		
 	}
 	@FXML
