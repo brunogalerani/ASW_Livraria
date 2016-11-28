@@ -19,7 +19,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import models.Celular;
+import models.EBook;
+import models.LivroFisico;
 import models.Produto;
+import models.Tablet;
+import models.VideoGame;
 
 public class ListaProdutosController implements Initializable{
 	
@@ -75,8 +80,36 @@ public class ListaProdutosController implements Initializable{
 	}
 	
 	@FXML
-	public void handleBtnEditar(){
-		
+	public void handleBtnEditar() throws IOException{
+		Produto produto = (Produto) this.tableViewProduto.getSelectionModel().getSelectedItem();
+		if (produto.getTipoProduto().equals(EBook.class.getName().substring(7))) {
+			System.out.println("EBOOK");
+		}
+		if (produto.getTipoProduto().equals(Celular.class.getName().substring(7))) {
+			
+			System.out.println("Celular");
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(CadastroProdutoDispositivoMovelController.class.
+					getResource("/views/CadastroProdutoDispositivoMovel.fxml"));
+			AnchorPane page = loader.load();
+			Stage diaogStage = new Stage();
+			diaogStage.setTitle("Selecionar o tipo de produto");
+			Scene scene = new Scene(page);
+			diaogStage.setScene(scene);
+			CadastroProdutoDispositivoMovelController controller = loader.getController();
+			controller.setDispMóvel((Celular)produto);
+			
+			diaogStage.showAndWait();
+		}
+		if (produto.getTipoProduto().equals(Tablet.class.getName().substring(7))) {
+			System.out.println("Tablet");
+		}
+		if (produto.getTipoProduto().equals(VideoGame.class.getName().substring(7))) {
+			System.out.println("VideoGame");
+		}
+		if (produto.getTipoProduto().equals(LivroFisico.class.getName().substring(7))) {
+			System.out.println("LivroFisico");
+		}
 	}
 	private void listenerTableView() {
 		this.tableViewProduto.getSelectionModel().selectedItemProperty().addListener(

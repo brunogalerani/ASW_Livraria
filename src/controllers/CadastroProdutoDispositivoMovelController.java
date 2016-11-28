@@ -16,6 +16,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import models.Celular;
+import models.DispMovel;
 import models.Tablet;
 
 public class CadastroProdutoDispositivoMovelController implements Initializable {
@@ -37,6 +38,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	private Celular celular;
 	private TabletDAO tabletDAO;
 	private CelularDAO celularDAO;
+	private DispMovel dispMovel;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -44,7 +46,14 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.tabletDAO = new TabletDAO();
 
 	}
-
+	
+	public void setDispMóvel(DispMovel dispMovel) {
+		this.dispMovel = dispMovel;
+		if (this.dispMovel.getClass() == Celular.class) {
+			celular = (Celular)dispMovel;
+			System.out.println(celular.getCodBarras());
+		}
+	}
 	private void cadastrarDispositivo() {
 		boolean touchScreen = radioButtonTsSim.isSelected();
 		double tamanhoTela = Double.parseDouble(this.textFieldTamanhoTela.getText());
