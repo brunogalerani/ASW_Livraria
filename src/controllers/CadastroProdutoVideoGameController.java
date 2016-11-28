@@ -29,11 +29,19 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 	
 	private VideoGameDAO videoGameDAO;
 	private VideoGame videoGame;
+	private boolean alteracao = false;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.videoGameDAO = new VideoGameDAO();
 	}
-	
+	public void setVideoGame(VideoGame videoGame) {
+		this.videoGame = videoGame;
+		this.alteracao = true;
+		this.carregarCampos();
+	}
+	private void carregarCampos() {
+		
+	}
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastro();
@@ -62,7 +70,10 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		String plataformaSuportada = this.textFieldPlataformaSuportada.getText();
 		String nome = this.textFieldNome.getText();
 		
-		this.videoGame = new VideoGame();
+		if (!alteracao) {
+			this.videoGame = new VideoGame();
+		}
+		
 		this.videoGame.setPreco(preco);
 		this.videoGame.setCodBarras(codBarras);
 		this.videoGame.setCor(cor);
@@ -82,7 +93,11 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGame.setPlataformaSuportada(plataformaSuportada);
 		this.videoGame.setNome(nome);
 		
-		this.videoGameDAO.insert(videoGame);
+		if (alteracao) {
+			this.videoGameDAO.update(videoGame);
+		} else {
+			this.videoGameDAO.insert(videoGame);
+		}
 		
 	}
 	private void voltar() {
