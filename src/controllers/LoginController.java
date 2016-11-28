@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import dao.FuncionarioDAO;
+import dao.GerenteDAO;
 import encryption.EncryptPassword;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Funcionario;
+import models.Gerente;
 
 public class LoginController implements Initializable {
 	@FXML
@@ -39,13 +41,13 @@ public class LoginController implements Initializable {
 	        }
 	    });
 		
-		// Gerente gerente = new Gerente();
-		// gerente.setCpf(123456);
-		// gerente.setLogin("Bruno");
-		// gerente.setSenha(EncryptPassword.encryptSHA256("teste"));
-		// GerenteDAO t = new GerenteDAO();
-		// t.insert(gerente);
-		//
+//		 Gerente gerente = new Gerente();
+//		 gerente.setCpf(123456);
+//		 gerente.setLogin("Bruno");
+//		 gerente.setSenha(EncryptPassword.encryptSHA256("teste"));
+//		 GerenteDAO t = new GerenteDAO();
+//		 t.insert(gerente);
+		
 		// Vendedor vendedor = new Vendedor();
 		// vendedor.setLogin("Alo");
 		// vendedor.setSenha(EncryptPassword.encryptSHA256("opa"));
