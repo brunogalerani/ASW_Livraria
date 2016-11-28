@@ -56,6 +56,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 		String categoria = this.textFieldCategoria.getText();
 		double tamanhoArquivo = Double.parseDouble(this.textFieldTamanhoArquivo.getText());
 		String formato = this.textFieldFormato.getText();
+		String nome = this.textFieldNome.getText();
 		
 		this.eBook = new EBook();
 		this.eBook.setPreco(preco);
@@ -70,6 +71,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 		this.eBook.setCategoria(categoria);
 		this.eBook.setTamanhoArquivo(tamanhoArquivo);
 		this.eBook.setFormato(formato);
+		this.eBook.setNome(nome);
 		
 		eBookDAO.insert(eBook);
 	}

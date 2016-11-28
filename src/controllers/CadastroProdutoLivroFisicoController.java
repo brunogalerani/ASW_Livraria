@@ -59,6 +59,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		double profundidade = Double.parseDouble(this.textFieldProfundidade.getText());
 		String tipo = this.textFieldTipo.getText();
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
+		String nome = this.textFieldNome.getText();
 		
 		this.livroFisico = new LivroFisico();
 		this.livroFisico.setPreco(preco);
@@ -77,6 +78,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		this.livroFisico.setProfundidade(profundidade);
 		this.livroFisico.setTipo(tipo);
 		this.livroFisico.setPeso(peso);
+		this.livroFisico.setNome(nome);
 		
 		this.livroFisicoDAO.insert(livroFisico);
 		

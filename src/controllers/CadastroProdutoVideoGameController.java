@@ -60,6 +60,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
 		String midia = this.textFieldMidia.getText();
 		String plataformaSuportada = this.textFieldPlataformaSuportada.getText();
+		String nome = this.textFieldNome.getText();
 		
 		this.videoGame = new VideoGame();
 		this.videoGame.setPreco(preco);
@@ -79,6 +80,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGame.setPeso(peso);
 		this.videoGame.setMidia(midia);
 		this.videoGame.setPlataformaSuportada(plataformaSuportada);
+		this.videoGame.setNome(nome);
 		
 		this.videoGameDAO.insert(videoGame);
 		
