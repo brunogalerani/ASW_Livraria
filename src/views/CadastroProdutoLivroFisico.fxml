@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoLivroFisicoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoLivroFisicoController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -49,22 +49,22 @@
             <Font name="Bauhaus 93" size="23.0" />
          </font>
       </Text>
-      <Label layoutX="58.0" layoutY="160.0" text="Código de barras">
+      <Label layoutX="58.0" layoutY="215.0" text="Código de barras">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="215.0" text="Preço">
+      <Label layoutX="58.0" layoutY="270.0" text="Preço">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="270.0" text="Titulo">
+      <Label layoutX="58.0" layoutY="325.0" text="Titulo">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="325.0" text="Idioma">
+      <Label layoutX="58.0" layoutY="380.0" text="Idioma">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -74,12 +74,12 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="380.0" text="Ano">
+      <Label layoutX="58.0" layoutY="435.0" text="Ano">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="435.0" text="ISBN">
+      <Label layoutX="58.0" layoutY="490.0" text="ISBN">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -104,7 +104,7 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="490.0" text="Categoria">
+      <Label layoutX="58.0" layoutY="545.0" text="Categoria">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
@@ -114,17 +114,17 @@
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldCodigoBarras" layoutX="250.0" layoutY="160.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldPreco" layoutX="250.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldTitulo" layoutX="250.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldIdioma" layoutX="250.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
-      <TextField fx:id="textFieldAno" layoutX="250.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldISBN" layoutX="250.0" layoutY="435.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldCodigoBarras" layoutX="250.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldPreco" layoutX="250.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldTitulo" layoutX="250.0" layoutY="325.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldIdioma" layoutX="250.0" layoutY="380.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldAno" layoutX="250.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldISBN" layoutX="250.0" layoutY="490.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldNumeroPaginas" layoutX="745.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldEditora" layoutX="745.0" layoutY="215.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldAutor" layoutX="745.0" layoutY="270.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldLargura" layoutX="930.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
-      <TextField fx:id="textFieldCategoria" layoutX="250.0" layoutY="490.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldCategoria" layoutX="250.0" layoutY="545.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="textFieldAltura" layoutX="745.0" layoutY="325.0" prefHeight="25.0" prefWidth="79.0" />
       <Button fx:id="buttonCadastrar" layoutX="937.0" layoutY="593.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" style="-fx-border-color: transparent; -fx-background-color: #417f5f;" text="Cadastrar" textFill="WHITE">
          <font>
@@ -136,12 +136,12 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="366.0" layoutY="380.0" text="Tipo">
+      <Label layoutX="366.0" layoutY="435.0" text="Tipo">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldTipo" layoutX="439.0" layoutY="380.0" prefHeight="25.0" prefWidth="79.0" />
+      <TextField fx:id="textFieldTipo" layoutX="439.0" layoutY="435.0" prefHeight="25.0" prefWidth="79.0" />
       <TextArea fx:id="textAreaResumo" layoutX="744.0" layoutY="435.0" prefHeight="135.0" prefWidth="268.0" />
       <Label layoutX="556.0" layoutY="381.0" text="Profundidade">
          <font>
@@ -149,11 +149,17 @@
          </font>
       </Label>
       <TextField fx:id="textFieldProfundidade" layoutX="745.0" layoutY="380.0" prefHeight="25.0" prefWidth="268.0" />
-      <Label layoutX="60.0" layoutY="538.0" text="Peso">
+      <Label layoutX="60.0" layoutY="593.0" text="Peso">
          <font>
             <Font name="Bauhaus 93" size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldPeso" layoutX="252.0" layoutY="538.0" prefHeight="25.0" prefWidth="268.0" />
+      <TextField fx:id="textFieldPeso" layoutX="252.0" layoutY="593.0" prefHeight="25.0" prefWidth="268.0" />
+      <Label layoutX="60.0" layoutY="160.0" text="Nome">
+         <font>
+            <Font name="Bauhaus 93" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldNome" layoutX="251.0" layoutY="159.0" prefHeight="25.0" prefWidth="268.0" />
    </children>
 </AnchorPane>

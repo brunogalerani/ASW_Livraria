@@ -18,7 +18,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 	@FXML
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldTitulo, textFieldIdioma, textFieldAno, 
 	textFieldTipo, textFieldISBN, textFieldCategoria, textFieldNumeroPaginas, textFieldEditora, textFieldAutor,
-	textFieldAltura, textFieldLargura, textFieldProfundidade, textFieldPeso;
+	textFieldAltura, textFieldLargura, textFieldProfundidade, textFieldPeso, textFieldNome;
 	
 	@FXML
 	private TextArea textAreaResumo;
