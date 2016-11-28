@@ -45,6 +45,7 @@ public class ListaProdutosController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		this.produtoDAO = new ProdutoDAO();
 		this.carregar();
+		this.listenerTableView();
 		
 	}
 	private void carregar() {
@@ -78,7 +79,18 @@ public class ListaProdutosController implements Initializable{
 	public void handleBtnEditar(){
 		
 	}
-	
+	private void listenerTableView() {
+		this.tableViewProduto.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> teste((Produto) newValue));
+	}
+	private void teste(Produto newValue) {
+		if (newValue != null) {
+			this.labelNome.setText(newValue.getNome());
+			this.labelCodigoDeBarras.setText(String.valueOf(newValue.getCodBarras()));
+			this.labelPreco.setText("R$: " + newValue.getPreco());
+			
+		}
+	}
 	@FXML
 	public void handleBtnDetalhes(){
 		

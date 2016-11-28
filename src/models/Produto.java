@@ -20,6 +20,7 @@ public abstract class Produto {
 	private long codBarras;
 	private int quantidade;
 	private String nome;
+	private String marca;
 	
 	public String getNome() {
 		return nome;
@@ -36,6 +37,15 @@ public abstract class Produto {
 		this.codBarras = 0;
 		this.preco = 0;
 		this.tipoProduto = this.getClass().getName().substring(7);
+	}
+
+	
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	public Long getId() {
