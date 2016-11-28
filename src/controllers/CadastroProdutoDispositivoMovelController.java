@@ -50,7 +50,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.dispMovel = dispMovel;
 		if (this.dispMovel.getClass() == Celular.class) {
 			celular = (Celular)dispMovel;
-			System.out.println(celular.getCodBarras());
+			System.out.println(celular.getFabricante());
 		}
 	}
 	private void cadastrarDispositivo() {
