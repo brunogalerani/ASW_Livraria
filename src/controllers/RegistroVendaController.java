@@ -94,7 +94,6 @@ public class RegistroVendaController implements Initializable {
 		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(("preco")));
 		
 		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
-		System.out.println((prodComprando==null) + "\n" + (prodObsComprando == null));
 		this.tableViewProdutosComprando.setItems(prodObsComprando);
 	}
 
@@ -104,7 +103,6 @@ public class RegistroVendaController implements Initializable {
 		MostraProduto mostraProduto = new MostraProduto(produtoSelecionado.getId(), quantidade,
 				produtoSelecionado.getPreco(), produtoSelecionado.getNome());
 		prodComprando.add(mostraProduto);
-		System.out.println(mostraProduto == null);
 		loadTableViewProdutosComprando();
 	}
 
