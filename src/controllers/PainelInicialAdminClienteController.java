@@ -16,7 +16,7 @@ public class PainelInicialAdminClienteController  implements Initializable{
 	private Button buttonBarAdmin, buttonBarFuncionario, buttonProduto, buttonCliente, buttonFuncionario, 
 	buttonHistoricoCompras, buttonGerenciarClientes, buttonListarClientes;
 	@FXML
-	AnchorPane ap;
+	private AnchorPane ap;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -28,6 +28,13 @@ public class PainelInicialAdminClienteController  implements Initializable{
 		AnchorPane nextAp = (AnchorPane) FXMLLoader
 				.load(getClass().getResource("/views/PainelInicialFuncionarioCliente.fxml"));
 		this.ap.getChildren().setAll(nextAp);
+	}
+	
+	@FXML 
+	private void handleBtnNavbarFuncionario() throws IOException{
+		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
+				.getResource("/views/PainelInicialAdminFuncionario.fxml"));
+		this.ap.getChildren().setAll(next);
 	}
 
 }
