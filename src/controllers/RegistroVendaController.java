@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import auxiliares.MostraProduto;
 import dao.PedidoDAO;
 import dao.ProdutoDAO;
 import javafx.collections.FXCollections;
@@ -20,7 +21,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import modelaux.MostraProduto;
 import models.Cliente;
 import models.Produto;
 

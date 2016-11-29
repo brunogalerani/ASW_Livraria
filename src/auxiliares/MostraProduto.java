@@ -1,4 +1,4 @@
-package modelaux;
+package auxiliares;
 
 public class MostraProduto {
 	private Long id;
