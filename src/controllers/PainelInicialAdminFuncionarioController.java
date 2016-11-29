@@ -41,5 +41,16 @@ public class PainelInicialAdminFuncionarioController  implements Initializable{
 		
 		next.showAndWait();		
 	}
+	@FXML
+	private void handleBtnCliente() throws IOException {
+		AnchorPane nextAp = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/PainelInicialAdminCliente.fxml"));
+		this.ap.getChildren().setAll(nextAp);
+	}
+	@FXML
+	private void handleBtnNavbarFuncionario() throws IOException {
+		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
+				.getResource("/views/PainelInicialFuncionarioCliente.fxml"));
+		this.ap.getChildren().setAll(next);
+	}
 
 }
