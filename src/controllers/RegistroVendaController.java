@@ -11,6 +11,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -92,19 +94,50 @@ public class RegistroVendaController implements Initializable {
 		tableColumnQtdEscolhida.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
 		tableColumnNomeProdutoComprando.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(("preco")));
-		
+
 		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
 		this.tableViewProdutosComprando.setItems(prodObsComprando);
 	}
 
 	@FXML
 	public void handleBtnAdicionar() {
-		int quantidade = Integer.parseInt(textFieldQuantidade.getText());
-		MostraProduto mostraProduto = new MostraProduto(produtoSelecionado.getId(), quantidade,
-				produtoSelecionado.getPreco(), produtoSelecionado.getNome());
-		
-		prodComprando.add(mostraProduto);
-		loadTableViewProdutosComprando();
+		try {
+			int quantidade = Integer.parseInt(textFieldQuantidade.getText());
+			if (quantidade <= 0) {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Erro de quantidade!");
+				alert.setContentText("Insira um valor válido para a quantidade!");
+				alert.showAndWait();
+				return;
+			}
+			if (produtoSelecionado.getQuantidade() >= quantidade) {
+				MostraProduto mostraProduto = new MostraProduto(produtoSelecionado.getId(), quantidade,
+						produtoSelecionado.getPreco(), produtoSelecionado.getNome());
+				if (!prodComprando.isEmpty()) {
+					for (MostraProduto m : prodComprando) {
+						if (m.getId() == produtoSelecionado.getId()) {
+							prodComprando.remove(m);
+							break;
+						}
+					}
+				}
+				prodComprando.add(mostraProduto);
+				loadTableViewProdutosComprando();
+			} else {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Erro de quantidade!");
+				alert.setHeaderText("Quantidade insuficiente do produto selecionado!");
+				alert.setContentText("Verifique o estoque e tente novamente!");
+				alert.showAndWait();
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Erro de quantidade!");
+			alert.setContentText("Insira um valor válido para a quantidade!");
+			alert.showAndWait();
+			return;
+		}
+
 	}
 
 	@FXML
@@ -116,10 +149,12 @@ public class RegistroVendaController implements Initializable {
 	public void handleBtnVoltar() {
 		this.voltar();
 	}
+
 	private void voltar() {
 		Stage actual = (Stage) this.buttonVoltar.getScene().getWindow();
 		actual.close();
 	}
+
 	@FXML
 	public void handleBtnRemover() {
 
