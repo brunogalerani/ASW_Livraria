@@ -88,18 +88,24 @@ public class RegistroVendaController implements Initializable {
 		tableColumnNomeProdutoComprando.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		Double precop = produtoSelecionado.getPreco() * Integer.parseInt(textFieldQuantidade.getText());
 		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(("preco")));
+		List<Produto> temp = new ArrayList<Produto>();
+		for(Produto p : prodComprando){
+			for(Produto p2 : temp){
+				if(p2.getId() == p.getId()){
+					continue;
+				}
+				temp.add(p);
+			}
+		}
 		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
 		this.tableViewProdutosComprando.setItems(prodObsComprando);
 	}
 
 	@FXML
 	public void handleBtnAdicionar() {
-		if (!prodComprando.contains(produtoSelecionado)) {
-			Produto temp = produtoSelecionado;
-			temp.setPreco(produtoSelecionado.getPreco() * Integer.parseInt(textFieldQuantidade.getText()));
-			prodComprando.add(temp);
-			temp.setQuantidade(Integer.parseInt(textFieldQuantidade.getText()));
-			loadTableViewProdutosComprando();
+		int quantidade = Integer.parseInt(textFieldQuantidade.getText());
+		for(int i = 0; i < quantidade; i++){
+			prodComprando.add(produtoSelecionado);
 		}
 	}
 
