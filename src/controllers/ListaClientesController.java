@@ -91,7 +91,7 @@ public class ListaClientesController implements Initializable {
 
 		if (cliente == null) {
 			Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-			errorAlert.setContentText("Por favor, escolha um estudante na Tabela!");
+			errorAlert.setContentText("Por favor, escolha um cliente na Tabela!");
 			errorAlert.show();
 		} else {
 			boolean buttonConfirmarClicked = showAnchorPaneCadastroCliente(cliente);

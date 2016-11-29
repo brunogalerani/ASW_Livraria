@@ -29,7 +29,7 @@ public class PainelInicialAdminFuncionarioController  implements Initializable{
 	@FXML
 	public void handleBtnGerenciarFuncionarios() throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(CadastroFuncionarioController.class.getResource("/views/CadastroFuncionario.fxml"));
+		loader.setLocation(ListaFuncionariosController.class.getResource("/views/ListaFuncionarios.fxml"));
 		AnchorPane page = (AnchorPane) loader.load();
 		
 		Stage next = new Stage();

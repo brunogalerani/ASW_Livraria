@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import models.Endereco;
+import models.Funcionario;
 import models.Vendedor;
 
 public class CadastroFuncionarioController implements Initializable{
@@ -46,7 +47,7 @@ public class CadastroFuncionarioController implements Initializable{
 		return funcionario;
 	}
 	
-	public Vendedor setFuncionario(Vendedor funcionario){
+	public Funcionario setFuncionario(Funcionario funcionario){
 		this.endereco = funcionario.getEndereco();
 		this.textFieldBairro.setText(endereco.getBairro());
 		this.textFieldCEP.setText(String.valueOf(endereco.getCep()));
@@ -132,8 +133,10 @@ public class CadastroFuncionarioController implements Initializable{
 			
 			if (funcionario.getId() == null) {
 				funcionariodao.insert(funcionario);
+				buttonConfirmarClicked = true;
 			} else {
 				funcionariodao.update(funcionario);
+				buttonConfirmarClicked = true;
 			}
 
 			Alert alert = new Alert(AlertType.INFORMATION);
