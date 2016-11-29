@@ -87,6 +87,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		String midia = this.textFieldMidia.getText();
 		String plataformaSuportada = this.textFieldPlataformaSuportada.getText();
 		String nome = this.textFieldNome.getText();
+		String bateria = this.textFieldBateria.getText();
 		
 		if (!alteracao) {
 			this.videoGame = new VideoGame();
@@ -110,6 +111,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGame.setMidia(midia);
 		this.videoGame.setPlataformaSuportada(plataformaSuportada);
 		this.videoGame.setNome(nome);
+		this.videoGame.setBateria(bateria);
 		
 		if (alteracao) {
 			this.videoGameDAO.update(videoGame);
