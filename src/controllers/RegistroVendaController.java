@@ -116,9 +116,12 @@ public class RegistroVendaController implements Initializable {
 
 	@FXML
 	public void handleBtnVoltar() {
-
+		this.voltar();
 	}
-
+	private void voltar() {
+		Stage actual = (Stage) this.buttonVoltar.getScene().getWindow();
+		actual.close();
+	}
 	@FXML
 	public void handleBtnRemover() {
 
