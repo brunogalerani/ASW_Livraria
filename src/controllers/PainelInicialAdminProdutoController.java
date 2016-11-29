@@ -30,5 +30,17 @@ public class PainelInicialAdminProdutoController  implements Initializable{
 				.getResource("/views/PainelInicialFuncionarioProduto.fxml"));
 		this.ap.getChildren().setAll(next);
 	}
+	@FXML
+	private void handleBtnCliente() throws IOException {
+		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
+				.getResource("/views/PainelInicialAdminCliente.fxml"));
+		this.ap.getChildren().setAll(next);
+	}
+	@FXML
+	private void hanbleBtnFuncionario() throws IOException {
+		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
+				.getResource("/views/PainelInicialAdminFuncionario.fxml"));
+		this.ap.getChildren().setAll(next);
+	}
 
 }

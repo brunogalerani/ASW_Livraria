@@ -63,7 +63,7 @@
                   <Image url="@../resources/product.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonProduto" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: transparent;" text="Produto" textFill="WHITE">
+            <Button fx:id="buttonProduto" mnemonicParsing="false" onAction="#handleBtnProduto" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: transparent;" text="Produto" textFill="WHITE">
                <font>
                   <Font name="Bauhaus 93" size="12.0" />
                </font>

@@ -47,6 +47,11 @@ public class PainelInicialAdminFuncionarioController  implements Initializable{
 		this.ap.getChildren().setAll(nextAp);
 	}
 	@FXML
+	private void handleBtnProduto() throws IOException {
+		AnchorPane nextAp = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/PainelInicialAdminProduto.fxml"));
+		this.ap.getChildren().setAll(nextAp);
+	}
+	@FXML
 	private void handleBtnNavbarFuncionario() throws IOException {
 		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
 				.getResource("/views/PainelInicialFuncionarioCliente.fxml"));

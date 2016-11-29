@@ -80,7 +80,7 @@
                   <Image url="@../resources/client.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonCliente" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: transparent;" text="Cliente" textFill="WHITE">
+            <Button fx:id="buttonCliente" mnemonicParsing="false" onAction="#handleBtnCliente" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: transparent;" text="Cliente" textFill="WHITE">
                <font>
                   <Font name="Bauhaus 93" size="12.0" />
                </font>
@@ -146,7 +146,7 @@
                   <Image url="@../resources/employee.png" />
                </image>
             </ImageView>
-            <Button fx:id="buttonFuncionario" mnemonicParsing="false" prefHeight="65.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Funcionário" textFill="WHITE">
+            <Button fx:id="buttonFuncionario" mnemonicParsing="false" onAction="#hanbleBtnFuncionario" prefHeight="65.0" prefWidth="70.0" style="-fx-background-color: transparent;" text="Funcionário" textFill="WHITE">
                <font>
                   <Font name="Bauhaus 93" size="10.0" />
                </font>
