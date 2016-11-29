@@ -18,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import modelaux.MostraProduto;
 import models.Cliente;
 import models.Produto;
 
@@ -35,7 +36,9 @@ public class RegistroVendaController implements Initializable {
 	private Label labelNomeProduto, labelCliente, labelTotalPreco;
 
 	@FXML
-	private TableView<Produto> tableViewProdutosDisponiveis, tableViewProdutosComprando;
+	private TableView<Produto> tableViewProdutosDisponiveis;
+	@FXML
+	private TableView<MostraProduto> tableViewProdutosComprando;
 
 	@FXML
 	private TableColumn<?, ?> tableColumnQtdDisponivel, tableColumnNomeProdutoDisponivel;
@@ -44,8 +47,10 @@ public class RegistroVendaController implements Initializable {
 	private TableColumn<?, ?> tableColumnQtdEscolhida, tableColumnNomeProdutoComprando, tableColumnPreco;
 
 	private Cliente cliente;
-	private List<Produto> prodDisponivel, prodComprando;
-	private ObservableList<Produto> prodObsDisponivel, prodObsComprando;
+	private List<Produto> prodDisponivel;
+	private List<MostraProduto> prodComprando;
+	private ObservableList<Produto> prodObsDisponivel;
+	private ObservableList<MostraProduto> prodObsComprando;
 	private PedidoDAO pedidodao;
 	private ProdutoDAO produtodao;
 	private Produto produtoSelecionado;
@@ -53,7 +58,7 @@ public class RegistroVendaController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		pedidodao = new PedidoDAO();
-		prodComprando = new ArrayList<Produto>();
+		prodComprando = new ArrayList<MostraProduto>();
 		produtodao = new ProdutoDAO();
 		loadTableViewDisponivel();
 
@@ -86,27 +91,21 @@ public class RegistroVendaController implements Initializable {
 	public void loadTableViewProdutosComprando() {
 		tableColumnQtdEscolhida.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
 		tableColumnNomeProdutoComprando.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		Double precop = produtoSelecionado.getPreco() * Integer.parseInt(textFieldQuantidade.getText());
 		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(("preco")));
-		List<Produto> temp = new ArrayList<Produto>();
-		for(Produto p : prodComprando){
-			for(Produto p2 : temp){
-				if(p2.getId() == p.getId()){
-					continue;
-				}
-				temp.add(p);
-			}
-		}
+		
 		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
+		System.out.println((prodComprando==null) + "\n" + (prodObsComprando == null));
 		this.tableViewProdutosComprando.setItems(prodObsComprando);
 	}
 
 	@FXML
 	public void handleBtnAdicionar() {
 		int quantidade = Integer.parseInt(textFieldQuantidade.getText());
-		for(int i = 0; i < quantidade; i++){
-			prodComprando.add(produtoSelecionado);
-		}
+		MostraProduto mostraProduto = new MostraProduto(produtoSelecionado.getId(), quantidade,
+				produtoSelecionado.getPreco(), produtoSelecionado.getNome());
+		prodComprando.add(mostraProduto);
+		System.out.println(mostraProduto == null);
+		loadTableViewProdutosComprando();
 	}
 
 	@FXML
