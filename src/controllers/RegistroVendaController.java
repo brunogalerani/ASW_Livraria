@@ -102,6 +102,7 @@ public class RegistroVendaController implements Initializable {
 		int quantidade = Integer.parseInt(textFieldQuantidade.getText());
 		MostraProduto mostraProduto = new MostraProduto(produtoSelecionado.getId(), quantidade,
 				produtoSelecionado.getPreco(), produtoSelecionado.getNome());
+		
 		prodComprando.add(mostraProduto);
 		loadTableViewProdutosComprando();
 	}
