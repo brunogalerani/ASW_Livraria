@@ -65,5 +65,11 @@ public class PainelInicialFuncionarioProdutoController implements Initializable 
 		diaogStage.setScene(scene);
 		diaogStage.showAndWait();
 	}
+	@FXML
+	private void handleBtnNavBarAdmin() throws IOException {
+		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
+				.getResource("/views/PainelInicialAdminProduto.fxml"));
+		this.ap.getChildren().setAll(next);
+	}
 	
 }
