@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import auxiliares.MostraProduto;
 import dao.PedidoDAO;
 import dao.ProdutoDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -35,7 +38,9 @@ public class RegistroVendaController implements Initializable {
 	private Label labelNomeProduto, labelCliente, labelTotalPreco;
 
 	@FXML
-	private TableView<Produto> tableViewProdutosDisponiveis, tableViewProdutosComprando;
+	private TableView<Produto> tableViewProdutosDisponiveis;
+	@FXML
+	private TableView<MostraProduto> tableViewProdutosComprando;
 
 	@FXML
 	private TableColumn<?, ?> tableColumnQtdDisponivel, tableColumnNomeProdutoDisponivel;
@@ -44,8 +49,10 @@ public class RegistroVendaController implements Initializable {
 	private TableColumn<?, ?> tableColumnQtdEscolhida, tableColumnNomeProdutoComprando, tableColumnPreco;
 
 	private Cliente cliente;
-	private List<Produto> prodDisponivel, prodComprando;
-	private ObservableList<Produto> prodObsDisponivel, prodObsComprando;
+	private List<Produto> prodDisponivel;
+	private List<MostraProduto> prodComprando;
+	private ObservableList<Produto> prodObsDisponivel;
+	private ObservableList<MostraProduto> prodObsComprando;
 	private PedidoDAO pedidodao;
 	private ProdutoDAO produtodao;
 	private Produto produtoSelecionado;
@@ -53,7 +60,7 @@ public class RegistroVendaController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		pedidodao = new PedidoDAO();
-		prodComprando = new ArrayList<Produto>();
+		prodComprando = new ArrayList<MostraProduto>();
 		produtodao = new ProdutoDAO();
 		loadTableViewDisponivel();
 
@@ -86,27 +93,51 @@ public class RegistroVendaController implements Initializable {
 	public void loadTableViewProdutosComprando() {
 		tableColumnQtdEscolhida.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
 		tableColumnNomeProdutoComprando.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		Double precop = produtoSelecionado.getPreco() * Integer.parseInt(textFieldQuantidade.getText());
 		tableColumnPreco.setCellValueFactory(new PropertyValueFactory<>(("preco")));
-		List<Produto> temp = new ArrayList<Produto>();
-		for(Produto p : prodComprando){
-			for(Produto p2 : temp){
-				if(p2.getId() == p.getId()){
-					continue;
-				}
-				temp.add(p);
-			}
-		}
+
 		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
 		this.tableViewProdutosComprando.setItems(prodObsComprando);
 	}
 
 	@FXML
 	public void handleBtnAdicionar() {
-		int quantidade = Integer.parseInt(textFieldQuantidade.getText());
-		for(int i = 0; i < quantidade; i++){
-			prodComprando.add(produtoSelecionado);
+		try {
+			int quantidade = Integer.parseInt(textFieldQuantidade.getText());
+			if (quantidade <= 0) {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Erro de quantidade!");
+				alert.setContentText("Insira um valor válido para a quantidade!");
+				alert.showAndWait();
+				return;
+			}
+			if (produtoSelecionado.getQuantidade() >= quantidade) {
+				MostraProduto mostraProduto = new MostraProduto(produtoSelecionado.getId(), quantidade,
+						produtoSelecionado.getPreco(), produtoSelecionado.getNome());
+				if (!prodComprando.isEmpty()) {
+					for (MostraProduto m : prodComprando) {
+						if (m.getId() == produtoSelecionado.getId()) {
+							prodComprando.remove(m);
+							break;
+						}
+					}
+				}
+				prodComprando.add(mostraProduto);
+				loadTableViewProdutosComprando();
+			} else {
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.setTitle("Erro de quantidade!");
+				alert.setHeaderText("Quantidade insuficiente do produto selecionado!");
+				alert.setContentText("Verifique o estoque e tente novamente!");
+				alert.showAndWait();
+			}
+		} catch (NumberFormatException e) {
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Erro de quantidade!");
+			alert.setContentText("Insira um valor válido para a quantidade!");
+			alert.showAndWait();
+			return;
 		}
+
 	}
 
 	@FXML
@@ -118,10 +149,12 @@ public class RegistroVendaController implements Initializable {
 	public void handleBtnVoltar() {
 		this.voltar();
 	}
+
 	private void voltar() {
 		Stage actual = (Stage) this.buttonVoltar.getScene().getWindow();
 		actual.close();
 	}
+
 	@FXML
 	public void handleBtnRemover() {
 
