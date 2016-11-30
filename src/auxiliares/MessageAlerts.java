@@ -1,7 +1,10 @@
 package auxiliares;
 
+import java.util.Optional;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 public class MessageAlerts {
 	private static Alert alert;
@@ -33,5 +36,22 @@ public class MessageAlerts {
 		alert.setContentText("Por favor, repita a operação novamente!");
 		alert.showAndWait();
 	}
-	
+	public static Optional<ButtonType> cancelarVenda() {
+		alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Cancelar a venda!");
+		alert.setHeaderText("Você deseja voltar e cancelar a venda?");
+		return alert.showAndWait();
+	}
+	public static Optional<ButtonType> cancelarCadastro() {
+		alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Cancelar cadastro!");
+		alert.setHeaderText("Voce deseja voltar e cancelar o cadastro?");
+		return alert.showAndWait();
+	}
+	public static Optional<ButtonType> removerItem() {
+		alert = new Alert(Alert.AlertType.CONFIRMATION);
+		alert.setTitle("Exclusão de item!");
+		alert.setHeaderText("Você deseja excluir o item selecionado?");
+		return alert.showAndWait();
+	}
 }
