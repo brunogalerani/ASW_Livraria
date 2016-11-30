@@ -3,7 +3,6 @@ package auxiliares;
 import java.util.Optional;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 
 public class MessageAlerts {
@@ -48,10 +47,30 @@ public class MessageAlerts {
 		alert.setHeaderText("Voce deseja voltar e cancelar o cadastro?");
 		return alert.showAndWait();
 	}
-	public static Optional<ButtonType> removerItem() {
+	public static Optional<ButtonType> removerItemAsk() {
 		alert = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setTitle("Exclusão de item!");
 		alert.setHeaderText("Você deseja excluir o item selecionado?");
 		return alert.showAndWait();
+	}
+	public static void removerItemConfirmacao() {
+		alert = new Alert(Alert.AlertType.INFORMATION);
+		alert.setTitle("Item removido!");
+		alert.setHeaderText("O item foi removido com sucesso!");
+		alert.showAndWait();
+	}
+	public static void valorInvalido() {
+		alert = new Alert(Alert.AlertType.WARNING);
+		alert.setTitle("Valor inválido!");
+		alert.setHeaderText("O valor informado é inválido!");
+		alert.setContentText("Por favor, verifique o valor digitado e insira-o novamente");
+		alert.showAndWait();
+	}
+	public static void valorInsuficiente() {
+		alert = new Alert(Alert.AlertType.WARNING);
+		alert.setTitle("Valor insuficiente!");
+		alert.setHeaderText("O valor informado é insuficiente!");
+		alert.setContentText("Por favor, insira um valor menor do que o informado!");
+		alert.showAndWait();
 	}
 }
