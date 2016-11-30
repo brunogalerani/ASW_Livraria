@@ -113,6 +113,7 @@ public class RegistroVendaController implements Initializable {
 						if (m.getId() == produtoSelecionado.getId()) {
 							prodComprando.remove(m);
 							break;
+							
 						}
 					}
 				}
