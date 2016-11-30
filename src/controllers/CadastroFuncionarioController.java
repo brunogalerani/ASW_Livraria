@@ -4,6 +4,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.EnderecoDAO;
 import dao.FuncionarioDAO;
 import dao.GerenteDAO;
@@ -202,17 +203,7 @@ public class CadastroFuncionarioController implements Initializable {
 				}
 			}
 			
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Sucesso!");
-			if (this.buttonCadastrar.getText().equals("Atualizar")) {
-				alert.setHeaderText("Funcionário atualizado com sucesso!");
-				alert.setContentText("Funcionário atualizado com sucesso!");
-			} else {
-				alert.setHeaderText("Funcionário cadastrado com sucesso!");
-				alert.setContentText("Funcionário cadastrado com sucesso!");
-			}
-
-			alert.showAndWait();
+			MessageAlerts.dadosRegistrados();
 
 			Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 			actual.close();

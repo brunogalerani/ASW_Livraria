@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import auxiliares.Session;
 import dao.FuncionarioDAO;
 import encryption.EncryptPassword;
@@ -56,22 +57,13 @@ public class LoginController implements Initializable {
 
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 		if (login.isEmpty()) {
-			alert.setTitle("Campo vazio!");
-			alert.setHeaderText("O campo \"Usuário\" está em branco!");
-			alert.setContentText("Por favor, preencha todos os campos antes de prosseguir!");
-			alert.showAndWait();
+			MessageAlerts.campoObrigatorioEmBranco();
 		} else if (password.isEmpty()) {
-			alert.setTitle("Campo vazio!");
-			alert.setHeaderText("O campo \"Senha\" está em branco!");
-			alert.setContentText("Por favor, preencha todos os campos antes de prosseguir!");
-			alert.showAndWait();
+			MessageAlerts.campoObrigatorioEmBranco();
 		} else {
 			Funcionario funcionario = funcionarioDAO.selectFromLogin(login, password);
 			if (funcionario == null) {
-				alert.setTitle("Login inválido!");
-				alert.setHeaderText("Credenciais inválidas ou usuário inexistente!");
-				alert.setContentText("Por favor, verifique seus dados e tente novamente!");
-				alert.showAndWait();
+				MessageAlerts.usuarioNaoEncontrado();
 			} else {
 				Session.funcOnline = funcionario;
 

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.ClienteDAO;
 import dao.EnderecoDAO;
 import javafx.fxml.FXML;
@@ -129,17 +130,7 @@ public class CadastroClienteController implements Initializable {
 				clienteDAO.update(cliente);
 			}
 
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Sucesso!");
-			if (this.buttonCadastrar.getText().equals("Atualizar")) {
-				alert.setHeaderText("Cliente atualizado com sucesso!");
-				alert.setContentText("Cliente atualizado com sucesso!");
-			} else {
-				alert.setHeaderText("Cliente cadastrado com sucesso!");
-				alert.setContentText("Cliente cadastrado com sucesso!");
-			}
-
-			alert.showAndWait();
+			MessageAlerts.dadosRegistrados();
 
 			Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 			actual.close();

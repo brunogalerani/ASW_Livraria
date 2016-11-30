@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -48,16 +49,25 @@
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="buttonVoltar" layoutX="403.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleBtnVoltar" style="-fx-border-color: transparent; -fx-background-color: #bf9d9d;" text="Voltar" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="buttonCadastrar" layoutX="25.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" style="-fx-border-color: #417f5f; -fx-background-color: transparent;" text="Cadastrar novo">
          <font>
             <Font name="Bauhaus 93" size="15.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <TableView fx:id="tableViewClientes" layoutX="202.0" layoutY="80.0" prefHeight="191.0" prefWidth="405.0">
         <columns>

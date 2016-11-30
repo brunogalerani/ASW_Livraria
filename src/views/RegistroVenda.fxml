@@ -83,11 +83,17 @@
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="buttonVoltar" layoutX="857.0" layoutY="602.0" mnemonicParsing="false" onAction="#handleBtnVoltar" style="-fx-border-color: transparent; -fx-background-color: #bf9d9d;" text="Voltar" textFill="WHITE">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="buttonSelecionarCliente" layoutX="481.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleBtnSelecionarCliente" style="-fx-border-color: #417f5f; -fx-background-color: transparent;" text="Selecionar cliente">
          <font>

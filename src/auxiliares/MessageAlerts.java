@@ -1,3 +1,4 @@
+
 package auxiliares;
 
 import java.util.Optional;
@@ -71,6 +72,13 @@ public class MessageAlerts {
 		alert.setTitle("Valor insuficiente!");
 		alert.setHeaderText("O valor informado é insuficiente!");
 		alert.setContentText("Por favor, insira um valor menor do que o informado!");
+		alert.showAndWait();
+	}
+	public static void objetoNaoSelecionado() {
+		alert = new Alert(Alert.AlertType.WARNING);
+		alert.setTitle("Item não selecionado!");
+		alert.setHeaderText("Não existe nenhum item selecionado!");
+		alert.setContentText("Por favor, selecione um item!");
 		alert.showAndWait();
 	}
 }
