@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+<<<<<<< HEAD
 import auxiliares.Session;
+=======
+import auxiliares.MessageAlerts;
+>>>>>>> branch 'master' of https://github.com/brunogalerani/SistemaLivraria_ASW.git
 import dao.FuncionarioDAO;
 import dao.GerenteDAO;
 import encryption.EncryptPassword;
@@ -69,8 +73,8 @@ public class LoginController implements Initializable {
 		String login = textFieldUsuario.getText();
 		String password = EncryptPassword.encryptSHA256(passwordFieldSenha.getText());
 
+//		MessageAlerts.campoObrigatorioEmBranco();
 		Alert alert = new Alert(Alert.AlertType.ERROR);
-
 		if (login.isEmpty()) {
 			alert.setTitle("Campo vazio!");
 			alert.setHeaderText("O campo \"Usuário\" está em branco!");
