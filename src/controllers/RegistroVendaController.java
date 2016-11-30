@@ -32,7 +32,7 @@ public class RegistroVendaController implements Initializable {
 	private Button buttonConcluir, buttonVoltar, buttonAdicionar, buttonRemover, buttonSelecionarCliente;
 
 	@FXML
-	private TextField textFieldQuantidade, textFieldCPF;
+	private TextField textFieldQuantidade, textFieldCPFCliente;
 
 	@FXML
 	private Label labelNomeProduto, labelCliente, labelTotalPreco;

@@ -86,7 +86,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="buttonEditar" alignment="TOP_CENTER" layoutX="624.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleBtnEditar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Editar">
+      <Button fx:id="buttonEditar" alignment="TOP_CENTER" layoutX="870.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleBtnEditar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Editar">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
@@ -94,15 +94,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="buttonCadastrar" alignment="TOP_CENTER" layoutX="465.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Cadastrar">
-         <font>
-            <Font name="Bauhaus 93" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="buttonApagar" alignment="TOP_CENTER" layoutX="942.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleBtnApagar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Apagar">
+      <Button fx:id="buttonCadastrar" alignment="TOP_CENTER" layoutX="571.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Cadastrar">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
@@ -128,14 +120,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="buttonDetalhes" alignment="TOP_CENTER" layoutX="783.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleBtnDetalhes" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Detalhes">
-         <font>
-            <Font name="Bauhaus 93" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
       <TableView fx:id="tableViewCliente" layoutX="34.0" layoutY="133.0" prefHeight="493.0" prefWidth="390.0">
         <columns>
           <TableColumn fx:id="tableColumnCPF" prefWidth="142.0" text="CPF" />

@@ -20,7 +20,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldCor, textFieldPotencia, textFieldLargura,
 	textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, 
 	textFieldAlimentacao, textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, 
-	textFieldBateria, textFieldMidia, textFieldPlataformaSuportada, textFieldNome;
+	textFieldBateria, textFieldMidia, textFieldPlataformaSuportada, textFieldNome, textFieldQuantidade;
 	@FXML
 	private DatePicker datePickerGarantia;
 	
