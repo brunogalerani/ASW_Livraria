@@ -29,7 +29,7 @@ import models.VideoGame;
 public class ListaProdutosController implements Initializable{
 	
 	@FXML
-	private Button buttonCadastrar, buttonEditar, buttonApagar, buttonDetalhes, buttonVoltar;
+	private Button buttonCadastrar, buttonEditar, buttonVoltar;
 	@FXML
 	private Label labelNome, labelCodigoDeBarras, labelMarca, labelPreco;
 	
@@ -171,15 +171,6 @@ public class ListaProdutosController implements Initializable{
 			this.labelPreco.setText("R$: " + newValue.getPreco());
 			
 		}
-	}
-	@FXML
-	public void handleBtnDetalhes(){
-		
-	}
-	
-	@FXML
-	public void handleBtnApagar(){
-		
 	}
 	
 	@FXML

@@ -33,7 +33,7 @@ public class RegistroVendaController implements Initializable {
 	private Button buttonConcluir, buttonVoltar, buttonAdicionar, buttonRemover, buttonSelecionarCliente;
 
 	@FXML
-	private TextField textFieldQuantidade, textFieldCPF;
+	private TextField textFieldQuantidade, textFieldCPFCliente;
 
 	@FXML
 	private Label labelNomeProduto, labelCliente, labelTotalPreco;
@@ -67,11 +67,6 @@ public class RegistroVendaController implements Initializable {
 
 		tableViewProdutosDisponiveis.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> selectedItemTableViewProdutosDisponiveis(newValue));
-
-		/*
-		 * if (cliente != null){ labelCliente.setText("Nome: " +
-		 * cliente.getNome() + "     CPF: " + cliente.getCpf()); }
-		 */
 	}
 
 	public void loadTableViewDisponivel() {
@@ -116,12 +111,13 @@ public class RegistroVendaController implements Initializable {
 						if (m.getId() == produtoSelecionado.getId()) {
 							prodComprando.remove(m);
 							break;
+							
 						}
 					}
 				}
 				prodComprando.add(mostraProduto);
-				
 				loadTableViewProdutosComprando();
+
 			} else {
 				MessageAlerts.valorInsuficiente();
 			}
@@ -149,7 +145,13 @@ public class RegistroVendaController implements Initializable {
 
 	@FXML
 	public void handleBtnRemover() {
-
+		for (MostraProduto m : prodComprando) {
+			if (m.getId() == produtoSelecionado.getId()) {
+				prodComprando.remove(m);
+				break;
+			}
+		}
+		loadTableViewProdutosComprando();
 	}
 
 	@FXML

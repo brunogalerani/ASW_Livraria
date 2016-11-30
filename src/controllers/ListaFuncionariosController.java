@@ -3,6 +3,7 @@ package controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import auxiliares.MessageAlerts;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -28,7 +30,7 @@ import models.Vendedor;
 public class ListaFuncionariosController implements Initializable {
 	
 	@FXML
-	private Button buttonCadastrar, buttonEditar, buttonApagar, buttonDetalhes, buttonVoltar;
+	private Button buttonCadastrar, buttonEditar, buttonVoltar;
 	@FXML
 	private Label labelNome, labelDataDeNascimento, labelTelefone, labelEmail, labelCEP;
 	@FXML
@@ -122,16 +124,6 @@ public class ListaFuncionariosController implements Initializable {
 		dialogStage.showAndWait();
 		
 		return controller.isButtonConfirmarClicked();
-	}
-	
-	@FXML
-	public void handleBtnDetalhes(){
-		
-	}
-	
-	@FXML
-	public void handleBtnApagar(){
-		
 	}
 	
 	@FXML

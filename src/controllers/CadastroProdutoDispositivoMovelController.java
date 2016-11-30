@@ -31,7 +31,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, textFieldAlimentacao,
 			textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, textFieldTamanhoTela,
 			textFieldTipoChip, textFieldQuantidadeChip, textFieldResolucao, textFieldTecnologiaSuportada, textFieldBateria,
-			textFieldNome;
+			textFieldNome, textFieldQuantidade;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
 
