@@ -66,11 +66,6 @@ public class RegistroVendaController implements Initializable {
 
 		tableViewProdutosDisponiveis.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> selectedItemTableViewProdutosDisponiveis(newValue));
-
-		/*
-		 * if (cliente != null){ labelCliente.setText("Nome: " +
-		 * cliente.getNome() + "     CPF: " + cliente.getCpf()); }
-		 */
 	}
 
 	public void loadTableViewDisponivel() {
@@ -121,7 +116,7 @@ public class RegistroVendaController implements Initializable {
 						}
 					}
 				}
-				prodComprando.add(mostraProduto);				
+				prodComprando.add(mostraProduto);
 				loadTableViewProdutosComprando();
 
 			} else {
@@ -169,7 +164,7 @@ public class RegistroVendaController implements Initializable {
 
 	@FXML
 	public void handleBtnSelecionarCliente() {
-		
+
 	}
 
 }
