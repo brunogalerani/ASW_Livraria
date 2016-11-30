@@ -36,8 +36,8 @@ public class Pedido {
 		return cliente;
 	}
 
-	public void setFuncionario(Cliente funcionario) {
-		this.cliente = funcionario;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public Funcionario getFuncionario() {
@@ -54,6 +54,14 @@ public class Pedido {
 
 	public void addProdutos(Produto produto) {
 		this.produtos.add(produto);
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
 
 }

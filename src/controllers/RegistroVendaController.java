@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import auxiliares.MostraProduto;
+import auxiliares.Session;
+import dao.ClienteDAO;
 import dao.PedidoDAO;
 import dao.ProdutoDAO;
 import javafx.collections.FXCollections;
@@ -22,6 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.Cliente;
+import models.Pedido;
 import models.Produto;
 
 public class RegistroVendaController implements Initializable {
@@ -51,17 +55,21 @@ public class RegistroVendaController implements Initializable {
 	private Cliente cliente;
 	private List<Produto> prodDisponivel;
 	private List<MostraProduto> prodComprando;
+	private List<Produto> listaFinal;
 	private ObservableList<Produto> prodObsDisponivel;
 	private ObservableList<MostraProduto> prodObsComprando;
 	private PedidoDAO pedidodao;
 	private ProdutoDAO produtodao;
 	private Produto produtoSelecionado;
+	private ClienteDAO clienteDAO;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		pedidodao = new PedidoDAO();
 		prodComprando = new ArrayList<MostraProduto>();
 		produtodao = new ProdutoDAO();
+		clienteDAO = new ClienteDAO();
+		listaFinal = new ArrayList<Produto>();
 		loadTableViewDisponivel();
 
 		tableViewProdutosDisponiveis.getSelectionModel().selectedItemProperty()
@@ -113,7 +121,7 @@ public class RegistroVendaController implements Initializable {
 						if (m.getId() == produtoSelecionado.getId()) {
 							prodComprando.remove(m);
 							break;
-							
+
 						}
 					}
 				}
@@ -139,7 +147,20 @@ public class RegistroVendaController implements Initializable {
 
 	@FXML
 	public void handleBtnConcluir() {
-
+		Produto temp;
+		for(MostraProduto m : prodComprando){
+			temp = produtodao.selectById(m.getId());
+			temp.removeQuantidade(m.getQuantidade());
+			produtodao.update(temp);
+			for(int i = 0 ; i < m.getQuantidade() ; i++){
+				listaFinal.add(temp);
+			}
+		}
+		Pedido pedido = new Pedido();
+		pedido.setCliente(cliente);
+		pedido.setProdutos(listaFinal);
+		pedido.setVendedor(Session.funcOnline);
+		pedidodao.insert(pedido);
 	}
 
 	@FXML
@@ -165,7 +186,13 @@ public class RegistroVendaController implements Initializable {
 
 	@FXML
 	public void handleBtnSelecionarCliente() {
-
+		try {
+			long cpf = Long.parseLong(textFieldCPFCliente.getText());
+			cliente = clienteDAO.selectFromCPF(cpf);
+			labelCliente.setText(cliente.getNome());
+		} catch (Exception e) {
+			MessageAlerts.usuarioNaoEncontrado();
+		}
 	}
 
 }
