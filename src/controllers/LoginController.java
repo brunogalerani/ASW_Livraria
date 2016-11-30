@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import auxiliares.Session;
 import dao.FuncionarioDAO;
 import dao.GerenteDAO;
 import encryption.EncryptPassword;
@@ -88,6 +89,8 @@ public class LoginController implements Initializable {
 				alert.setContentText("Por favor, verifique seus dados e tente novamente!");
 				alert.showAndWait();
 			} else {
+				Session.funcOnline = funcionario;
+				
 				Stage actual = (Stage) buttonLogin.getScene().getWindow();
 			
 				actual.close();

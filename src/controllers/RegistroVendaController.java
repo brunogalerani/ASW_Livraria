@@ -121,9 +121,9 @@ public class RegistroVendaController implements Initializable {
 						}
 					}
 				}
-				prodComprando.add(mostraProduto);
-				
+				prodComprando.add(mostraProduto);				
 				loadTableViewProdutosComprando();
+
 			} else {
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("Erro de quantidade!");
@@ -158,12 +158,18 @@ public class RegistroVendaController implements Initializable {
 
 	@FXML
 	public void handleBtnRemover() {
-
+		for (MostraProduto m : prodComprando) {
+			if (m.getId() == produtoSelecionado.getId()) {
+				prodComprando.remove(m);
+				break;
+			}
+		}
+		loadTableViewProdutosComprando();
 	}
 
 	@FXML
 	public void handleBtnSelecionarCliente() {
-
+		
 	}
 
 }
