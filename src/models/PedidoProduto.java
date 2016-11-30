@@ -12,4 +12,5 @@ public class PedidoProduto {
 	private Pedido pedido;
 	@ManyToOne
 	private Produto produto;
+	
 }
