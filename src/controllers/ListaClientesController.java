@@ -25,7 +25,7 @@ import models.Cliente;
 public class ListaClientesController implements Initializable {
 
 	@FXML
-	private Button buttonCadastrar, buttonEditar, buttonApagar, buttonDetalhes, buttonVoltar;
+	private Button buttonCadastrar, buttonEditar, buttonVoltar;
 	@FXML
 	private Label labelNome, labelDataDeNascimento, labelTelefone, labelEmail, labelCEP;
 	@FXML
@@ -101,16 +101,6 @@ public class ListaClientesController implements Initializable {
 				loadTableViewCliente();
 			}
 		}
-	}
-
-	@FXML
-	public void handleBtnDetalhes() {
-		
-	}
-
-	@FXML
-	public void handleBtnApagar() {
-
 	}
 
 	@FXML

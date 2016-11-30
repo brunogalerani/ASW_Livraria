@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListaProdutosController">
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListaProdutosController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
          <menus>
@@ -96,7 +96,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="buttonEditar" alignment="TOP_CENTER" layoutX="634.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleBtnEditar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Editar">
+      <Button fx:id="buttonEditar" alignment="TOP_CENTER" layoutX="862.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleBtnEditar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Editar">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
@@ -104,23 +104,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="buttonCadastrar" alignment="TOP_CENTER" layoutX="475.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Cadastrar">
-         <font>
-            <Font name="Bauhaus 93" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="buttonApagar" alignment="TOP_CENTER" layoutX="952.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleBtnApagar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Apagar">
-         <font>
-            <Font name="Bauhaus 93" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="buttonDetalhes" alignment="TOP_CENTER" layoutX="793.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleBtnDetalhes" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Detalhes">
+      <Button fx:id="buttonCadastrar" alignment="TOP_CENTER" layoutX="563.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleBtnCadastrar" prefHeight="41.0" prefWidth="112.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: transparent;" text="Cadastrar">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
