@@ -4,13 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-<<<<<<< HEAD
 import auxiliares.Session;
-=======
-import auxiliares.MessageAlerts;
->>>>>>> branch 'master' of https://github.com/brunogalerani/SistemaLivraria_ASW.git
 import dao.FuncionarioDAO;
-import dao.GerenteDAO;
 import encryption.EncryptPassword;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -24,7 +19,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Funcionario;
-import models.Gerente;
 
 public class LoginController implements Initializable {
 	@FXML
@@ -40,24 +34,11 @@ public class LoginController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		buttonLogin.setDefaultButton(true);
 		Platform.runLater(new Runnable() {
-	        @Override
-	        public void run() {
-	            textFieldUsuario.requestFocus();
-	        }
-	    });
-		
-//		 Gerente gerente = new Gerente();
-//		 gerente.setCpf(123456);
-//		 gerente.setLogin("Bruno");
-//		 gerente.setSenha(EncryptPassword.encryptSHA256("teste"));
-//		 GerenteDAO t = new GerenteDAO();
-//		 t.insert(gerente);
-		
-		// Vendedor vendedor = new Vendedor();
-		// vendedor.setLogin("Alo");
-		// vendedor.setSenha(EncryptPassword.encryptSHA256("opa"));
-		// VendedorDAO dao = new VendedorDAO();
-		// dao.insert(vendedor);
+			@Override
+			public void run() {
+				textFieldUsuario.requestFocus();
+			}
+		});
 	}
 
 	@FXML
@@ -73,7 +54,6 @@ public class LoginController implements Initializable {
 		String login = textFieldUsuario.getText();
 		String password = EncryptPassword.encryptSHA256(passwordFieldSenha.getText());
 
-//		MessageAlerts.campoObrigatorioEmBranco();
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 		if (login.isEmpty()) {
 			alert.setTitle("Campo vazio!");
@@ -94,11 +74,11 @@ public class LoginController implements Initializable {
 				alert.showAndWait();
 			} else {
 				Session.funcOnline = funcionario;
-				
+
 				Stage actual = (Stage) buttonLogin.getScene().getWindow();
-			
+
 				actual.close();
-				
+
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(PainelInicialFuncionarioClienteController.class
 						.getResource("/views/PainelInicialFuncionarioCliente.fxml"));
