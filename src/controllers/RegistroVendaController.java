@@ -122,6 +122,7 @@ public class RegistroVendaController implements Initializable {
 					}
 				}
 				prodComprando.add(mostraProduto);
+				
 				loadTableViewProdutosComprando();
 			} else {
 				Alert alert = new Alert(AlertType.WARNING);

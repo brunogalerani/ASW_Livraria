@@ -9,7 +9,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Transient;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Produto {
 
 	@Id
@@ -21,7 +21,7 @@ public abstract class Produto {
 	private int quantidade;
 	private String nome;
 	private String marca;
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -39,7 +39,6 @@ public abstract class Produto {
 		this.tipoProduto = this.getClass().getName().substring(7);
 	}
 
-	
 	public String getMarca() {
 		return marca;
 	}
@@ -87,5 +86,13 @@ public abstract class Produto {
 	public void setTipoProduto(String tipoProduto) {
 		this.tipoProduto = tipoProduto;
 	}
-	
+
+	public void addQuantidade(int quantidade) {
+		this.quantidade += quantidade;
+	}
+
+	public void removeQuantidade(int quantidade) {
+		this.quantidade -= quantidade;
+	}
+
 }
