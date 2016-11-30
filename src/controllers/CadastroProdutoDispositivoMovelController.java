@@ -4,6 +4,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.CelularDAO;
 import dao.TabletDAO;
 import javafx.fxml.FXML;
@@ -219,9 +220,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastrarDispositivo();
-		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
-		confirmacaoCadastro.setHeaderText("Dispositivo cadastrado com sucesso!");
-		confirmacaoCadastro.showAndWait();
+		MessageAlerts.dadosRegistrados();
 		this.voltar();
 	}
 	private void voltar() {

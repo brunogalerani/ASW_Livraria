@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.FuncionarioDAO;
 import dao.VendedorDAO;
 import javafx.collections.FXCollections;
@@ -93,9 +94,7 @@ public class ListaFuncionariosController implements Initializable {
 		Funcionario funcionario= this.tableViewFuncionarios.getSelectionModel().getSelectedItem();
 
 		if (funcionario == null) {
-			Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-			errorAlert.setContentText("Por favor, escolha um funcionário na Tabela!");
-			errorAlert.show();
+			MessageAlerts.objetoNaoSelecionado();
 		} else {
 			boolean buttonConfirmarClicked = showAnchorPaneCadastroFuncionario(funcionario);
 

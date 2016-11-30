@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.LivroFisicoDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,9 +64,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastrar();
-		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
-		confirmacaoCadastro.setHeaderText("Livro cadastrado com sucesso!");
-		confirmacaoCadastro.showAndWait();
+		MessageAlerts.dadosRegistrados();
 		this.voltar();
 	}
 	private void cadastrar() {

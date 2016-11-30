@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -113,9 +114,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 			this.closeDialogStage();
 			nextStage.show();
 		}else {
-			Alert selecioneUmProduto = new Alert(Alert.AlertType.WARNING);
-			selecioneUmProduto.setHeaderText("Por favor, selecione tipo de produto");
-			selecioneUmProduto.showAndWait();
+			MessageAlerts.objetoNaoSelecionado();
 		}
 	}
 

@@ -4,6 +4,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.VideoGameDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,9 +64,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 	@FXML
 	private void handleBtnCadastrar() {
 		this.cadastro();
-		Alert confirmacaoCadastro = new Alert(Alert.AlertType.INFORMATION);
-		confirmacaoCadastro.setHeaderText("Video Game cadastrado com sucesso!");
-		confirmacaoCadastro.showAndWait();
+		MessageAlerts.dadosRegistrados();
 		this.voltar();
 	}
 	private void cadastro() {

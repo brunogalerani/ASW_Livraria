@@ -69,25 +69,15 @@ public class LoginController implements Initializable {
 		String login = textFieldUsuario.getText();
 		String password = EncryptPassword.encryptSHA256(passwordFieldSenha.getText());
 
-//		MessageAlerts.campoObrigatorioEmBranco();
 		Alert alert = new Alert(Alert.AlertType.ERROR);
 		if (login.isEmpty()) {
-			alert.setTitle("Campo vazio!");
-			alert.setHeaderText("O campo \"Usuário\" está em branco!");
-			alert.setContentText("Por favor, preencha todos os campos antes de prosseguir!");
-			alert.showAndWait();
+			MessageAlerts.campoObrigatorioEmBranco();
 		} else if (password.isEmpty()) {
-			alert.setTitle("Campo vazio!");
-			alert.setHeaderText("O campo \"Senha\" está em branco!");
-			alert.setContentText("Por favor, preencha todos os campos antes de prosseguir!");
-			alert.showAndWait();
+			MessageAlerts.campoObrigatorioEmBranco();
 		} else {
 			Funcionario funcionario = funcionarioDAO.selectFromLogin(login, password);
 			if (funcionario == null) {
-				alert.setTitle("Login inválido!");
-				alert.setHeaderText("Credenciais inválidas ou usuário inexistente!");
-				alert.setContentText("Por favor, verifique seus dados e tente novamente!");
-				alert.showAndWait();
+				MessageAlerts.usuarioNaoEncontrado();
 			} else {
 				Stage actual = (Stage) buttonLogin.getScene().getWindow();
 			

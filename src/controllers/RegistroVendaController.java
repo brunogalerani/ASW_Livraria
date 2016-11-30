@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import auxiliares.MostraProduto;
 import dao.PedidoDAO;
 import dao.ProdutoDAO;
@@ -104,10 +105,7 @@ public class RegistroVendaController implements Initializable {
 		try {
 			int quantidade = Integer.parseInt(textFieldQuantidade.getText());
 			if (quantidade <= 0) {
-				Alert alert = new Alert(AlertType.WARNING);
-				alert.setTitle("Erro de quantidade!");
-				alert.setContentText("Insira um valor válido para a quantidade!");
-				alert.showAndWait();
+				MessageAlerts.valorInvalido();
 				return;
 			}
 			if (produtoSelecionado.getQuantidade() >= quantidade) {
@@ -125,17 +123,10 @@ public class RegistroVendaController implements Initializable {
 				
 				loadTableViewProdutosComprando();
 			} else {
-				Alert alert = new Alert(AlertType.WARNING);
-				alert.setTitle("Erro de quantidade!");
-				alert.setHeaderText("Quantidade insuficiente do produto selecionado!");
-				alert.setContentText("Verifique o estoque e tente novamente!");
-				alert.showAndWait();
+				MessageAlerts.valorInsuficiente();
 			}
 		} catch (NumberFormatException e) {
-			Alert alert = new Alert(AlertType.WARNING);
-			alert.setTitle("Erro de quantidade!");
-			alert.setContentText("Insira um valor válido para a quantidade!");
-			alert.showAndWait();
+			MessageAlerts.valorInsuficiente();
 			return;
 		}
 
