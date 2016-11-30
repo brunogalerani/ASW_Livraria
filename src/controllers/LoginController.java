@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import auxiliares.Session;
 import dao.FuncionarioDAO;
 import encryption.EncryptPassword;
