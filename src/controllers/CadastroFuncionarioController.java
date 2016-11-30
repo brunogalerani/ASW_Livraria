@@ -6,48 +6,76 @@ import java.util.ResourceBundle;
 
 import dao.EnderecoDAO;
 import dao.FuncionarioDAO;
+import dao.GerenteDAO;
+import dao.VendedorDAO;
 import encryption.EncryptPassword;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import models.Endereco;
 import models.Funcionario;
+import models.Gerente;
 import models.Vendedor;
 
-public class CadastroFuncionarioController implements Initializable{
-	
+public class CadastroFuncionarioController implements Initializable {
+
 	@FXML
-	private TextField textFieldNome, textFieldCPF, textFieldRG, textFieldTelefone,
-		textFieldEmail, textFieldCEP, textFieldRua, textFieldNumero, textFieldBairro,
-		textFieldComplemento, textFieldEstado, textFieldCidade;
+	private TextField textFieldNome, textFieldCPF, textFieldRG, textFieldTelefone, textFieldEmail, textFieldCEP,
+			textFieldRua, textFieldNumero, textFieldBairro, textFieldComplemento, textFieldEstado, textFieldCidade;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
 	@FXML
 	private DatePicker datePickerDataNascimento;
-	
-	private Vendedor funcionario;
+	@FXML
+	private RadioButton radioButtonGerente, radioButtonVendedor;
+
+	private Vendedor vendedor;
+	private Gerente gerente;
 	private Endereco endereco;
-	private FuncionarioDAO funcionariodao;
+	private VendedorDAO vendedorDao;
+	private GerenteDAO gerenteDao;
+	private FuncionarioDAO funcionarioDao;
 	private Stage dialogStage;
 	private boolean buttonConfirmarClicked;
-	
+	private boolean checked;
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		this.funcionariodao = new FuncionarioDAO();
-		this.funcionario = new Vendedor();
+		this.gerenteDao = new GerenteDAO();
+		this.vendedorDao = new VendedorDAO();
+		this.radioButtonVendedor.setSelected(true);
+		this.gerente = new Gerente();
+		this.vendedor = new Vendedor();
 		this.endereco = new Endereco();
 	}
 	
-	public Vendedor getFuncionario(){
-		return funcionario;
+	@FXML
+	private void isRadioButtonChecked(){
+		if(this.radioButtonGerente.isArmed()){
+			this.checked = !radioButtonGerente.isArmed();
+			radioButtonVendedor.setSelected(checked);
+			return;
+		} else if (this.radioButtonVendedor.isArmed()){
+			this.checked = !radioButtonVendedor.isArmed();
+			radioButtonGerente.setSelected(checked);
+		}
 	}
-	
-	public Funcionario setFuncionario(Funcionario funcionario){
+
+	public Vendedor getVendedor() {
+		return vendedor;
+	}
+
+	public Gerente getGerente() {
+		return gerente;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
 		this.endereco = funcionario.getEndereco();
 		this.textFieldBairro.setText(endereco.getBairro());
 		this.textFieldCEP.setText(String.valueOf(endereco.getCep()));
@@ -64,17 +92,27 @@ public class CadastroFuncionarioController implements Initializable{
 		this.datePickerDataNascimento.setValue(funcionario.getDataNascimento());
 		this.buttonCadastrar.setText("Atualizar");
 		
-		return funcionario;
+		if(funcionario.getClass() == Vendedor.class){
+			this.radioButtonVendedor.setSelected(true);
+			this.radioButtonGerente.setSelected(false);
+			this.vendedor = (Vendedor) funcionario;
+		} else if (funcionario.getClass() == Gerente.class){
+			this.radioButtonGerente.setSelected(true);
+			this.radioButtonVendedor.setSelected(false);
+			this.gerente = (Gerente) funcionario;
+		}
+		this.radioButtonGerente.setDisable(true);
+		this.radioButtonVendedor.setDisable(true);
 	}
-	
-	public void setDialogStage(Stage dialogStage){
+
+	public void setDialogStage(Stage dialogStage) {
 		this.dialogStage = dialogStage;
 	}
-	
-	public Stage getDialogStage(){
+
+	public Stage getDialogStage() {
 		return dialogStage;
 	}
-	
+
 	public boolean isButtonConfirmarClicked() {
 		return buttonConfirmarClicked;
 	}
@@ -115,30 +153,55 @@ public class CadastroFuncionarioController implements Initializable{
 			} else {
 				endDAO.update(endereco);
 			}
+			
+			if (radioButtonVendedor.isSelected()) {
+				vendedor.setNome(nome);
+				vendedor.setDataNascimento(dataNascimento);
+				vendedor.setCpf(cpf);
+				vendedor.setRg(rg);
+				vendedor.setTelefone(telefone);
+				vendedor.setEmail(email);
+				vendedor.setEndereco(endereco);
 
-			funcionario.setNome(nome);
-			funcionario.setDataNascimento(dataNascimento);
-			funcionario.setCpf(cpf);
-			funcionario.setRg(rg);
-			funcionario.setTelefone(telefone);
-			funcionario.setEmail(email);
-			funcionario.setEndereco(endereco);
-			
-			String geraLogin[] = funcionario.getNome().split(" ", 2);
-			String login = geraLogin[0];
-			String login2 = String.valueOf(geraLogin[1].charAt(0));
-			
-			funcionario.setLogin((login+login2).toLowerCase());
-			funcionario.setSenha(EncryptPassword.encryptSHA256(((login+"123").toLowerCase())));
-			
-			if (funcionario.getId() == null) {
-				funcionariodao.insert(funcionario);
-				buttonConfirmarClicked = true;
-			} else {
-				funcionariodao.update(funcionario);
-				buttonConfirmarClicked = true;
+				String geraLogin[] = vendedor.getNome().split(" ", 2);
+				String login = geraLogin[0];
+				String login2 = String.valueOf(geraLogin[1].charAt(0));
+
+				vendedor.setLogin((login + login2).toLowerCase());
+				vendedor.setSenha(EncryptPassword.encryptSHA256(((login + "123").toLowerCase())));
+
+				if (vendedor.getId() == null) {
+					vendedorDao.insert(vendedor);
+					buttonConfirmarClicked = true;
+				} else {
+					vendedorDao.update(vendedor);
+					buttonConfirmarClicked = true;
+				}
+			} else if (radioButtonGerente.isSelected()){
+				gerente.setNome(nome);
+				gerente.setDataNascimento(dataNascimento);
+				gerente.setCpf(cpf);
+				gerente.setRg(rg);
+				gerente.setTelefone(telefone);
+				gerente.setEmail(email);
+				gerente.setEndereco(endereco);
+
+				String geraLogin[] = gerente.getNome().split(" ", 2);
+				String login = geraLogin[0];
+				String login2 = String.valueOf(geraLogin[1].charAt(0));
+
+				gerente.setLogin((login + login2).toLowerCase());
+				gerente.setSenha(EncryptPassword.encryptSHA256(((login + "gerente").toLowerCase())));
+
+				if (gerente.getId() == null) {
+					gerenteDao.insert(gerente);
+					buttonConfirmarClicked = true;
+				} else {
+					gerenteDao.update(gerente);
+					buttonConfirmarClicked = true;
+				}
 			}
-
+			
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Sucesso!");
 			if (this.buttonCadastrar.getText().equals("Atualizar")) {
@@ -157,11 +220,11 @@ public class CadastroFuncionarioController implements Initializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
 	private void handleBtnVoltar() {
 		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 		actual.close();
 	}
-	
+
 }

@@ -85,6 +85,7 @@ public class ListaFuncionariosController implements Initializable {
 		next.setScene(scene);
 		
 		next.showAndWait();		
+		loadTableViewFuncionario();
 	}
 	
 	@FXML

@@ -1,5 +1,6 @@
 /META-INF/
 /app/
+/auxiliares/
 /controllers/
 /dao/
 /database/
@@ -7,5 +8,3 @@
 /models/
 /resources/
 /views/
-/modelaux/
-/auxiliares/
