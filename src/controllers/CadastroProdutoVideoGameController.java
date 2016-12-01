@@ -64,9 +64,14 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 	}
 	@FXML
 	private void handleBtnCadastrar() {
-		this.cadastro();
-		MessageAlerts.dadosRegistrados();
-		this.voltar();
+		if (textFieldNome.getText().isEmpty() || textFieldCodigoBarras.getText().isEmpty()
+				|| textFieldFabricante.getText().isEmpty() || textFieldPreco.getText().isEmpty()) {
+					MessageAlerts.campoObrigatorioEmBranco();
+		} else {
+			this.cadastro();
+			MessageAlerts.dadosRegistrados();
+			this.voltar();
+		}
 	}
 	private void cadastro() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());

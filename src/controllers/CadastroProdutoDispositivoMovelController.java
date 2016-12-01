@@ -220,9 +220,14 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 
 	@FXML
 	private void handleBtnCadastrar() {
-		this.cadastrarDispositivo();
-		MessageAlerts.dadosRegistrados();
-		this.voltar();
+		if (textFieldNome.getText().isEmpty() || textFieldCodigoBarras.getText().isEmpty()
+				|| textFieldMarca.getText().isEmpty() || textFieldPreco.getText().isEmpty()) {
+					MessageAlerts.campoObrigatorioEmBranco();
+		} else {
+			this.cadastrarDispositivo();
+			MessageAlerts.dadosRegistrados();
+			this.voltar();
+		}
 	}
 	private void voltar() {
 		Stage actual = (Stage) buttonVoltar.getScene().getWindow();

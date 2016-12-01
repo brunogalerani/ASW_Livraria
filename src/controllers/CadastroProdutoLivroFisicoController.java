@@ -64,9 +64,14 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 	}
 	@FXML
 	private void handleBtnCadastrar() {
-		this.cadastrar();
-		MessageAlerts.dadosRegistrados();
-		this.voltar();
+		if (textFieldNome.getText().isEmpty() || textFieldCodigoBarras.getText().isEmpty()
+				|| textFieldISBN.getText().isEmpty() || textFieldPreco.getText().isEmpty()) {
+					MessageAlerts.campoObrigatorioEmBranco();
+		} else {
+			this.cadastrar();
+			MessageAlerts.dadosRegistrados();
+			this.voltar();
+		}
 	}
 	private void cadastrar() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
