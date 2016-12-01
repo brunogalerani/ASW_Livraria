@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import auxiliares.MessageAlerts;
 import dao.ClienteDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -90,9 +91,7 @@ public class ListaClientesController implements Initializable {
 		Cliente cliente = this.tableViewCliente.getSelectionModel().getSelectedItem();
 
 		if (cliente == null) {
-			Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-			errorAlert.setContentText("Por favor, escolha um cliente na Tabela!");
-			errorAlert.show();
+			MessageAlerts.objetoNaoSelecionado();
 		} else {
 			boolean buttonConfirmarClicked = showAnchorPaneCadastroCliente(cliente);
 

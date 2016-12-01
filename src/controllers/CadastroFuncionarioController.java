@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -214,8 +215,10 @@ public class CadastroFuncionarioController implements Initializable {
 
 	@FXML
 	private void handleBtnVoltar() {
-		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
-		actual.close();
+		if (MessageAlerts.cancelarCadastro().get() == ButtonType.OK) {
+			Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+			actual.close();	
+		}
 	}
 
 }
