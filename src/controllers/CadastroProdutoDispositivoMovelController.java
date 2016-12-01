@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -229,7 +230,9 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	}
 	@FXML
 	private void handleBtnVoltar() {
-		this.voltar();
+		if (MessageAlerts.cancelarCadastro().get() == ButtonType.OK) {
+			this.voltar();	
+		}
 	}
 
 }
