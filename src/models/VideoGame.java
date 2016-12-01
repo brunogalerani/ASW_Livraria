@@ -7,8 +7,9 @@ import javax.persistence.Id;
 
 @Entity
 public class VideoGame extends Eletronicos {
-	
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String midia;
 	private String plataformaSuportada;
@@ -31,6 +32,14 @@ public class VideoGame extends Eletronicos {
 
 	public void setPlataformaSuportada(String plataformaSuportada) {
 		this.plataformaSuportada = plataformaSuportada;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

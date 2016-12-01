@@ -79,7 +79,7 @@ public class MessageAlerts {
 	public static void valorInsuficiente() {
 		alert = new Alert(Alert.AlertType.WARNING);
 		alert.setTitle("Valor insuficiente!");
-		alert.setHeaderText("O valor informado é insuficiente!");
+		alert.setHeaderText("Não é possível utilizar o valor informado!");
 		alert.setContentText("Por favor, insira um valor menor do que o informado!");
 		alert.showAndWait();
 	}
