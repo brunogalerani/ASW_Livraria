@@ -7,7 +7,6 @@ import auxiliares.MessageAlerts;
 import dao.LivroFisicoDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
@@ -15,34 +14,35 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.LivroFisico;
 
-public class CadastroProdutoLivroFisicoController  implements Initializable{
-	
+public class CadastroProdutoLivroFisicoController implements Initializable {
+
 	@FXML
-	private TextField textFieldCodigoBarras, textFieldPreco, textFieldTitulo, textFieldIdioma, textFieldAno, 
-	textFieldTipo, textFieldISBN, textFieldCategoria, textFieldNumeroPaginas, textFieldEditora, textFieldAutor,
-	textFieldAltura, textFieldLargura, textFieldProfundidade, textFieldPeso, textFieldNome, textFieldQuantidade;
-	
+	private TextField textFieldCodigoBarras, textFieldPreco, textFieldTitulo, textFieldIdioma, textFieldAno,
+			textFieldTipo, textFieldISBN, textFieldCategoria, textFieldNumeroPaginas, textFieldEditora, textFieldAutor,
+			textFieldAltura, textFieldLargura, textFieldProfundidade, textFieldPeso, textFieldNome, textFieldQuantidade;
+
 	@FXML
 	private TextArea textAreaResumo;
-	
+
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
-	
+
 	private LivroFisicoDAO livroFisicoDAO;
 	private LivroFisico livroFisico;
 	private boolean alteracao = false;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.livroFisicoDAO = new LivroFisicoDAO();
-		
+
 	}
-	
+
 	public void setLivroFisico(LivroFisico livroFisico) {
 		this.livroFisico = livroFisico;
 		this.alteracao = true;
 		this.carregarCampos();
 	}
-	
+
 	private void carregarCampos() {
 		this.textAreaResumo.setText(this.livroFisico.getResumo());
 		this.textFieldAltura.setText(String.valueOf(this.livroFisico.getAltura()));
@@ -63,17 +63,22 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		this.textFieldTitulo.setText(this.livroFisico.getTitulo());
 		this.textFieldQuantidade.setText(String.valueOf(this.livroFisico.getQuantidade()));
 	}
+
 	@FXML
 	private void handleBtnCadastrar() {
 		if (textFieldNome.getText().isEmpty() || textFieldCodigoBarras.getText().isEmpty()
 				|| textFieldISBN.getText().isEmpty() || textFieldPreco.getText().isEmpty()) {
-					MessageAlerts.campoObrigatorioEmBranco();
+			MessageAlerts.campoObrigatorioEmBranco();
 		} else {
 			this.cadastrar();
 			MessageAlerts.dadosRegistrados();
 			this.voltar();
 		}
 	}
+
+	/*
+	 * Método para "setar" os valores no Livro Fisico e inserí-lo no BD
+	 */
 	private void cadastrar() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
@@ -93,7 +98,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
 		String nome = this.textFieldNome.getText();
 		int quantidade = Integer.parseInt(this.textFieldQuantidade.getText());
-		
+
 		if (!alteracao) {
 			this.livroFisico = new LivroFisico();
 		}
@@ -115,18 +120,20 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		this.livroFisico.setPeso(peso);
 		this.livroFisico.setNome(nome);
 		this.livroFisico.setQuantidade(quantidade);
-		
+
 		if (alteracao) {
 			this.livroFisicoDAO.update(livroFisico);
-		}else {
+		} else {
 			this.livroFisicoDAO.insert(livroFisico);
 		}
-		
+
 	}
+
 	private void voltar() {
 		Stage actual = (Stage) buttonVoltar.getScene().getWindow();
 		actual.close();
 	}
+
 	@FXML
 	private void handleBtnVoltar() {
 		if (MessageAlerts.cancelarCadastro().get() == ButtonType.OK) {

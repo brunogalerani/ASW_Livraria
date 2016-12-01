@@ -13,7 +13,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -55,13 +54,16 @@ public class LoginController implements Initializable {
 		String login = textFieldUsuario.getText();
 		String password = EncryptPassword.encryptSHA256(passwordFieldSenha.getText());
 
-		Alert alert = new Alert(Alert.AlertType.ERROR);
-		if (login.isEmpty()) {
-			MessageAlerts.campoObrigatorioEmBranco();
-		} else if (password.isEmpty()) {
+		/*
+		 * Verifica se os campos foram preenchidos
+		 */
+		if (login.isEmpty() || password.isEmpty()) {
 			MessageAlerts.campoObrigatorioEmBranco();
 		} else {
 			Funcionario funcionario = funcionarioDAO.selectFromLogin(login, password);
+			/*
+			 * Verifica se encontrou um usuário com as credenciais fornecidas
+			 */
 			if (funcionario == null) {
 				MessageAlerts.usuarioNaoEncontrado();
 			} else {

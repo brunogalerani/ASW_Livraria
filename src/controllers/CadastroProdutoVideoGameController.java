@@ -8,7 +8,6 @@ import auxiliares.MessageAlerts;
 import dao.VideoGameDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
@@ -16,31 +15,34 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.VideoGame;
 
-public class CadastroProdutoVideoGameController  implements Initializable{
+public class CadastroProdutoVideoGameController implements Initializable {
 
 	@FXML
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldCor, textFieldPotencia, textFieldLargura,
-	textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, 
-	textFieldAlimentacao, textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, 
-	textFieldBateria, textFieldMidia, textFieldPlataformaSuportada, textFieldNome, textFieldQuantidade;
+			textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, textFieldAlimentacao,
+			textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, textFieldBateria,
+			textFieldMidia, textFieldPlataformaSuportada, textFieldNome, textFieldQuantidade;
 	@FXML
 	private DatePicker datePickerGarantia;
-	
+
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
-	
+
 	private VideoGameDAO videoGameDAO;
 	private VideoGame videoGame;
 	private boolean alteracao = false;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.videoGameDAO = new VideoGameDAO();
 	}
+
 	public void setVideoGame(VideoGame videoGame) {
 		this.videoGame = videoGame;
 		this.alteracao = true;
 		this.carregarCampos();
 	}
+
 	private void carregarCampos() {
 		this.textFieldAlimentacao.setText(String.valueOf(this.videoGame.getAlimentacao()));
 		this.textFieldAltura.setText(String.valueOf(this.videoGame.getAltura()));
@@ -63,17 +65,23 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.datePickerGarantia.setValue(this.videoGame.getGarantia());
 		this.textFieldQuantidade.setText(String.valueOf(this.videoGame.getQuantidade()));
 	}
+
 	@FXML
 	private void handleBtnCadastrar() {
 		if (textFieldNome.getText().isEmpty() || textFieldCodigoBarras.getText().isEmpty()
 				|| textFieldFabricante.getText().isEmpty() || textFieldPreco.getText().isEmpty()) {
-					MessageAlerts.campoObrigatorioEmBranco();
+			MessageAlerts.campoObrigatorioEmBranco();
 		} else {
 			this.cadastro();
 			MessageAlerts.dadosRegistrados();
 			this.voltar();
 		}
 	}
+	
+	/*
+	 * Método para "setar" os valores do VideoGame e inserí-lo no BD
+	 */
+	
 	private void cadastro() {
 		double preco = Double.parseDouble(this.textFieldPreco.getText());
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
@@ -95,11 +103,11 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		String nome = this.textFieldNome.getText();
 		String bateria = this.textFieldBateria.getText();
 		int quantidade = Integer.parseInt(this.textFieldQuantidade.getText());
-		
+
 		if (!alteracao) {
 			this.videoGame = new VideoGame();
 		}
-		
+
 		this.videoGame.setPreco(preco);
 		this.videoGame.setCodBarras(codBarras);
 		this.videoGame.setCor(cor);
@@ -120,18 +128,20 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGame.setNome(nome);
 		this.videoGame.setBateria(bateria);
 		this.videoGame.setQuantidade(quantidade);
-		
+
 		if (alteracao) {
 			this.videoGameDAO.update(videoGame);
 		} else {
 			this.videoGameDAO.insert(videoGame);
 		}
-		
+
 	}
+
 	private void voltar() {
 		Stage actual = (Stage) buttonVoltar.getScene().getWindow();
 		actual.close();
 	}
+
 	@FXML
 	private void handleBtnVoltar() {
 		if (MessageAlerts.cancelarCadastro().get() == ButtonType.OK) {

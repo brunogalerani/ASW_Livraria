@@ -9,13 +9,11 @@ import dao.ClienteDAO;
 import dao.EnderecoDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import models.Cliente;
 import models.Endereco;
 
@@ -136,7 +134,7 @@ public class CadastroClienteController implements Initializable {
 			Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 			actual.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			MessageAlerts.campoObrigatorioEmBranco();
 		}
 	}
 
