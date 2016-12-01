@@ -41,8 +41,6 @@ public class ListaFuncionariosController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		funcionariodao = new FuncionarioDAO();
-		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
-		actual.setResizable(false);
 
 		loadTableViewFuncionario();
 
@@ -90,8 +88,9 @@ public class ListaFuncionariosController implements Initializable {
 
 		Scene scene = new Scene(page);
 		next.setScene(scene);
-
+		next.setResizable(false);
 		next.showAndWait();
+		
 		loadTableViewFuncionario();
 	}
 
@@ -125,7 +124,7 @@ public class ListaFuncionariosController implements Initializable {
 		CadastroFuncionarioController controller = loader.getController();
 		controller.setDialogStage(dialogStage);
 		controller.setFuncionario(funcionario);
-
+		dialogStage.setResizable(false);
 		dialogStage.showAndWait();
 
 		return controller.isButtonConfirmarClicked();

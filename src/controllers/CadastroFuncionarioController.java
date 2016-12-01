@@ -51,8 +51,7 @@ public class CadastroFuncionarioController implements Initializable {
 		this.gerente = new Gerente();
 		this.vendedor = new Vendedor();
 		this.endereco = new Endereco();
-		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
-		actual.setResizable(false);
+		
 	}
 
 	@FXML

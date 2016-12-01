@@ -45,9 +45,6 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		this.celularDAO = new CelularDAO();
 		this.tabletDAO = new TabletDAO();
-		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
-		actual.setResizable(false);
-
 	}
 
 	public void setDispMóvel(DispMovel dispMovel) {

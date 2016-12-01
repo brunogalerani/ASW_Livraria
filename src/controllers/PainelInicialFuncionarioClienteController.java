@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import auxiliares.Session;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,8 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import models.Funcionario;
-import models.Vendedor;
+import models.Gerente;
 
 public class PainelInicialFuncionarioClienteController implements Initializable {
 
@@ -27,13 +27,10 @@ public class PainelInicialFuncionarioClienteController implements Initializable 
 	public void initialize(URL location, ResourceBundle resources) {
 		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
 		actual.setResizable(false);
-
-	}
-
-	public void setDialogStage(Funcionario funcionario) {
-		if (funcionario.getClass() == Vendedor.class) {
-			buttonBarAdmin.setDisable(true);
+		if (Session.funcOnline.getClass() != Gerente.class) {
+			this.buttonBarAdmin.setDisable(true);
 		}
+
 	}
 
 	@FXML

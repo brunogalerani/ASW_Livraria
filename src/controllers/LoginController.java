@@ -33,8 +33,6 @@ public class LoginController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		buttonLogin.setDefaultButton(true);
-		Stage actual = (Stage) buttonLogin.getScene().getWindow();
-		actual.setResizable(false);
 		Platform.runLater(new Runnable() {
 			@Override
 			public void run() {
@@ -85,10 +83,7 @@ public class LoginController implements Initializable {
 				nextStage.setResizable(false);
 				Scene scene = new Scene(page);
 				nextStage.setScene(scene);
-
-				PainelInicialFuncionarioClienteController controller = loader.getController();
-
-				controller.setDialogStage(funcionario);
+				nextStage.setResizable(false);
 
 				nextStage.show();
 			}

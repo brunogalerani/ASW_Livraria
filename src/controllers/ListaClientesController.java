@@ -41,8 +41,6 @@ public class ListaClientesController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		clientdao = new ClienteDAO();
-		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
-		actual.setResizable(false);
 
 		loadTableViewCliente();
 
@@ -93,7 +91,7 @@ public class ListaClientesController implements Initializable {
 		nextStage.setResizable(false);
 		Scene scene = new Scene(page);
 		nextStage.setScene(scene);
-
+		nextStage.setResizable(false);
 		nextStage.showAndWait();
 		loadTableViewCliente();
 	}
@@ -134,7 +132,7 @@ public class ListaClientesController implements Initializable {
 		CadastroClienteController controller = loader.getController();
 		controller.setDialogStage(dialogStage);
 		controller.setCliente(cliente);
-
+		dialogStage.setResizable(false);
 		dialogStage.showAndWait();
 
 		return controller.isButtonConfirmarClicked();

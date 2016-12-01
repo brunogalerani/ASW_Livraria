@@ -53,8 +53,6 @@ public class ListaProdutosController implements Initializable {
 		this.listaProdutos = new ArrayList<>();
 		this.loadTableViewProduto();
 		this.listenerTableView();
-		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
-		actual.setResizable(false);
 	}
 
 	private void loadTableViewProduto() {
@@ -89,13 +87,14 @@ public class ListaProdutosController implements Initializable {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(SelecaoTipoProdutoController.class.getResource("/views/SelecaoTipoProduto.fxml"));
 		AnchorPane page = loader.load();
-		Stage diaogStage = new Stage();
-		diaogStage.setTitle("Selecionar o tipo de produto");
+		Stage dialogStage = new Stage();
+		dialogStage.setTitle("Selecionar o tipo de produto");
 		Scene scene = new Scene(page);
-		diaogStage.setScene(scene);
+		dialogStage.setScene(scene);
 		SelecaoTipoProdutoController controller = loader.getController();
-		controller.setDialogStage(diaogStage);
-		diaogStage.showAndWait();
+		controller.setDialogStage(dialogStage);
+		dialogStage.setResizable(false);
+		dialogStage.showAndWait();
 		loadTableViewProduto();
 	}
 
