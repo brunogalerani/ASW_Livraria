@@ -22,7 +22,8 @@ public class PainelInicialFuncionarioProdutoController implements Initializable 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		Stage actual = (Stage) buttonAdicionarProdutos.getScene().getWindow();
+		actual.setResizable(false);
 
 	}
 	@FXML

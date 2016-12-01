@@ -12,66 +12,71 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class PainelInicialAdminFuncionarioController  implements Initializable{
+public class PainelInicialAdminFuncionarioController implements Initializable {
 
 	@FXML
-	private Button buttonBarAdmin, buttonBarFuncionario, buttonProduto, buttonCliente, buttonFuncionario, 
-	buttonCadastrarFuncionarios, buttonListarFuncionarios;
+	private Button buttonBarAdmin, buttonBarFuncionario, buttonProduto, buttonCliente, buttonFuncionario,
+			buttonCadastrarFuncionarios, buttonListarFuncionarios;
 	@FXML
 	private AnchorPane ap;
-	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
+		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
+		actual.setResizable(false);
+
 	}
-	
+
 	@FXML
-	public void handleBtnCadastrarFuncionarios() throws IOException{
+	public void handleBtnCadastrarFuncionarios() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(CadastroFuncionarioController.class.getResource("/views/CadastroFuncionario.fxml"));
 		AnchorPane page = (AnchorPane) loader.load();
-		
+
 		Stage next = new Stage();
 		next.setTitle("Sistema Livraria ASW");
 		next.setResizable(false);
-		
+
 		Scene scene = new Scene(page);
 		next.setScene(scene);
-		
-		next.showAndWait();		
+
+		next.showAndWait();
 	}
+
 	@FXML
 	private void handleBtnCliente() throws IOException {
-		AnchorPane nextAp = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/PainelInicialAdminCliente.fxml"));
+		AnchorPane nextAp = (AnchorPane) FXMLLoader
+				.load(getClass().getResource("/views/PainelInicialAdminCliente.fxml"));
 		this.ap.getChildren().setAll(nextAp);
 	}
+
 	@FXML
 	private void handleBtnProduto() throws IOException {
-		AnchorPane nextAp = (AnchorPane) FXMLLoader.load(getClass().getResource("/views/PainelInicialAdminProduto.fxml"));
+		AnchorPane nextAp = (AnchorPane) FXMLLoader
+				.load(getClass().getResource("/views/PainelInicialAdminProduto.fxml"));
 		this.ap.getChildren().setAll(nextAp);
 	}
-	
+
 	@FXML
-	public void handleButtonListarFuncionarios() throws IOException{
+	public void handleButtonListarFuncionarios() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(ListaFuncionariosController.class.getResource("/views/ListaFuncionarios.fxml"));
 		AnchorPane page = (AnchorPane) loader.load();
-		
+
 		Stage next = new Stage();
 		next.setTitle("Sistema Livraria ASW");
 		next.setResizable(false);
-		
+
 		Scene scene = new Scene(page);
 		next.setScene(scene);
-		
-		next.showAndWait();	
+
+		next.showAndWait();
 	}
-	
+
 	@FXML
 	private void handleBtnNavbarFuncionario() throws IOException {
-		AnchorPane next = (AnchorPane) FXMLLoader.load(getClass()
-				.getResource("/views/PainelInicialFuncionarioCliente.fxml"));
+		AnchorPane next = (AnchorPane) FXMLLoader
+				.load(getClass().getResource("/views/PainelInicialFuncionarioCliente.fxml"));
 		this.ap.getChildren().setAll(next);
 	}
 

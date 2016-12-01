@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import database.JPAUtil;
-import models.*;
+import models.Funcionario;
 
 public class FuncionarioDAO {
 	private EntityManager manager;
@@ -36,17 +36,18 @@ public class FuncionarioDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Funcionario> all() {
 		Query query = this.manager.createQuery("select f from Funcionario f");
 		List<Funcionario> list = query.getResultList();
 		return list;
 	}
-	
+
 	public Funcionario selectFromLogin(String login, String password) {
 		try {
-			TypedQuery<Funcionario> query = this.manager.createQuery("select f from Funcionario f where f.login=:login and f.senha=:senha",
-					Funcionario.class);
-			query.setParameter("login", login);	
+			TypedQuery<Funcionario> query = this.manager.createQuery(
+					"select f from Funcionario f where f.login=:login and f.senha=:senha", Funcionario.class);
+			query.setParameter("login", login);
 			query.setParameter("senha", password);
 			Funcionario funcionario = query.getSingleResult();
 

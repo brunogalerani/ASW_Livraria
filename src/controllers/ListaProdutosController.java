@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -49,12 +50,17 @@ public class ListaProdutosController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.produtoDAO = new ProdutoDAO();
+		this.listaProdutos = new ArrayList<>();
 		this.loadTableViewProduto();
 		this.listenerTableView();
-
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 	}
 
 	private void loadTableViewProduto() {
+		if (!this.listaProdutos.isEmpty()) {
+			this.observableListProdutos.removeAll(observableListProdutos);
+		}
 		this.listaProdutos = this.produtoDAO.all();
 
 		this.tableColumnQtdDisponivel.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
@@ -113,6 +119,9 @@ public class ListaProdutosController implements Initializable {
 				CadastroProdutoEbookController controller = loader.getController();
 				controller.setEbook((EBook) produto);
 				diaogStage.showAndWait();
+				loadTableViewProduto();
+				loadLabelValues(produto);
+
 			} else if (produto.getTipoProduto().equals(Celular.class.getName().substring(7))) {
 
 				System.out.println("Celular");
@@ -128,6 +137,9 @@ public class ListaProdutosController implements Initializable {
 				CadastroProdutoDispositivoMovelController controller = loader.getController();
 				controller.setDispMóvel((Celular) produto);
 				diaogStage.showAndWait();
+				loadTableViewProduto();
+				loadLabelValues(produto);
+
 			} else if (produto.getTipoProduto().equals(Tablet.class.getName().substring(7))) {
 				System.out.println("Tablet");
 				FXMLLoader loader = new FXMLLoader();
@@ -142,6 +154,9 @@ public class ListaProdutosController implements Initializable {
 				CadastroProdutoDispositivoMovelController controller = loader.getController();
 				controller.setDispMóvel((Tablet) produto);
 				diaogStage.showAndWait();
+				loadTableViewProduto();
+				loadLabelValues(produto);
+
 			} else if (produto.getTipoProduto().equals(VideoGame.class.getName().substring(7))) {
 				System.out.println("VideoGame");
 				FXMLLoader loader = new FXMLLoader();
@@ -156,6 +171,9 @@ public class ListaProdutosController implements Initializable {
 				CadastroProdutoVideoGameController controller = loader.getController();
 				controller.setVideoGame((VideoGame) produto);
 				diaogStage.showAndWait();
+				loadTableViewProduto();
+				loadLabelValues(produto);
+
 			} else if (produto.getTipoProduto().equals(LivroFisico.class.getName().substring(7))) {
 				System.out.println("LivroFisico");
 				FXMLLoader loader = new FXMLLoader();
@@ -170,9 +188,9 @@ public class ListaProdutosController implements Initializable {
 				CadastroProdutoLivroFisicoController controller = loader.getController();
 				controller.setLivroFisico((LivroFisico) produto);
 				diaogStage.showAndWait();
+				loadTableViewProduto();
+				loadLabelValues(produto);
 			}
-			loadTableViewProduto();
-			loadLabelValues(produto);
 		}
 
 	}

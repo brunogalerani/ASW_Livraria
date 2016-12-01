@@ -35,6 +35,8 @@ public class CadastroProdutoVideoGameController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.videoGameDAO = new VideoGameDAO();
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 	}
 
 	public void setVideoGame(VideoGame videoGame) {

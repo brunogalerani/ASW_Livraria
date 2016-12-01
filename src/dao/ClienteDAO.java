@@ -35,13 +35,14 @@ public class ClienteDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Cliente> all() {
 		Query query = this.manager.createQuery("select c from Cliente c");
 		List<Cliente> list = query.getResultList();
 		return list;
 	}
-	
-	public Cliente selectFromCPF(long cpf){
+
+	public Cliente selectFromCPF(long cpf) {
 		TypedQuery<Cliente> query = this.manager.createQuery("select c from Cliente c where c.cpf=:cpf", Cliente.class);
 		query.setParameter("cpf", cpf);
 		return query.getSingleResult();

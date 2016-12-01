@@ -38,6 +38,8 @@ public class CadastroClienteController implements Initializable {
 		this.clienteDAO = new ClienteDAO();
 		this.cliente = new Cliente();
 		this.endereco = new Endereco();
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 	}
 
 	public Cliente getCliente() {

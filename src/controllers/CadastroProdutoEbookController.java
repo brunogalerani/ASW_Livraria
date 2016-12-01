@@ -34,6 +34,8 @@ public class CadastroProdutoEbookController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.eBookDAO = new EBookDAO();
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 
 	}
 

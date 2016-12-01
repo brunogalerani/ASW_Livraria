@@ -8,7 +8,6 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import database.JPAUtil;
-import models.Gerente;
 import models.Vendedor;
 
 public class VendedorDAO {
@@ -37,6 +36,7 @@ public class VendedorDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Vendedor> all() {
 		Query query = this.manager.createQuery("select g from Gerente g");
 		List<Vendedor> list = query.getResultList();
@@ -47,7 +47,7 @@ public class VendedorDAO {
 		try {
 			TypedQuery<Vendedor> query = this.manager.createQuery("select v from Vendedor v where v.login=:login",
 					Vendedor.class);
-			query.setParameter("login", login);			
+			query.setParameter("login", login);
 			Vendedor vendedor = query.getSingleResult();
 
 			return vendedor;

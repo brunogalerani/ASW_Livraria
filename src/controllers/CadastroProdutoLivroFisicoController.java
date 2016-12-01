@@ -34,7 +34,8 @@ public class CadastroProdutoLivroFisicoController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.livroFisicoDAO = new LivroFisicoDAO();
-
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 	}
 
 	public void setLivroFisico(LivroFisico livroFisico) {

@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import database.JPAUtil;
-import models.Celular;
 import models.PedidoProduto;
 
 public class PedidoProdutoDAO {
@@ -35,6 +34,7 @@ public class PedidoProdutoDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<PedidoProduto> all() {
 		Query query = this.manager.createQuery("select p from PedidoProduto p");
 		List<PedidoProduto> list = query.getResultList();

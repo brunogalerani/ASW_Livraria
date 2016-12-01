@@ -25,7 +25,8 @@ public class PainelInicialFuncionarioClienteController implements Initializable 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
+		actual.setResizable(false);
 
 	}
 

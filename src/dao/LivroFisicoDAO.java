@@ -7,7 +7,6 @@ import javax.persistence.Query;
 
 import database.JPAUtil;
 import models.LivroFisico;
-import models.Produto;
 
 public class LivroFisicoDAO {
 	private EntityManager manager;
@@ -35,6 +34,7 @@ public class LivroFisicoDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<LivroFisico> all() {
 		Query query = this.manager.createQuery("select l from LivroFisico l");
 		List<LivroFisico> list = query.getResultList();

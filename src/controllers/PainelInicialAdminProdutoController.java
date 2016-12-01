@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class PainelInicialAdminProdutoController  implements Initializable{
 
@@ -20,7 +21,8 @@ public class PainelInicialAdminProdutoController  implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
+		actual.setResizable(false);
 		
 	}
 	

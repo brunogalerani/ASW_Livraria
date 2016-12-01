@@ -5,36 +5,37 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import auxiliares.MessageAlerts;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class SelecaoTipoProdutoController implements Initializable{
+public class SelecaoTipoProdutoController implements Initializable {
 
 	@FXML
 	private Button buttonVoltar, buttonConfirmar;
 	@FXML
 	private RadioButton radioButtonDM, radioButtonEB, radioButtonVG, radioButtonLF;
 	private boolean checked;
-	
+
 	private Stage dialogStage;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.radioButtonDM.setSelected(true);
+		Stage actual = (Stage) buttonConfirmar.getScene().getWindow();
+		actual.setResizable(false);
 	}
-	
+
 	@FXML
-	private void handleBtnVoltar(){
+	private void handleBtnVoltar() {
 		this.closeDialogStage();
 	}
+
 	@FXML
 	private void ifRadioButtonChecked() {
 		if (this.radioButtonDM.isArmed()) {
@@ -61,13 +62,15 @@ public class SelecaoTipoProdutoController implements Initializable{
 			this.radioButtonLF.setSelected(this.checked);
 			this.radioButtonDM.setSelected(this.checked);
 		}
-		
+
 	}
+
 	@FXML
-	private void handleBtnConfirmar() throws IOException{
-		if(this.radioButtonDM.isSelected()){
+	private void handleBtnConfirmar() throws IOException {
+		if (this.radioButtonDM.isSelected()) {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(CadastroProdutoDispositivoMovelController.class.getResource("/views/CadastroProdutoDispositivoMovel.fxml"));
+			loader.setLocation(CadastroProdutoDispositivoMovelController.class
+					.getResource("/views/CadastroProdutoDispositivoMovel.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			Stage nextStage = new Stage();
@@ -75,9 +78,9 @@ public class SelecaoTipoProdutoController implements Initializable{
 			nextStage.setResizable(false);
 			Scene scene = new Scene(page);
 			nextStage.setScene(scene);
-			this.closeDialogStage();			
+			this.closeDialogStage();
 			nextStage.show();
-		} else if(this.radioButtonEB.isSelected()){
+		} else if (this.radioButtonEB.isSelected()) {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(CadastroProdutoEbookController.class.getResource("/views/CadastroProdutoEbook.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
@@ -89,9 +92,10 @@ public class SelecaoTipoProdutoController implements Initializable{
 			nextStage.setScene(scene);
 			this.closeDialogStage();
 			nextStage.show();
-		}else if(this.radioButtonLF.isSelected()){
+		} else if (this.radioButtonLF.isSelected()) {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(CadastroProdutoLivroFisicoController.class.getResource("/views/CadastroProdutoLivroFisico.fxml"));
+			loader.setLocation(
+					CadastroProdutoLivroFisicoController.class.getResource("/views/CadastroProdutoLivroFisico.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			Stage nextStage = new Stage();
@@ -101,9 +105,10 @@ public class SelecaoTipoProdutoController implements Initializable{
 			nextStage.setScene(scene);
 			this.closeDialogStage();
 			nextStage.show();
-		}else if(this.radioButtonVG.isSelected()){
+		} else if (this.radioButtonVG.isSelected()) {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(CadastroProdutoVideoGameController.class.getResource("/views/CadastroProdutoVideoGame.fxml"));
+			loader.setLocation(
+					CadastroProdutoVideoGameController.class.getResource("/views/CadastroProdutoVideoGame.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 
 			Stage nextStage = new Stage();
@@ -113,7 +118,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 			nextStage.setScene(scene);
 			this.closeDialogStage();
 			nextStage.show();
-		}else {
+		} else {
 			MessageAlerts.objetoNaoSelecionado();
 		}
 	}
@@ -121,6 +126,7 @@ public class SelecaoTipoProdutoController implements Initializable{
 	public void setDialogStage(Stage diaogStage) {
 		this.dialogStage = diaogStage;
 	}
+
 	private void closeDialogStage() {
 		this.dialogStage.close();
 	}

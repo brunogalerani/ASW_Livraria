@@ -41,6 +41,8 @@ public class ListaClientesController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		clientdao = new ClienteDAO();
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 
 		loadTableViewCliente();
 
@@ -50,6 +52,9 @@ public class ListaClientesController implements Initializable {
 	}
 
 	public void loadTableViewCliente() {
+		if (!this.clientesList.isEmpty()) {
+			this.clientsObsList.removeAll(clientsObsList);
+		}
 		this.clientesList = clientdao.all();
 		tableColumnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));

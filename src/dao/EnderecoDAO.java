@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import database.JPAUtil;
-import models.*;
+import models.Endereco;
 
 public class EnderecoDAO {
 	private EntityManager manager;
@@ -34,6 +34,7 @@ public class EnderecoDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Endereco> all() {
 		Query query = this.manager.createQuery("select e from Endereco e");
 		List<Endereco> list = query.getResultList();

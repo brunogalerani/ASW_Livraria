@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import database.JPAUtil;
-import models.Produto;
 import models.VideoGame;
 
 public class VideoGameDAO {
@@ -35,6 +34,7 @@ public class VideoGameDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<VideoGame> all() {
 		Query query = this.manager.createQuery("select v from VideoGame v");
 		List<VideoGame> list = query.getResultList();

@@ -7,8 +7,6 @@ import javax.persistence.Query;
 
 import database.JPAUtil;
 import models.Celular;
-import models.DispMovel;
-import models.Produto;
 
 public class CelularDAO {
 	private EntityManager manager;
@@ -36,6 +34,7 @@ public class CelularDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Celular> all() {
 		Query query = this.manager.createQuery("select d from DispMovel d");
 		List<Celular> list = query.getResultList();

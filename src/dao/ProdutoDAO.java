@@ -35,13 +35,14 @@ public class ProdutoDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Produto> all() {
 		Query query = this.manager.createQuery("select p from Produto p");
 		List<Produto> list = query.getResultList();
 		return list;
 	}
-	
-	public Produto selectById(Long id){
+
+	public Produto selectById(Long id) {
 		TypedQuery<Produto> query = this.manager.createQuery("select p from Produto p where p.id=:id", Produto.class);
 		query.setParameter("id", id);
 		return query.getSingleResult();
@@ -52,4 +53,3 @@ public class ProdutoDAO {
 		this.manager.close();
 	}
 }
-

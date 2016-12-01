@@ -41,6 +41,8 @@ public class ListaFuncionariosController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		funcionariodao = new FuncionarioDAO();
+		Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
+		actual.setResizable(false);
 
 		loadTableViewFuncionario();
 
@@ -50,6 +52,9 @@ public class ListaFuncionariosController implements Initializable {
 	}
 
 	public void loadTableViewFuncionario() {
+		if (!this.funcionarioList.isEmpty()) {
+			this.funcionarioObsList.removeAll(funcionarioObsList);
+		}
 		this.funcionarioList = funcionariodao.all();
 		tableColumnCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		tableColumnNome.setCellValueFactory(new PropertyValueFactory<>("nome"));

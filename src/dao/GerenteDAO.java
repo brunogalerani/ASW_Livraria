@@ -37,6 +37,7 @@ public class GerenteDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Gerente> all() {
 		Query query = this.manager.createQuery("select g from Gerente g");
 		List<Gerente> list = query.getResultList();
@@ -45,9 +46,9 @@ public class GerenteDAO {
 
 	public Gerente selectFromLogin(String login, String password) {
 		try {
-			TypedQuery<Gerente> query = this.manager.createQuery("select g from Gerente g where g.login=:login and g.senha=:senha",
-					Gerente.class);
-			query.setParameter("login", login);	
+			TypedQuery<Gerente> query = this.manager
+					.createQuery("select g from Gerente g where g.login=:login and g.senha=:senha", Gerente.class);
+			query.setParameter("login", login);
 			query.setParameter("senha", password);
 			Gerente gerente = query.getSingleResult();
 

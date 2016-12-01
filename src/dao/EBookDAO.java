@@ -7,7 +7,6 @@ import javax.persistence.Query;
 
 import database.JPAUtil;
 import models.EBook;
-import models.Produto;
 
 public class EBookDAO {
 	private EntityManager manager;
@@ -35,6 +34,7 @@ public class EBookDAO {
 		this.manager.getTransaction().commit();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<EBook> all() {
 		Query query = this.manager.createQuery("select e from EBook e");
 		List<EBook> list = query.getResultList();
