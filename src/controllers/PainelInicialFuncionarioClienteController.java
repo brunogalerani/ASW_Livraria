@@ -25,8 +25,6 @@ public class PainelInicialFuncionarioClienteController implements Initializable 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
-		actual.setResizable(false);
 		if (Session.funcOnline.getClass() != Gerente.class) {
 			this.buttonBarAdmin.setDisable(true);
 		}

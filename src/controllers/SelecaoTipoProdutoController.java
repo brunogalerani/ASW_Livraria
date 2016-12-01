@@ -27,8 +27,7 @@ public class SelecaoTipoProdutoController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.radioButtonDM.setSelected(true);
-		Stage actual = (Stage) buttonConfirmar.getScene().getWindow();
-		actual.setResizable(false);
+		
 	}
 
 	@FXML

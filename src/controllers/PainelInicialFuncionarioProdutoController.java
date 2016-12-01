@@ -24,8 +24,7 @@ public class PainelInicialFuncionarioProdutoController implements Initializable 
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Stage actual = (Stage) buttonAdicionarProdutos.getScene().getWindow();
-		actual.setResizable(false);
+		
 		if (Session.funcOnline.getClass() != Gerente.class) {
 			this.buttonBarAdmin.setDisable(true);
 		}

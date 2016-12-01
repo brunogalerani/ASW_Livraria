@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import models.Gerente;
 
 public class PainelInicialAdminClienteController  implements Initializable{
@@ -23,8 +22,6 @@ public class PainelInicialAdminClienteController  implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
-		actual.setResizable(false);
 		if (Session.funcOnline.getClass() != Gerente.class) {
 			this.buttonBarAdmin.setDisable(true);
 		}

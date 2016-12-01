@@ -70,8 +70,6 @@ public class RegistroVendaController implements Initializable {
 		loadTableViewDisponivel();
 		totalCompra = 0;
 		this.labelTotalPreco.setText(String.valueOf(totalCompra));
-		Stage actual = (Stage) buttonAdicionar.getScene().getWindow();
-		actual.setResizable(false);
 
 		tableViewProdutosDisponiveis.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> selectedItemTableViewProdutosDisponiveis(newValue));
