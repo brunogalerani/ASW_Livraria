@@ -10,13 +10,12 @@ import auxiliares.MostraProduto;
 import auxiliares.Session;
 import dao.ClienteDAO;
 import dao.PedidoDAO;
+import dao.PedidoProdutoDAO;
 import dao.ProdutoDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -26,6 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import models.Cliente;
 import models.Pedido;
+import models.PedidoProduto;
 import models.Produto;
 
 public class RegistroVendaController implements Initializable {
@@ -55,13 +55,13 @@ public class RegistroVendaController implements Initializable {
 	private Cliente cliente;
 	private List<Produto> prodDisponivel;
 	private List<MostraProduto> prodComprando;
-	private List<Produto> listaFinal;
 	private ObservableList<Produto> prodObsDisponivel;
 	private ObservableList<MostraProduto> prodObsComprando;
 	private PedidoDAO pedidodao;
 	private ProdutoDAO produtodao;
 	private Produto produtoSelecionado;
 	private ClienteDAO clienteDAO;
+	private double totalCompra;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -69,8 +69,9 @@ public class RegistroVendaController implements Initializable {
 		prodComprando = new ArrayList<MostraProduto>();
 		produtodao = new ProdutoDAO();
 		clienteDAO = new ClienteDAO();
-		listaFinal = new ArrayList<Produto>();
 		loadTableViewDisponivel();
+		totalCompra = 0;
+		this.labelTotalPreco.setText(String.valueOf(totalCompra));
 
 		tableViewProdutosDisponiveis.getSelectionModel().selectedItemProperty()
 				.addListener((observable, oldValue, newValue) -> selectedItemTableViewProdutosDisponiveis(newValue));
@@ -100,6 +101,8 @@ public class RegistroVendaController implements Initializable {
 
 		this.prodObsComprando = FXCollections.observableList(this.prodComprando);
 		this.tableViewProdutosComprando.setItems(prodObsComprando);
+		this.labelTotalPreco.setText(String.valueOf(this.totalCompra));
+
 	}
 
 	@FXML
@@ -118,11 +121,12 @@ public class RegistroVendaController implements Initializable {
 						if (m.getId() == produtoSelecionado.getId()) {
 							prodComprando.remove(m);
 							break;
-
 						}
 					}
 				}
 				prodComprando.add(mostraProduto);
+				this.totalCompra += mostraProduto.getPreco();
+
 				loadTableViewProdutosComprando();
 
 			} else {
@@ -136,21 +140,46 @@ public class RegistroVendaController implements Initializable {
 	}
 
 	@FXML
-	public void handleBtnConcluir() {
-		Produto temp;
-		for(MostraProduto m : prodComprando){
-			temp = produtodao.selectById(m.getId());
-			temp.removeQuantidade(m.getQuantidade());
-			produtodao.update(temp);
-			for(int i = 0 ; i < m.getQuantidade() ; i++){
-				listaFinal.add(temp);
+	public void handleBtnRemover() {
+		for (MostraProduto m : prodComprando) {
+			if (m.getId() == produtoSelecionado.getId()) {
+				prodComprando.remove(m);
+				this.totalCompra -= m.getPreco();
+				break;
 			}
 		}
-		Pedido pedido = new Pedido();
-		pedido.setCliente(cliente);
-		pedido.setProdutos(listaFinal);
-		pedido.setVendedor(Session.funcOnline);
-		pedidodao.insert(pedido);
+		loadTableViewProdutosComprando();
+	}
+
+	@FXML
+	public void handleBtnConcluir() {
+		if (!prodComprando.isEmpty() && !labelCliente.getText().isEmpty()) {
+			Produto temp;
+			Pedido pedido = new Pedido();
+			PedidoProdutoDAO pedidoProdutoDAO = new PedidoProdutoDAO();
+
+			pedido.setCliente(cliente);
+			pedido.setVendedor(Session.funcOnline);
+			pedidodao.insert(pedido);
+			for (MostraProduto m : prodComprando) {
+				PedidoProduto pedidoProduto = new PedidoProduto();
+				temp = produtodao.selectById(m.getId());
+				temp.removeQuantidade(m.getQuantidade());
+				produtodao.update(temp);
+				pedidoProduto.setProduto(temp);
+				pedidoProduto.setQuantidade(m.getQuantidade());
+				pedidoProduto.setPedido(pedido);
+				pedidoProdutoDAO.insert(pedidoProduto);
+
+				MessageAlerts.vendaRealizada();
+
+				Stage actual = (Stage) this.buttonVoltar.getScene().getWindow();
+				actual.close();
+			}
+		} else {
+			MessageAlerts.campoObrigatorioEmBranco();
+		}
+
 	}
 
 	@FXML
@@ -164,17 +193,6 @@ public class RegistroVendaController implements Initializable {
 	}
 
 	@FXML
-	public void handleBtnRemover() {
-		for (MostraProduto m : prodComprando) {
-			if (m.getId() == produtoSelecionado.getId()) {
-				prodComprando.remove(m);
-				break;
-			}
-		}
-		loadTableViewProdutosComprando();
-	}
-
-	@FXML
 	public void handleBtnSelecionarCliente() {
 		try {
 			long cpf = Long.parseLong(textFieldCPFCliente.getText());
@@ -182,6 +200,7 @@ public class RegistroVendaController implements Initializable {
 			labelCliente.setText(cliente.getNome());
 		} catch (Exception e) {
 			MessageAlerts.usuarioNaoEncontrado();
+			this.textFieldCPFCliente.setText("");
 		}
 	}
 

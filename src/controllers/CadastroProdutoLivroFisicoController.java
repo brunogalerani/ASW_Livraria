@@ -61,6 +61,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		this.textFieldProfundidade.setText(String.valueOf(this.livroFisico.getProfundidade()));
 		this.textFieldTipo.setText(this.livroFisico.getTipo());
 		this.textFieldTitulo.setText(this.livroFisico.getTitulo());
+		this.textFieldQuantidade.setText(String.valueOf(this.livroFisico.getQuantidade()));
 	}
 	@FXML
 	private void handleBtnCadastrar() {
@@ -91,6 +92,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		String tipo = this.textFieldTipo.getText();
 		double peso = Double.parseDouble(this.textFieldPeso.getText());
 		String nome = this.textFieldNome.getText();
+		int quantidade = Integer.parseInt(this.textFieldQuantidade.getText());
 		
 		if (!alteracao) {
 			this.livroFisico = new LivroFisico();
@@ -112,6 +114,7 @@ public class CadastroProdutoLivroFisicoController  implements Initializable{
 		this.livroFisico.setTipo(tipo);
 		this.livroFisico.setPeso(peso);
 		this.livroFisico.setNome(nome);
+		this.livroFisico.setQuantidade(quantidade);
 		
 		if (alteracao) {
 			this.livroFisicoDAO.update(livroFisico);

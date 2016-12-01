@@ -57,6 +57,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 		this.textFieldPreco.setText(String.valueOf(this.eBook.getPreco()));
 		this.textFieldTamanhoArquivo.setText(String.valueOf(this.eBook.getTamanhoArquivo()));
 		this.textFieldTitulo.setText(this.eBook.getTitulo());
+		this.textFieldQuantidade.setText(String.valueOf(this.eBook.getQuantidade()));
 		//////pareiii aquiiiii////////////////////
 	}
 	@FXML
@@ -84,6 +85,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 		double tamanhoArquivo = Double.parseDouble(this.textFieldTamanhoArquivo.getText());
 		String formato = this.textFieldFormato.getText();
 		String nome = this.textFieldNome.getText();
+		int quantidade = Integer.parseInt(this.textFieldQuantidade.getText());
 		
 		if (!alteracao) {
 			this.eBook = new EBook();
@@ -102,6 +104,7 @@ public class CadastroProdutoEbookController  implements Initializable{
 		this.eBook.setTamanhoArquivo(tamanhoArquivo);
 		this.eBook.setFormato(formato);
 		this.eBook.setNome(nome);
+		this.eBook.setQuantidade(quantidade);
 		
 		if (alteracao) {
 			eBookDAO.update(eBook);

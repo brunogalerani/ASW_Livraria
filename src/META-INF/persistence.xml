@@ -27,6 +27,7 @@
 		<class>models.Tablet</class>
 		<class>models.Vendedor</class>
 		<class>models.VideoGame</class>
+		<class>models.PedidoProduto</class>
 				
 		<!-- Propriedades JDBC -->
 		<properties>

@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 @Entity
@@ -21,7 +22,7 @@ public abstract class Produto {
 	private int quantidade;
 	private String nome;
 	private String marca;
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -29,9 +30,6 @@ public abstract class Produto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	@Transient
-	private Pedido pedido;
 
 	public Produto() {
 		this.codBarras = 0;
@@ -94,5 +92,4 @@ public abstract class Produto {
 	public void removeQuantidade(int quantidade) {
 		this.quantidade -= quantidade;
 	}
-
 }
