@@ -88,6 +88,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.textFieldTecnologiaSuportada.setText(this.celular.getTecnologiaSuportada());
 		this.textFieldTipoChip.setText(this.celular.getTipoChip());
 		this.datePickerGarantia.setValue(this.celular.getGarantia());
+		this.textFieldQuantidade.setText(String.valueOf(this.celular.getQuantidade()));
 		
 	}
 	private void carregarCamposTablet() {
@@ -117,6 +118,8 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.textFieldTecnologiaSuportada.setText(this.tablet.getTecnologiaSuportada());
 		this.textFieldTipoChip.setText(this.tablet.getTipoChip());
 		this.datePickerGarantia.setValue(this.tablet.getGarantia());
+		this.textFieldQuantidade.setText(String.valueOf(this.tablet.getQuantidade()));
+		
 	}
 	private void cadastrarDispositivo() {
 		boolean touchScreen = radioButtonTsSim.isSelected();
@@ -142,6 +145,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		long codBarras = Long.parseLong(this.textFieldCodigoBarras.getText());
 		String bateria = this.textFieldBateria.getText();
 		String nome = this.textFieldNome.getText();
+		int quantidade = Integer.parseInt(this.textFieldQuantidade.getText());
 
 		if (radioButtonCel.isSelected()) {
 			if (!alteracao) {
@@ -171,6 +175,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.celular.setCodBarras(codBarras);
 			this.celular.setBateria(bateria);
 			this.celular.setNome(nome);
+			this.celular.setQuantidade(quantidade);
 
 			if (!alteracao) {
 				celularDAO.insert(celular);
@@ -206,6 +211,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			this.tablet.setCodBarras(codBarras);
 			this.tablet.setBateria(bateria);
 			this.tablet.setNome(nome);
+			this.tablet.setQuantidade(quantidade);
 			
 			if (!alteracao) {
 				tabletDAO.insert(tablet);

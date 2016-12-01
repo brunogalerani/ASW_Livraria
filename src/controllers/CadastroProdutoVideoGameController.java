@@ -60,6 +60,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.textFieldPreco.setText(String.valueOf(this.videoGame.getPreco()));
 		this.textFieldProfundidade.setText(String.valueOf(this.videoGame.getProfundidade()));
 		this.datePickerGarantia.setValue(this.videoGame.getGarantia());
+		this.textFieldQuantidade.setText(String.valueOf(this.videoGame.getQuantidade()));
 	}
 	@FXML
 	private void handleBtnCadastrar() {
@@ -87,6 +88,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		String plataformaSuportada = this.textFieldPlataformaSuportada.getText();
 		String nome = this.textFieldNome.getText();
 		String bateria = this.textFieldBateria.getText();
+		int quantidade = Integer.parseInt(this.textFieldQuantidade.getText());
 		
 		if (!alteracao) {
 			this.videoGame = new VideoGame();
@@ -111,6 +113,7 @@ public class CadastroProdutoVideoGameController  implements Initializable{
 		this.videoGame.setPlataformaSuportada(plataformaSuportada);
 		this.videoGame.setNome(nome);
 		this.videoGame.setBateria(bateria);
+		this.videoGame.setQuantidade(quantidade);
 		
 		if (alteracao) {
 			this.videoGameDAO.update(videoGame);
