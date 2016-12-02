@@ -14,7 +14,6 @@ public class Cliente extends Pessoa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String tipoCliente;
 	
 	@OneToMany(mappedBy="cliente")
 	List<Pedido> pedidos;
@@ -30,13 +29,5 @@ public class Cliente extends Pessoa {
 	public void setId(Long id) {
 		this.id = id;
 	}	
-	
-	public String getTipoCliente() {
-		return tipoCliente;
-	}
-
-	public void setTipoCliente(String tipoCliente) {
-		this.tipoCliente = tipoCliente;
-	}
 
 }

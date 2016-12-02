@@ -39,6 +39,7 @@ public class CadastroFuncionarioController implements Initializable {
 	private Endereco endereco;
 	private VendedorDAO vendedorDao;
 	private GerenteDAO gerenteDao;
+	EnderecoDAO endDAO;
 	private Stage dialogStage;
 	private boolean buttonConfirmarClicked;
 	private boolean checked;
@@ -51,14 +52,15 @@ public class CadastroFuncionarioController implements Initializable {
 		this.gerente = new Gerente();
 		this.vendedor = new Vendedor();
 		this.endereco = new Endereco();
-		
+		endDAO = new EnderecoDAO();
+
 	}
 
 	@FXML
 	private void isRadioButtonChecked() {
 		/*
-		 * Acionado cada vez que se seleciona um Radio Button
-		 * Sua função é desarmar o que não estiver selecionado
+		 * Acionado cada vez que se seleciona um Radio Button Sua função é
+		 * desarmar o que não estiver selecionado
 		 */
 		if (this.radioButtonGerente.isArmed()) {
 			this.checked = !radioButtonGerente.isArmed();
@@ -128,8 +130,8 @@ public class CadastroFuncionarioController implements Initializable {
 	private void handleBtnCadastrar() {
 		try {
 			/*
-			 * Verifica se o nome contém pelo menos UM sobrenome, pois o mesmo
-			 * é obrigatório para gerar o login!
+			 * Verifica se o nome contém pelo menos UM sobrenome, pois o mesmo é
+			 * obrigatório para gerar o login!
 			 */
 			if (!this.textFieldNome.getText().startsWith(" ") && this.textFieldNome.getText().contains(" ")) {
 
@@ -148,8 +150,6 @@ public class CadastroFuncionarioController implements Initializable {
 				String cidade = this.textFieldCidade.getText();
 				String estado = this.textFieldEstado.getText();
 
-				EnderecoDAO endDAO = new EnderecoDAO();
-
 				endereco.setRua(rua);
 				endereco.setBairro(bairro);
 				endereco.setCep(cep);
@@ -157,11 +157,6 @@ public class CadastroFuncionarioController implements Initializable {
 				endereco.setComplemento(complemento);
 				endereco.setCidade(cidade);
 				endereco.setEstado(estado);
-				if (endereco.getId() == null) {
-					endDAO.insert(endereco);
-				} else {
-					endDAO.update(endereco);
-				}
 
 				if (radioButtonVendedor.isSelected()) {
 					vendedor.setNome(nome);
@@ -180,10 +175,14 @@ public class CadastroFuncionarioController implements Initializable {
 					vendedor.setSenha(EncryptPassword.encryptSHA256(((login + "123").toLowerCase())));
 
 					if (vendedor.getId() == null) {
+						endDAO.insert(endereco);
 						vendedorDao.insert(vendedor);
+
 						buttonConfirmarClicked = true;
 					} else {
+						endDAO.update(endereco);
 						vendedorDao.update(vendedor);
+
 						buttonConfirmarClicked = true;
 					}
 				} else if (radioButtonGerente.isSelected()) {
@@ -203,9 +202,11 @@ public class CadastroFuncionarioController implements Initializable {
 					gerente.setSenha(EncryptPassword.encryptSHA256(((login + "gerente").toLowerCase())));
 
 					if (gerente.getId() == null) {
+						endDAO.insert(endereco);
 						gerenteDao.insert(gerente);
 						buttonConfirmarClicked = true;
 					} else {
+						endDAO.update(endereco);
 						gerenteDao.update(gerente);
 						buttonConfirmarClicked = true;
 					}
@@ -215,11 +216,17 @@ public class CadastroFuncionarioController implements Initializable {
 
 				Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 				actual.close();
-			}else{
+			} else {
 				MessageAlerts.nomeIncompleto();
 			}
-		} catch (Exception e) {
+
+		} catch (NumberFormatException e) {
 			MessageAlerts.campoObrigatorioEmBranco();
+
+		} catch (Exception e) {
+			this.gerenteDao.rollback();
+			this.vendedorDao.rollback();
+			MessageAlerts.campoDuplicado();
 		}
 	}
 

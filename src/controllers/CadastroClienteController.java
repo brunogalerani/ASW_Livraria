@@ -133,8 +133,12 @@ public class CadastroClienteController implements Initializable {
 
 			Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 			actual.close();
-		} catch (Exception e) {
+		}catch (NumberFormatException e) {
 			MessageAlerts.campoObrigatorioEmBranco();
+
+		} catch (Exception e) {
+			this.clienteDAO.rollback();
+			MessageAlerts.campoDuplicado();
 		}
 	}
 

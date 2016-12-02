@@ -55,4 +55,8 @@ public class VendedorDAO {
 			return null;
 		}
 	}
+	
+	public void rollback(){
+		this.manager.getTransaction().rollback();
+	}
 }

@@ -1,6 +1,5 @@
 package models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,6 @@ public abstract class Produto {
 	private Long id;
 	private String tipoProduto;
 	private double preco;
-	@Column(unique = true)
 	private long codBarras;
 	private int quantidade;
 	private String nome;

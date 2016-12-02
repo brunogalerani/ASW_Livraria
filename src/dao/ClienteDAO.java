@@ -48,6 +48,10 @@ public class ClienteDAO {
 		return query.getSingleResult();
 	}
 
+	public void rollback() {
+		this.manager.getTransaction().rollback();
+	}
+
 	@Override
 	protected void finalize() throws Throwable {
 		this.manager.close();

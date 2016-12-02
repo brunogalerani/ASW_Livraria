@@ -21,7 +21,7 @@ public class Endereco {
 	private String complemento;
 	private String cidade;
 	private String estado;
-	@OneToMany(mappedBy="endereco")
+	@OneToMany(mappedBy = "endereco")
 	private List<Pessoa> pessoa;
 
 	public Endereco() {
@@ -33,8 +33,8 @@ public class Endereco {
 
 	public void setId(Long id) {
 		this.id = id;
-	}	
-	
+	}
+
 	public String getRua() {
 		return rua;
 	}

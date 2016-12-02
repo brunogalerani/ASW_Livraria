@@ -105,5 +105,13 @@ public class MessageAlerts {
 		alert.setHeaderText("Por favor, insira o nome completo no campo \"Nome\"!");
 		alert.showAndWait();
 	}
+	
+	public static void campoDuplicado(){
+		alert = new Alert(Alert.AlertType.WARNING);
+		alert.setTitle("Campo Duplicado!");
+		alert.setHeaderText("Algum dos campos que não devem ter repetição já está cadastrado!");
+		alert.setContentText("Verifique as informações e tente novamente!");
+		alert.showAndWait();
+	}
 
 }

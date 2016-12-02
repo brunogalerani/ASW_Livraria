@@ -58,6 +58,10 @@ public class GerenteDAO {
 		}
 	}
 
+	public void rollback() {
+		this.manager.getTransaction().rollback();
+	}
+
 	@Override
 	protected void finalize() throws Throwable {
 		this.manager.close();
