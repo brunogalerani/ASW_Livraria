@@ -28,7 +28,7 @@ public class ListaFuncionariosController implements Initializable {
 	@FXML
 	private Button buttonCadastrar, buttonEditar, buttonVoltar;
 	@FXML
-	private Label labelNome, labelDataDeNascimento, labelTelefone, labelEmail, labelCEP;
+	private Label labelNome, labelDataDeNascimento, labelTelefone, labelEmail, labelLogin;
 	@FXML
 	private TableView<Funcionario> tableViewFuncionarios;
 
@@ -64,7 +64,7 @@ public class ListaFuncionariosController implements Initializable {
 	}
 
 	private void loadLabelValues(Funcionario funcionario) {
-		this.labelCEP.setText(String.valueOf(funcionario.getEndereco().getCep()));
+		this.labelLogin.setText(funcionario.getLogin());
 		this.labelDataDeNascimento.setText(String.valueOf(funcionario.getDataNascimento()));
 		this.labelEmail.setText(funcionario.getEmail());
 		this.labelNome.setText(funcionario.getNome());

@@ -58,11 +58,10 @@ public class PainelInicialFuncionarioProdutoController implements Initializable 
 		this.ap.getChildren().setAll(nextAp);
 	}
 
-	@FXML 
-	public void handleButtonRegistrarVenda() throws IOException{
+	@FXML
+	public void handleButtonRegistrarVenda() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(RegistroVendaController.class.
-				getResource("/views/RegistroVenda.fxml"));
+		loader.setLocation(RegistroVendaController.class.getResource("/views/RegistroVenda.fxml"));
 		AnchorPane page = loader.load();
 		Stage diaogStage = new Stage();
 		diaogStage.setTitle("Registrar Venda");
