@@ -1,22 +1,25 @@
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-public abstract class Livro extends Produto{
-	
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Livro extends Produto {
+
 	private String titulo;
 	private String idioma;
 	private int ano;
+	@Column(unique = true)
 	private int isbn;
 	private int numeroPaginas;
 	private String editora;
 	private String autor;
 	private String resumo;
 	private String categoria;
-	
+
 	public Livro() {
 		super();
 	}
@@ -92,7 +95,5 @@ public abstract class Livro extends Produto{
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
-	
-	
+
 }

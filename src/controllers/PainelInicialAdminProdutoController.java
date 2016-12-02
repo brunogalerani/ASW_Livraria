@@ -87,5 +87,23 @@ public class PainelInicialAdminProdutoController implements Initializable {
 				.load(getClass().getResource("/views/ListaProdutos.fxml"));
 		this.ap.getChildren().setAll(nextAp);
 	}
+	
+	@FXML
+	public void handleButtonLogout() throws IOException{
+		Stage actual = (Stage) buttonBarAdmin.getScene().getWindow();
+		actual.close();
+		
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(ListaClientesController.class.getResource("/views/Login.fxml"));
+		AnchorPane page = (AnchorPane) loader.load();
+
+		Stage nextStage = new Stage();
+		nextStage.setTitle("Sistema Livraria ASW");
+		nextStage.setResizable(false);
+		Scene scene = new Scene(page);
+		nextStage.setScene(scene);
+
+		nextStage.show();
+	}
 
 }

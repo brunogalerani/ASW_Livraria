@@ -1,6 +1,8 @@
 package models;
+
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,20 +12,24 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Pessoa {
-	
-	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private LocalDate dataNascimento;
+	@Column(unique = true)
 	private long cpf;
+	@Column(unique = true)
 	private String rg;
 	@ManyToOne
 	private Endereco endereco;
 	private String telefone;
+	@Column(unique = true)
 	private String email;
-	
+
 	public Pessoa() {
 	}
 
@@ -82,7 +88,5 @@ public abstract class Pessoa {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	
+
 }

@@ -6,6 +6,8 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
@@ -21,6 +23,11 @@
                   <Font name="Bauhaus 93" size="23.0" />
                </font>
             </Text>
+            <ImageView fitHeight="40.0" fitWidth="84.0" layoutX="1016.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/bground.png" />
+               </image>
+            </ImageView>
          </children>
       </Group>
       <Text fill="#bf9d9d" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Video Game" textAlignment="CENTER" wrappingWidth="1099.9999985063914">

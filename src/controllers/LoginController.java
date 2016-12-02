@@ -84,10 +84,8 @@ public class LoginController implements Initializable {
 				Scene scene = new Scene(page);
 				nextStage.setScene(scene);
 				nextStage.setResizable(false);
-
 				nextStage.show();
 			}
 		}
 	}
-
 }
