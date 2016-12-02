@@ -1,10 +1,6 @@
-/META-INF/
-/app/
-/auxiliares/
 /controllers/
 /dao/
 /database/
 /encryption/
 /models/
-/resources/
 /views/

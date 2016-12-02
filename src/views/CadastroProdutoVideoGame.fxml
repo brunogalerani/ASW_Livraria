@@ -5,9 +5,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
@@ -16,36 +13,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastroProdutoVideoGameController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
-         <menus>
-            <Menu mnemonicParsing="false" text="File">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Close" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
       <Group layoutY="27.0">
          <children>
-            <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
-            <Text fill="WHITE" layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Produtos" textAlignment="CENTER" wrappingWidth="282.13671875">
+            <Region layoutY="-27.0" prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
+            <Text fill="WHITE" layoutX="6.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro Produtos" textAlignment="CENTER" wrappingWidth="282.13671875">
                <font>
                   <Font name="Bauhaus 93" size="23.0" />
                </font>
             </Text>
          </children>
       </Group>
-      <Text fill="#bf9d9d" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Video Game" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
+      <Text fill="#bf9d9d" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Video Game" textAlignment="CENTER" wrappingWidth="1099.9999985063914">
          <font>
             <Font name="Bauhaus 93" size="23.0" />
          </font>

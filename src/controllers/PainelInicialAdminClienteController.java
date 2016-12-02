@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Gerente;
@@ -19,8 +20,12 @@ public class PainelInicialAdminClienteController  implements Initializable{
 	@FXML
 	private Button buttonBarAdmin, buttonBarFuncionario, buttonProduto, buttonCliente, buttonFuncionario, 
 	buttonHistoricoCompras, buttonGerenciarClientes, buttonListarClientes;
+	
 	@FXML
 	private AnchorPane ap;
+	
+	@FXML
+	private MenuItem menuItemLogout;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

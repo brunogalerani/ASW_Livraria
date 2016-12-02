@@ -5,9 +5,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,34 +12,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListaProdutosController">
+<AnchorPane fx:id="ap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.71" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListaProdutosController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1100.0">
-         <menus>
-            <Menu mnemonicParsing="false" text="File">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Close" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
-      <Group layoutY="27.0">
+      <Group>
          <children>
             <Region prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #417f5f;" />
          </children>
       </Group>
-      <Region layoutY="67.0" prefHeight="50.0" prefWidth="1100.0" style="-fx-background-color: #d6bdbd;" />
-      <Text fill="WHITE" fontSmoothingType="LCD" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" wrappingWidth="1100.0">
+      <Region layoutY="40.0" prefHeight="50.0" prefWidth="1100.0" style="-fx-background-color: #d6bdbd;" />
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" textAlignment="CENTER" wrappingWidth="1100.0">
          <font>
             <Font name="System Bold Italic" size="35.0" />
          </font>
@@ -83,7 +61,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="buttonVoltar" alignment="TOP_CENTER" layoutX="34.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleBtnVoltar" prefHeight="41.0" prefWidth="103.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: white;" text="Voltar">
+      <Button fx:id="buttonVoltar" alignment="TOP_CENTER" layoutX="34.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleBtnVoltar" prefHeight="41.0" prefWidth="103.0" style="-fx-border-color: #417f5f; -fx-border-image-width: 3px; -fx-background-color: white;" text="Voltar">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
