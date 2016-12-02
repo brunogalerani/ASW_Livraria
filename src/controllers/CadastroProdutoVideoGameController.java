@@ -1,7 +1,6 @@
 package controllers;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import auxiliares.MessageAlerts;
@@ -10,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import models.VideoGame;
@@ -21,9 +19,7 @@ public class CadastroProdutoVideoGameController implements Initializable {
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldCor, textFieldPotencia, textFieldLargura,
 			textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, textFieldAlimentacao,
 			textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, textFieldBateria,
-			textFieldMidia, textFieldPlataformaSuportada, textFieldNome, textFieldQuantidade;
-	@FXML
-	private DatePicker datePickerGarantia;
+			textFieldMidia, textFieldPlataformaSuportada, textFieldNome, textFieldQuantidade, textFieldGarantia;
 
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
@@ -63,7 +59,7 @@ public class CadastroProdutoVideoGameController implements Initializable {
 		this.textFieldPotencia.setText(String.valueOf(this.videoGame.getPotencia()));
 		this.textFieldPreco.setText(String.valueOf(this.videoGame.getPreco()));
 		this.textFieldProfundidade.setText(String.valueOf(this.videoGame.getProfundidade()));
-		this.datePickerGarantia.setValue(this.videoGame.getGarantia());
+		this.textFieldGarantia.setText(String.valueOf(this.videoGame.getGarantia()));
 		this.textFieldQuantidade.setText(String.valueOf(this.videoGame.getQuantidade()));
 	}
 
@@ -93,7 +89,7 @@ public class CadastroProdutoVideoGameController implements Initializable {
 		double potencia = Double.parseDouble(this.textFieldPotencia.getText());
 		int alimentacao = Integer.parseInt(this.textFieldAlimentacao.getText());
 		double consumo = Double.parseDouble(this.textFieldConsumo.getText());
-		LocalDate garantia = datePickerGarantia.getValue();
+		int garantia = Integer.parseInt(this.textFieldGarantia.getText());
 		String modelo = this.textFieldModelo.getText();
 		String marca = this.textFieldMarca.getText();
 		String fabricante = this.textFieldFabricante.getText();

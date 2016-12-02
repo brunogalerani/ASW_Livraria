@@ -17,7 +17,7 @@ public abstract class Eletronicos extends Produto {
 	private int alimentacao;
 	private double consumo;
 	private String bateria;
-	private LocalDate garantia;
+	private int garantia;
 	private String modelo;
 	private String marca;
 	private String fabricante;
@@ -92,11 +92,11 @@ public abstract class Eletronicos extends Produto {
 		this.bateria = bateria;
 	}
 
-	public LocalDate getGarantia() {
+	public int getGarantia() {
 		return garantia;
 	}
 
-	public void setGarantia(LocalDate garantia) {
+	public void setGarantia(int garantia) {
 		this.garantia = garantia;
 	}
 

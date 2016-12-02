@@ -1,7 +1,6 @@
 package controllers;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import auxiliares.MessageAlerts;
@@ -11,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -23,14 +21,13 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 
 	@FXML
 	private RadioButton radioButtonCel, radioButtonTablet, radioButtonTsSim, radioButtonTsNao;
-	@FXML
-	private DatePicker datePickerGarantia;
+
 	@FXML
 	private TextField textFieldCodigoBarras, textFieldPreco, textFieldCor, textFieldPotencia, textFieldLargura,
 			textFieldAltura, textFieldProfundidade, textFieldConsumo, textFieldPeso, textFieldAlimentacao,
 			textFieldModelo, textFieldMarca, textFieldFabricante, textFieldArmazenamento, textFieldTamanhoTela,
 			textFieldTipoChip, textFieldQuantidadeChip, textFieldResolucao, textFieldTecnologiaSuportada,
-			textFieldBateria, textFieldNome, textFieldQuantidade;
+			textFieldBateria, textFieldNome, textFieldQuantidade, textFieldGarantia;
 	@FXML
 	private Button buttonVoltar, buttonCadastrar;
 
@@ -86,7 +83,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.textFieldTamanhoTela.setText(String.valueOf(this.celular.getTamanhoTela()));
 		this.textFieldTecnologiaSuportada.setText(this.celular.getTecnologiaSuportada());
 		this.textFieldTipoChip.setText(this.celular.getTipoChip());
-		this.datePickerGarantia.setValue(this.celular.getGarantia());
+		this.textFieldGarantia.setText(String.valueOf(this.celular.getGarantia()));
 		this.textFieldQuantidade.setText(String.valueOf(this.celular.getQuantidade()));
 		this.radioButtonTsSim.setSelected(this.celular.isTouchScreen());
 		this.radioButtonTsNao.setSelected(!this.celular.isTouchScreen());
@@ -119,7 +116,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 		this.textFieldTamanhoTela.setText(String.valueOf(this.tablet.getTamanhoTela()));
 		this.textFieldTecnologiaSuportada.setText(this.tablet.getTecnologiaSuportada());
 		this.textFieldTipoChip.setText(this.tablet.getTipoChip());
-		this.datePickerGarantia.setValue(this.tablet.getGarantia());
+		this.textFieldGarantia.setText(String.valueOf(this.tablet.getGarantia()));
 		this.textFieldQuantidade.setText(String.valueOf(this.tablet.getQuantidade()));
 		this.radioButtonTsSim.setSelected(this.tablet.isTouchScreen());
 		this.radioButtonTsNao.setSelected(!this.tablet.isTouchScreen());
@@ -141,7 +138,7 @@ public class CadastroProdutoDispositivoMovelController implements Initializable 
 			double potencia = Double.parseDouble(this.textFieldPotencia.getText());
 			int alimentacao = Integer.parseInt(this.textFieldAlimentacao.getText());
 			double consumo = Double.parseDouble(this.textFieldConsumo.getText());
-			LocalDate garantia = this.datePickerGarantia.getValue();
+			int garantia = Integer.parseInt(this.textFieldGarantia.getText());
 			String modelo = this.textFieldModelo.getText();
 			String marca = this.textFieldMarca.getText();
 			String fabricante = this.textFieldFabricante.getText();
