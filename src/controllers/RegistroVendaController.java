@@ -168,12 +168,11 @@ public class RegistroVendaController implements Initializable {
 				pedidoProduto.setQuantidade(m.getQuantidade());
 				pedidoProduto.setPedido(pedido);
 				pedidoProdutoDAO.insert(pedidoProduto);
-
-				MessageAlerts.vendaRealizada();
-
-				Stage actual = (Stage) this.buttonVoltar.getScene().getWindow();
-				actual.close();
 			}
+			MessageAlerts.vendaRealizada();
+
+			Stage actual = (Stage) this.buttonVoltar.getScene().getWindow();
+			actual.close();
 		} else {
 			MessageAlerts.campoObrigatorioEmBranco();
 		}

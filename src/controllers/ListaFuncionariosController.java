@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -41,7 +42,7 @@ public class ListaFuncionariosController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		funcionariodao = new FuncionarioDAO();
-
+		funcionarioList = new ArrayList<>();
 		loadTableViewFuncionario();
 
 		tableViewFuncionarios.getSelectionModel().selectedItemProperty()

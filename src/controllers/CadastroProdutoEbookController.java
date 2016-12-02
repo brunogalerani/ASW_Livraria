@@ -64,13 +64,12 @@ public class CadastroProdutoEbookController implements Initializable {
 
 	@FXML
 	private void handleBtnCadastrar() {
-		if (textFieldNome.getText().isEmpty() || textFieldCodigoBarras.getText().isEmpty()
-				|| textFieldISBN.getText().isEmpty() || textFieldPreco.getText().isEmpty()) {
-			MessageAlerts.campoObrigatorioEmBranco();
-		} else {
+		try{
 			this.cadastrar();
 			MessageAlerts.dadosRegistrados();
 			this.voltar();
+		}catch (Exception e) {
+			MessageAlerts.campoObrigatorioEmBranco();
 		}
 	}
 
