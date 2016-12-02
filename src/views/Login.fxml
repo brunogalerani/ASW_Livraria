@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
@@ -52,7 +53,10 @@
             <Font name="System Bold Italic" size="57.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="152.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="196.0" layoutY="119.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/IF.png" />
+         </image></ImageView>
       <PasswordField fx:id="passwordFieldSenha" layoutX="108.0" layoutY="476.0" prefHeight="33.0" prefWidth="286.0" style="-fx-border-color: #417f5f;" />
    </children>
 </AnchorPane>
