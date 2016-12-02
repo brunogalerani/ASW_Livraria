@@ -198,6 +198,7 @@ public class RegistroVendaController implements Initializable {
 		} catch (Exception e) {
 			MessageAlerts.usuarioNaoEncontrado();
 			this.textFieldCPFCliente.setText("");
+			this.labelCliente.setText("");
 		}
 	}
 

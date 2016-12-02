@@ -78,8 +78,7 @@ public class ListaProdutosController implements Initializable {
 	private void loadLabelValues(Produto produto) {
 		this.labelNome.setText(produto.getNome());
 		this.labelCodigoDeBarras.setText(String.valueOf(produto.getCodBarras()));
-		this.labelPreco.setText("R$: " + produto.getPreco());
-		this.labelMarca.setText(produto.getMarca());
+		this.labelPreco.setText("R$  " + produto.getPreco());
 	}
 
 	@FXML
