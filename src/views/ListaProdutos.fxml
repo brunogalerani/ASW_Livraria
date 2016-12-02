@@ -7,6 +7,8 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
@@ -92,5 +94,10 @@
             <TableColumn fx:id="tableColumnTipo" text="Tipo" />
         </columns>
       </TableView>
+      <ImageView fitHeight="40.0" fitWidth="84.0" layoutX="1016.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/bground.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
