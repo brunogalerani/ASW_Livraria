@@ -34,7 +34,7 @@ public class RegistroVendaController implements Initializable {
 	private Button buttonConcluir, buttonVoltar, buttonAdicionar, buttonRemover, buttonSelecionarCliente;
 
 	@FXML
-	private TextField textFieldQuantidade, textFieldCPFCliente;
+	private TextField textFieldQuantidade, textFieldEmailCliente;
 
 	@FXML
 	private Label labelNomeProduto, labelCliente, labelTotalPreco;
@@ -192,12 +192,12 @@ public class RegistroVendaController implements Initializable {
 	@FXML
 	public void handleBtnSelecionarCliente() {
 		try {
-			long cpf = Long.parseLong(textFieldCPFCliente.getText());
-			cliente = clienteDAO.selectFromCPF(cpf);
+			String email = textFieldEmailCliente.getText();
+			cliente = clienteDAO.selectFromEmail(email);
 			labelCliente.setText(cliente.getNome());
 		} catch (Exception e) {
 			MessageAlerts.usuarioNaoEncontrado();
-			this.textFieldCPFCliente.setText("");
+			this.textFieldEmailCliente.setText("");
 			this.labelCliente.setText("");
 		}
 	}

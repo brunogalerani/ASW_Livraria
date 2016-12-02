@@ -166,13 +166,7 @@ public class CadastroFuncionarioController implements Initializable {
 					vendedor.setTelefone(telefone);
 					vendedor.setEmail(email);
 					vendedor.setEndereco(endereco);
-
-					String geraLogin[] = vendedor.getNome().split(" ", 2);
-					String login = geraLogin[0];
-					String login2 = String.valueOf(geraLogin[1].charAt(0));
-
-					vendedor.setLogin((login + login2).toLowerCase());
-					vendedor.setSenha(EncryptPassword.encryptSHA256(((login + "123").toLowerCase())));
+					geraSenha(vendedor);
 
 					if (vendedor.getId() == null) {
 						endDAO.insert(endereco);
@@ -193,13 +187,7 @@ public class CadastroFuncionarioController implements Initializable {
 					gerente.setTelefone(telefone);
 					gerente.setEmail(email);
 					gerente.setEndereco(endereco);
-
-					String geraLogin[] = gerente.getNome().split(" ", 2);
-					String login = geraLogin[0];
-					String login2 = String.valueOf(geraLogin[1].charAt(0));
-
-					gerente.setLogin((login + login2).toLowerCase());
-					gerente.setSenha(EncryptPassword.encryptSHA256(((login + "gerente").toLowerCase())));
+					geraSenha(gerente);
 
 					if (gerente.getId() == null) {
 						endDAO.insert(endereco);
@@ -235,6 +223,16 @@ public class CadastroFuncionarioController implements Initializable {
 		if (MessageAlerts.cancelarCadastro().get() == ButtonType.OK) {
 			Stage actual = (Stage) buttonCadastrar.getScene().getWindow();
 			actual.close();
+		}
+	}
+	
+	private void geraSenha(Funcionario funcionario){
+		if (funcionario.getLogin()==null) {
+			String geraLogin[] = funcionario.getNome().split(" ", 2);
+			String login = geraLogin[0] + geraLogin[1];						
+
+			funcionario.setLogin((login).toLowerCase());
+			funcionario.setSenha(EncryptPassword.encryptSHA256(((login + "123").toLowerCase())));
 		}
 	}
 

@@ -42,9 +42,9 @@ public class ClienteDAO {
 		return list;
 	}
 
-	public Cliente selectFromCPF(long cpf) {
-		TypedQuery<Cliente> query = this.manager.createQuery("select c from Cliente c where c.cpf=:cpf", Cliente.class);
-		query.setParameter("cpf", cpf);
+	public Cliente selectFromEmail(String email) {
+		TypedQuery<Cliente> query = this.manager.createQuery("select c from Cliente c where c.email=:email", Cliente.class);
+		query.setParameter("email", email);
 		return query.getSingleResult();
 	}
 
